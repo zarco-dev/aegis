@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_13_000811) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_13_234505) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,6 +42,74 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_13_000811) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "bank_passwords", force: :cascade do |t|
+    t.string "cardholder"
+    t.string "account_type"
+    t.string "bank_name"
+    t.string "franchise"
+    t.string "account_number"
+    t.string "secure_code"
+    t.datetime "expiration_date"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_bank_passwords_on_user_id"
+  end
+
+  create_table "group_invitations", force: :cascade do |t|
+    t.boolean "status", default: false
+    t.bigint "user_id", null: false
+    t.bigint "group_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_group_invitations_on_group_id"
+    t.index ["user_id"], name: "index_group_invitations_on_user_id"
+  end
+
+  create_table "groups", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.integer "users_number"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_groups_on_user_id"
+  end
+
+  create_table "passwords", force: :cascade do |t|
+    t.text "url"
+    t.string "site_name"
+    t.string "category"
+    t.string "site_username"
+    t.string "site_password"
+    t.boolean "group", default: false
+    t.bigint "user_id", null: false
+    t.bigint "group_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_passwords_on_group_id"
+    t.index ["user_id"], name: "index_passwords_on_user_id"
+  end
+
+  create_table "subscription_plans", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.integer "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "subscriptions", force: :cascade do |t|
+    t.datetime "begining_date"
+    t.datetime "expired_date"
+    t.bigint "user_id", null: false
+    t.bigint "subscription_plan_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["subscription_plan_id"], name: "index_subscriptions_on_subscription_plan_id"
+    t.index ["user_id"], name: "index_subscriptions_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -50,10 +118,29 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_13_000811) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "username"
+    t.string "full_name"
+    t.boolean "premium_user", default: false
+    t.boolean "group_user", default: false
+    t.datetime "birth_date"
+    t.string "cel_number"
+    t.bigint "subscription_plan_id", null: false
+    t.string "provider"
+    t.string "uid"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["subscription_plan_id"], name: "index_users_on_subscription_plan_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "bank_passwords", "users"
+  add_foreign_key "group_invitations", "groups"
+  add_foreign_key "group_invitations", "users"
+  add_foreign_key "groups", "users"
+  add_foreign_key "passwords", "groups"
+  add_foreign_key "passwords", "users"
+  add_foreign_key "subscriptions", "subscription_plans"
+  add_foreign_key "subscriptions", "users"
+  add_foreign_key "users", "subscription_plans"
 end

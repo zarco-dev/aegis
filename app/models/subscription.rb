@@ -1,4 +1,4 @@
 class Subscription < ApplicationRecord
-  has_one :user
-  has_one :subscription_plan
+  belongs_to :user
+  belongs_to :subscription_plan
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_14_135116) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_14_213552) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -82,9 +82,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_14_135116) do
     t.string "category"
     t.string "site_username"
     t.string "site_password"
-    t.boolean "group", default: false
+    t.boolean "isgroup", default: false
     t.bigint "user_id", null: false
-    t.bigint "group_id", null: false
+    t.bigint "group_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["group_id"], name: "index_passwords_on_group_id"
@@ -102,10 +102,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_14_135116) do
   create_table "subscriptions", force: :cascade do |t|
     t.datetime "begining_date"
     t.datetime "expired_date"
-    t.bigint "user_id", null: false
     t.bigint "subscription_plan_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
     t.index ["subscription_plan_id"], name: "index_subscriptions_on_subscription_plan_id"
     t.index ["user_id"], name: "index_subscriptions_on_user_id"
   end
@@ -124,10 +124,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_14_135116) do
     t.boolean "group_user", default: false
     t.datetime "birth_date"
     t.string "cel_number"
-    t.bigint "subscription_plan_id", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-    t.index ["subscription_plan_id"], name: "index_users_on_subscription_plan_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
@@ -140,5 +138,4 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_14_135116) do
   add_foreign_key "passwords", "users"
   add_foreign_key "subscriptions", "subscription_plans"
   add_foreign_key "subscriptions", "users"
-  add_foreign_key "users", "subscription_plans"
 end

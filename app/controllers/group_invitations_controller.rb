@@ -1,0 +1,2 @@
+class GroupInvitationsController < ApplicationController
+end

@@ -1,4 +1,3 @@
 class SubscriptionPlan < ApplicationRecord
-  belongs_to :subscription
-  belongs_to :user
+  has_many :subscriptions
 end

@@ -5,8 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
 
-  has_one :subscription_plan
-  belongs_to :subscription
+  has_one :subscription
+  has_one :subscription_plan, through: :subscription
   has_many :bank_passwords, dependent: :delete_all
   has_many :passwords, dependent: :delete_all
   has_many :groups, dependent: :delete_all

@@ -3,12 +3,12 @@ Rails.application.routes.draw do
 
   root to: "pages#home"
 
-  get "pages", to: "pages#generate", as: :generate
-  get "pages", to: "pages#index", as: :dashboard
+  get "generate", to: "pages#generate", as: :generate
+  get "dashboard", to: "pages#index", as: :dashboard
 
   resources :passwords
   resources :bank_passwords
-  
+
   resources :groups do
     resources :group_invitations
   end

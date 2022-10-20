@@ -11,6 +11,8 @@ gem "rails", "~> 7.0.4"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
+gem 'pundit', '~> 2.2'
+
 gem 'devise', '~> 4.8', '>= 4.8.1'
 
 gem "dotenv-rails", groups: [:development, :test]
@@ -25,6 +27,8 @@ gem "puma", "~> 5.0"
 
 # Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
 gem "jsbundling-rails"
+
+gem 'turbolinks_render'
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
@@ -64,6 +68,8 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem "dotenv-rails"
+  gem "better_errors"
+  gem "binding_of_caller"
 end
 
 group :development do

@@ -1,4 +1,26 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<% unless user_signed_in? %>
+  <div class="navigation" data-controller="navbar">
+    <div class="menuToggle" data-action="click->navbar#menutoggle" data-navbar-target="menu"><i></i>
+        <%= image_tag "logotipo.svg" %>
+    </div>
+    <div class="menu">
+      <ul>
+        <li style="--i:0.1s;"><%= link_to root_path do %><i class="fa-solid fa-house"></i><% end %></li>
+        <li style="--i:0.2s;"><%= link_to new_user_registration_path do %><i class="fa-solid fa-user-plus"></i><% end %></li>
+        <li></li>
+        <li style="--i:0.2s;"><a href="#"><i class="fa-solid fa-lock"></i></a></li>
+        <li style="--i:0.1s;"><%= link_to new_user_session_path do %><i class="fa-solid fa-right-to-bracket"></i><% end %></li>
+      </ul>
+    </div>
+  </div>
+<% else %>
+    <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}%>
+<% end %>
+
+
+
+
+<!--<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to "#", class: "navbar-brand" do %>
       <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
@@ -33,4 +55,4 @@
       </ul>
     </div>
   </div>
-</div>
+</div> -->

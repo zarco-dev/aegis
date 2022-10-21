@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_one :subscription_plan, through: :subscription
   has_many :bank_passwords, dependent: :delete_all
   has_many :passwords, dependent: :delete_all
-  has_many :groups, dependent: :delete_all
+  has_many :groups, foreign_key: :owner_id
   has_many :group_invitations, dependent: :delete_all
 
   validates :username, presence: { message: "no debe estar vacio" }, uniqueness: true, format: { with: /\A[a-zA-Z]+\z/, message: "debe contener solo letras" }, length: { minimum: 3, message: "es muy corto, minimo 3 caracteres" }

@@ -1,0 +1,9 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-12">
+      <h1>Detalles del grupo '<%= @group.name %>'</h1>
+      <%= link_to '+ Agregar usuario', new_group_group_invitation_path(@group), class: "btn btn-success" %>
+      <%= link_to 'volver', groups_path%>
+    </div>
+  </div>
+</div>

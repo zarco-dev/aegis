@@ -1,0 +1,12 @@
+<div class="left-navbar">
+  <div class="container p-3">
+    <h3><%= current_user.username %>'s menu</h3>
+
+    <div class="content mt-5">
+      <h5><%= link_to 'Mis contraseñas', dashboard_path, style: 'text-decoration: none;' %></h5>
+      <% if current_user.premium_user == true %>
+        <h5><%= link_to 'Mis grupos', groups_path, style: 'text-decoration: none;' %></h5>
+      <% end %>
+    </div>
+  </div>
+</div>

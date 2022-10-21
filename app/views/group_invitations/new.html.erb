@@ -1,0 +1,11 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-12">
+      <h1>Invitar a un usuario</h1>
+      <%= simple_form_for @group_invitation, url: group_group_invitations_path, method: :post do |f| %>
+        <input class="form-control string required" placeholder="johndoe@gmail.com" type="invite" name="invitation" value="">
+        <%= f.submit 'Agregar usuario', class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>

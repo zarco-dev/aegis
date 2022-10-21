@@ -57,7 +57,7 @@
 }
 
 .menuToggle:hover{
-  box-shadow: 0 0 4px 2px rgb(12, 159, 218);
+  box-shadow: 0 0 4px 2px #3cb0d0;
 }
 
 .menuToggle img{
@@ -184,8 +184,13 @@
   font-size: 2em;
   text-decoration: none;
   color: #555;
+  transition: .4s;
+  -webkit-transition: .4s;
+  -moz-transition: .4s;
+  -ms-transition: .4s;
+  -o-transition: .4s;
 }
 
 .menu ul li:hover a {
-  color: #1284b9;
+  color: #3cb0d0;
 }

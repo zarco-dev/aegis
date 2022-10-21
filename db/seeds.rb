@@ -1,4 +1,4 @@
-# User.destroy_all
+User.destroy_all
 
 SubscriptionPlan.create!(
   title: "basic",

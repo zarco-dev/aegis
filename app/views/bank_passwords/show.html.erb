@@ -1,0 +1,9 @@
+<% a = @bankpassword.account_number.gsub("1", "*") %>
+  <% a = a.gsub("5", "*") %>
+  <% a = a.gsub("8", "*") %>
+  <%= a %>
+    <p>Tipo de cuenta: <%= @bankpassword.account_type %></p>
+    <p>Banco: <%= @bankpassword.bank_name %></p>
+    <%= @bankpassword.cardholder %>
+  </div>
+<p><%= link_to 'volver', bank_passwords_path %></p>

@@ -1,7 +1,2 @@
 <h1><%= @password.site_name %></h1>
 <p><%= link_to 'volver', dashboard_path %></p>
-<% if policy(@password).edit? %>
-  <%= link_to edit_password_path(@password) do %>
-    <button type="button" class="btn btn-primary" style="color: white;"><i class="fa-solid fa-pen-to-square"></i></button>
-  <% end %>
-<% end %>

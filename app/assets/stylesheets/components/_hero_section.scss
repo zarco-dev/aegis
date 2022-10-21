@@ -1,0 +1,246 @@
+.container-hero-section{
+    background-image: url("../../images/background-color-blue.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.hero-section .banner{
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.hero-section .banner .headline{
+    width:85%;
+    display:flex;
+    flex-direction: column;
+    padding-left: 100px;
+    padding-right: 50px;
+    z-index:1;
+}
+.hero-section .banner .headline .title{
+    font-family: var(--headers-font);
+    font-size: 40px;
+    font-weight: 600;
+    color:  var(--light-gray);
+    margin-top: 10px;
+}
+.hero-section .banner .headline .logo-aegis{
+    width:100%;
+}
+.hero-section .banner .headline .cta{
+    margin: 40px 0px;
+}
+.hero-section .banner .headline .cta .cta-start{
+    text-decoration: none;
+    color: var(--white);
+    font-family: var(--body-font);
+    font-weight: 600;
+    font-size: 20px;
+    padding: 15px 70px;
+    border-radius: 8px;
+    background-color: var(--hotpink);
+    border: 1px solid var(--hotpink);
+    transition: .5s;
+}
+.hero-section .banner .headline .cta .cta-start:hover{
+    background-color: var(--light-blue);
+    border: 1px solid var(--white);
+    box-shadow: 0 0 5px var(--white);
+    color: var(--white);
+}
+.hero-section .banner .headline .cta .cta-register{
+    text-decoration: none;
+    color: var(--white);
+    font-family: var(--body-font);
+    font-weight: 600;
+    font-size: 20px;
+    padding: 15px 70px;
+    border-radius: 8px;
+    border: 1px solid var(--white);
+    background-color: var(--deep-gray);
+    margin-left: 20px;
+    transition: .5s;
+}
+.hero-section .banner .headline .cta .cta-register:hover{
+    box-shadow: 0 0 10px var(--white);
+    background-color: var(--light-blue);
+}
+.hero-section .banner .img-banner{
+    width:115%;
+
+}
+.hero-section .banner .img-banner .image-social-media {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 100px auto;
+}
+.hero-section .banner .img-banner .image-social-media .image{
+    width: 60%;
+    height: 350px;
+
+    z-index: 1;
+}
+.hero-section .banner .img-banner .image-social-media .social-media-hero-section{
+    width:100%;
+}
+.hero-section .banner .img-banner .image-social-media .social-media-hero-section .flaticon{
+    width:55px;
+    border-radius: 50%;
+    padding: 8px 8px;
+    background-color: var(--light-blue);
+    position:relative;
+    animation-name: motion;
+    animation-duration: 2s;
+    animation-direction: reverse;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+@keyframes motion{
+    0%{
+        bottom: 0; top: 0;
+    }
+    25%{
+        bottom: 5px; top: 0;
+    }
+    50%{
+        bottom: 5px; top: 5px;
+    }
+    75%{
+        bottom: 0; top: 5px;
+    }
+    100%{
+        bottom: 0; top: 0;
+    }
+}
+.hero-section .banner .img-banner .image-social-media .social-media-hero-section .flaticon-1{
+    transform: translate(50%, 350%);
+}
+.hero-section .banner .img-banner .image-social-media .social-media-hero-section .flaticon-2{
+    transform: translate(150%, 250%);
+}
+.hero-section .banner .img-banner .image-social-media .social-media-hero-section .flaticon-3{
+    transform: translate(190%, 145%);
+}
+.hero-section .banner .img-banner .image-social-media .social-media-hero-section .flaticon-4{
+    transform: translate(-250%, 150%);
+}
+.hero-section .banner .img-banner .image-social-media .social-media-hero-section .flaticon-5{
+    transform: translate(-20%,-100%);
+}
+.hero-section .banner .img-banner .image-social-media .social-media-hero-section .flaticon-6{
+    transform: translate(220%, 5%);
+}
+.hero-section .banner .img-banner .image-social-media .social-media-hero-section .flaticon-7{
+    transform: translate(90%, 310%);
+}
+.hero-section .banner .img-banner .image-social-media .social-media-hero-section .flaticon-8{
+    transform: translate(-110%, 160%);
+}
+.hero-section .banner .img-banner .image-social-media .social-media-hero-section .flaticon-9{
+    transform: translate(-15%, 120%);
+}
+.hero-section .banner .img-banner .image-social-media .social-media-hero-section .flaticon-10{
+    transform: translate(-180%, -100%);
+}
+.hero-section .banner .img-banner .image-social-media .social-media-hero-section .flaticon-11{
+    transform: translate(100%, -150%);
+}
+.hero-section .banner .img-banner .image-social-media .social-media-hero-section .flaticon-b{
+    width:55px;
+    border-radius: 50%;
+    padding: 8px 8px;
+    background-color: var(--light-blue);
+    position:relative;
+    animation-name: motion-b;
+    animation-duration: 2s;
+    animation-direction: reverse;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+@keyframes motion-b{
+    0%{
+        bottom: 5; top: 0;
+    }
+    25%{
+        bottom: 5px; top: 5;
+    }
+    50%{
+        bottom: 0px; top: 5px;
+    }
+    75%{
+        bottom: 0; top: 0px;
+    }
+    100%{
+        bottom: 5; top: 0;
+    }
+}
+.hero-section .banner .img-banner .image-social-media .social-media-hero-section .flaticon-c{
+    width:55px;
+    border-radius: 50%;
+    padding: 8px 8px;
+    background-color: var(--light-blue);
+    position:relative;
+    animation-name: motion-c;
+    animation-duration: 2s;
+    animation-direction: reverse;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+@keyframes motion-c{
+    0%{
+        bottom: 0; top: 5px;
+    }
+    25%{
+        bottom: 5px; top: 5px;
+    }
+    50%{
+        bottom: 5px; top: 0px;
+    }
+    75%{
+        bottom: 0; top: 0px;
+    }
+    100%{
+        bottom: 0; top: 5px;
+    }
+}
+.hero-section .banner .img-banner .image-social-media .social-media-hero-section .flaticon-d{
+    width:55px;
+    border-radius: 50%;
+    padding: 8px 8px;
+    background-color: var(--light-blue);
+    position:relative;
+    animation-name: motion;
+    animation-duration: 2s;
+    animation-direction: reverse;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+@keyframes motion-d{
+    0%{
+        bottom: 0; top: 5px;
+    }
+    25%{
+        bottom: 5px; top: 5px;
+    }
+    50%{
+        bottom: 5px; top: 0;
+    }
+    75%{
+        bottom: 0; top: 0;
+    }
+    100%{
+        bottom: 0; top: 5px;
+    }
+}
+.hero-section .ball-pink{
+    width:1px;
+    height: 1px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 300px 150px var(--hotpink);
+    background-color: var(--hotpink);
+}

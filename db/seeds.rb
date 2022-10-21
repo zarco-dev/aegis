@@ -3,13 +3,13 @@ User.destroy_all
 SubscriptionPlan.create!(
   title: "basic",
   description: "Plan basico, almacena hasta 15 contraseñas",
-  price: 10
+  price: 0
 )
 
 SubscriptionPlan.create!(
   title: "Premium",
   description: "Plan premium, almacena contraseñas ilimitadas y crear grupos para compartirlas",
-  price: 30
+  price: 35
 )
 
 # # # 6.times do |c|

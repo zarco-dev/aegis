@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  # before_create :plan_type
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
@@ -13,13 +13,7 @@ class User < ApplicationRecord
   has_many :groups, dependent: :delete_all
   has_many :group_invitations, dependent: :delete_all
 
-  private
+  validates :username, presence: { message: "no debe estar vacio" }, uniqueness: true, format: { with: /\A[a-zA-Z]+\z/, message: "debe contener solo letras" }, length: { minimum: 3, message: "es muy corto, minimo 3 caracteres" }
 
-  # def plan_type
-  #   # if self.premium_user == "1"
-  #   #   self.premium_user = true
-  #   # end
-  #   raise
-  # end
-
+  validates :email, presence: true, uniqueness: true, format: { with: /\S+@\S+\.\S+/, message: "debe tener el formato correcto" }
 end

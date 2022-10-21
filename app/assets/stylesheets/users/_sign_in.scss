@@ -36,3 +36,9 @@
   font-size: 1.2em;
   color: #053C5E;
 }
+
+#sign-in-valid form input:invalid, #sign-in-valid form input:valid {
+  box-shadow: none !important;
+  outline: none;
+  border: none;
+}

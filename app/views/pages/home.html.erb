@@ -1,0 +1,16 @@
+<% if user_signed_in? %>
+  <% date_in = current_user.subscription.begining_date %>
+  <% date_start = "#{date_in.day}/#{date_in.month}/#{date_in.year}" %>
+  <div class="container p-5 bg-secondary">
+    <h1>Tienes un plan: <%= current_user.subscription.subscription_plan.title %></h1>
+    <p>Se activo el: <%= date_in.day  %>-<%= date_in.month  %>-<%= date_in.year  %></p>
+    <% if current_user.subscription.expired_date.eql?(nil) %>
+      <p>No se vence</p>
+    <% else %>
+      <% date_out = current_user.subscription.expired_date %>
+      <% date_end = "#{date_out.day}/#{date_out.month}/#{date_out.year}" %>
+      <p>Se vence en: <%= date_out.day %>-<%= date_out.month %>-<%= date_out.year %></p>
+      <p>Te quedan: <%= (Date.parse(date_end) - Date.parse(date_start)).to_i %> días</p>
+    <% end %>
+  </div>
+<% end %>

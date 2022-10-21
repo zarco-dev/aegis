@@ -1,6 +1,6 @@
 <div class="log-in-container">
 <div class="circle-login"></div>
-  <div class="form-sign">
+  <div class="form-sign" id="sign-in-valid">
     <h2>Inicia Sesión</h2>
 
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: false }) do |f| %>

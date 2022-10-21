@@ -1,0 +1,17 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-12">
+
+      <%= simple_form_for @password do |f| %>
+        <%= f.input :site_name, placeholder: 'Facebook, Youtube, etc...' %>
+        <%= f.input :category %>
+        <%= f.input :site_username %>
+        <%= f.input :site_password %>
+        <%= f.input :url %>
+
+        <%= f.submit 'Editar contraseña', class: 'btn btn-success' %>
+      <% end %>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-12">
+      <%= simple_form_for @group do |f| %>
+        <%= f.input :name, placeholder: 'Familiar, Empresarial, etc...' %>
+        <%= f.input :description, as: :text %>
+        <%= f.submit 'Crear grupo', class: "btn btn-success" %>
+      <% end %>
+    </div>
+  </div>
+</div>

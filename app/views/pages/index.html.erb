@@ -1,0 +1,34 @@
+<div class="dashboard-body">
+  <div class="row">
+
+    <div class="col-3">
+      <%= render "shared/left_navbar"%>
+    </div>
+
+    <div class="col-9">
+      <div class="container mt-3">
+
+        <h1>Mis contraseñas</h1>
+        <% @password.each do |password| %>
+          <div class="mt-5 mb-5">
+
+            <h3>Nombre del sitio: <%= link_to password.site_name, password_path(password), style: 'text-decoration: none;' %></h3>
+            <p>Categoría: <%= password.category %></p>
+            <p>Dirección: <%= password.url %></p>
+
+            <%= link_to password, data: { turbo_method: :delete, turbo_confirm: "Quieres borrar esta contraseña?" } do %>
+              <button type="button" class="btn btn-danger" style="color: white;"><i class="fa-solid fa-trash"></i></button>
+            <% end %>
+            <%= link_to edit_password_path(password) do %>
+              <button type="button" class="btn btn-primary" style="color: white;"><i class="fa-solid fa-pen-to-square"></i></button>
+            <% end %>
+
+          </div>
+        <% end %>
+
+        <%= link_to '+ Crear contraseña', new_password_path, class: "btn btn-success" %>
+
+      </div>
+    </div>
+  </div>
+</div>

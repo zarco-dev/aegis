@@ -1,0 +1,13 @@
+<% @bankpasswords.each do |bankpassword| %>
+  <div class="card bg-dark p-3 text-light">
+  <% a = bankpassword.account_number.gsub("1", "*") %>
+  <% a = a.gsub("5", "*") %>
+  <% a = a.gsub("8", "*") %>
+    <h1><%= a %></h1>
+    <p>Tipo de cuenta: <%= bankpassword.account_type %></p>
+    <p>Banco: <%= bankpassword.bank_name %></p>
+    <%= bankpassword.cardholder %>
+  </div>
+<% end %>
+
+<%= link_to "Almacenar bankpassword", new_bank_password_path %>

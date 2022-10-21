@@ -1,0 +1,79 @@
+.section-services{
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 150px;
+    margin: auto;
+    background-color: var( --deep-gray);
+}
+    .section-services .subtitle{
+    color: var(--gray);
+    font-size: 40px ;
+    font-weight: 600;
+    padding-bottom: 150px;
+    padding-top: 150px;
+    font-family: var(--headers-font);
+}
+.section-services .cards-services{
+    width:80%;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 60px;
+    column-gap: 90px;
+    margin: 0 auto;
+}
+.section-services .cards-services .services-pink{
+    width: 250px;
+    height: auto;
+    background-color: var( --light-red-opacity);
+    text-align:center;
+    border-radius: 8px;
+    transition:.5s;
+    padding-bottom: 30px;
+}
+.section-services .cards-services .services-pink:hover{
+    background-color: var(--almost-black);
+    box-shadow: 0 0 5px var(--light-blue);
+}
+.section-services .cards-services .services-blue{
+    width: 250px;
+    height: auto;
+    background-color: var(--light-blue-opacity);
+    text-align:center;
+    border-radius: 8px;
+    transition:.5s;
+    padding-bottom: 30px;
+}
+.section-services .cards-services .services-blue:hover{
+    background-color: var(--almost-black);
+    box-shadow: 0 0 5px var(--light-blue);
+}
+.section-services .cards-services .item-services{
+    width: 100px;
+    padding: 30px 0;
+    transition:.5s;
+    transform: scale(100%, 100%);
+    transition: all .5s ease-in-out;
+}
+.section-services .cards-services .item-services:hover{
+    transform: scale(125%, 125%);
+}
+.section-services .cards-services p{
+    color: var(--light-gray);
+    font-size: 18px ;
+    font-weight: 600;
+    padding: 0px 50px;
+    font-family: var(--body-font);
+}
+.ball-pink{
+    width:1px;
+    height: 1px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 300px 150px var(--hotpink);
+    background-color: var(--hotpink);
+    align-self: end;
+}

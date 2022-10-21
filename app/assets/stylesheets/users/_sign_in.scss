@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.log-in-container {
+  background: linear-gradient(162deg, #154c74 , #07273d);
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.circle-login {
+  background-color: #053c5e;
+  position: absolute;
+  width: 54vw;
+  height: 100vh;
+  left: 0px;
+  z-index: 1;
+  border-radius: 26% 74% 58% 42% / 46% 15% 85% 54%  ;
+  -webkit-border-radius: 26% 74% 58% 42% / 46% 15% 85% 54%  ;
+  -moz-border-radius: 26% 74% 58% 42% / 46% 15% 85% 54%  ;
+  -ms-border-radius: 26% 74% 58% 42% / 46% 15% 85% 54%  ;
+  -o-border-radius: 26% 74% 58% 42% / 46% 15% 85% 54%  ;
+}
+
+.icon-input {
+  position: relative;
+  top: -47px;
+  left: 397px;
+  font-size: 1.2em;
+  color: #053C5E;
+}
+
+#sign-in-valid form input:invalid, #sign-in-valid form input:valid {
+  box-shadow: none !important;
+  outline: none;
+  border: none;
+}

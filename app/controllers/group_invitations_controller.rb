@@ -2,12 +2,15 @@ class GroupInvitationsController < ApplicationController
   before_action :find_group, only: [:new, :create]
   after_action :authorize_group_invitation
 
+  def index
+  end
+
   def new
     @group_invitation = GroupInvitation.new
+    @query = User.find_by(email: params[:invitation])
   end
 
   def create
-    @group_invitation = User.find_by(email: params[:invitation])
     raise
   end
 

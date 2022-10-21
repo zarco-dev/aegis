@@ -1,0 +1,98 @@
+.section-cards-profiles{
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 150px;
+    margin: auto;
+}
+.section-cards-profiles .subtitle{
+    color: var(--gray);
+    font-size: 40px ;
+    font-weight: 600;
+    padding-bottom: 150px;
+    padding-top: 150px;
+    font-family: var(--headers-font);
+}
+.section-cards-profiles .subtitle span{
+    color: var(--light-blue);
+}
+.section-cards-profiles .cards-clients{
+    width: 80%;
+    max-width:1200px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 60px;
+    column-gap: 60px;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+.section-cards-profiles .cards-clients .card{
+    width: 500px;
+    height: 280px;
+    display: flex;
+    flex-direction: row;
+    background-color: var(--deep-gray);
+    border-radius: 8px;
+    transition:.5s;
+    transition: all 0.5s ease-in-out;
+}
+.section-cards-profiles .cards-clients .card:hover{
+    box-shadow: 0 0 5px var(--light-blue);
+}
+.section-cards-profiles .cards-clients .card figure{
+    overflow: hidden;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+.section-cards-profiles .cards-clients .card figure .services{
+    width: 220px;
+    height: 280px;
+    text-align: left;
+    transition: all .5s ease-in-out;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+.section-cards-profiles .cards-clients .card figure .services:hover{
+    transform: scale(1.1);
+}
+.section-cards-profiles .cards-clients .card .text{
+    padding: 0px 20px;
+    width:280px;
+    height:280px;
+    background-color: var(--deep-gray);
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+.section-cards-profiles .cards-clients .card .text h3{
+    color: var(--light-blue);
+    font-size: 25px ;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    font-family: var(--body-font);
+}
+.section-cards-profiles .cards-clients .card .text p{
+    color: var(--light-gray);
+    font-size: 16px ;
+    font-weight: 200;
+    padding-bottom: 80px;
+    font-family: var(--body-font);
+}
+.section-cards-profiles .cards-clients .card .text .plan{
+    color: var(--light-blue);
+    font-size: 16px ;
+    font-weight: 200;
+    font-family: var(--body-font);
+    text-decoration: none;
+    transition:.5s;
+}
+.section-cards-profiles .cards-clients .card .text .plan:hover{
+    text-decoration: underline;
+}
+.section-cards-profiles .cards-clients .flaticon{
+    width:80px;
+    height:80px;
+    align-self: end;
+}

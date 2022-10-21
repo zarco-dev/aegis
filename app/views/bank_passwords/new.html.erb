@@ -1,0 +1,19 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-12">
+
+      <%= simple_form_for @bankpassword do |f| %>
+        <%= f.input :cardholder, placeholder: '' %>
+        <%= f.input :account_type %>
+        <%= f.input :bank_name %>
+        <%= f.input :franchise %>
+        <%= f.input :account_number %>
+        <%= f.input :secure_code %>
+        <%= f.input :expiration_date %>
+        <%= f.submit 'Guardar contraseña bancaria', class: 'btn btn-success' %>
+      <% end %>
+
+
+    </div>
+  </div>
+</div>

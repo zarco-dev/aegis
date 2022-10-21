@@ -1,0 +1,67 @@
+.section-testimonies{
+    width: 100%;
+    height: auto;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 150px;
+    background-color: var(--deep-gray);
+
+}
+.section-testimonies .subtitle{
+    color: var(--gray);
+    font-size: 40px;
+    font-weight: 600;
+    padding-bottom: 150px;
+    padding-top: 150px;
+    font-family: var(--headers-font);
+}
+.section-testimonies .cards-testimonies{
+    width: 80%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.section-testimonies .cards-testimonies .card{
+    width: 342px;
+    height: 235px;
+    padding:  20px 20px;
+    border-radius: 8px;
+    border: 1px solid var(--light-blue);
+    background-color: var(--almost-black);
+    transition: .5s;
+}
+.section-testimonies .cards-testimonies .card:hover{
+    border: 1px solid var(--blue);
+    box-shadow: 0 0 3px var(--blue);
+
+}
+.section-testimonies .cards-testimonies .card .text-1 h3{
+    color:var(--light-blue);
+    font-family: var(--headers-font);
+    font-size: 18px;
+    margin-left: 20px;
+}
+.section-testimonies .cards-testimonies .card p{
+    color:var(--light-gray);
+    font-family: var(--body-font);
+    font-size: 15px;
+}
+.section-testimonies .cards-testimonies .card .text-1{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.section-testimonies .cards-testimonies .card .text-2{
+    display: grid;
+    grid-auto-rows: minmax(60px, auto);
+}
+.section-testimonies .cards-testimonies .card .rating-stars{
+    align-self:end;
+    justify-self: end;
+}

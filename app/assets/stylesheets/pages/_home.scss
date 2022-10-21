@@ -1,1 +1,12 @@
-// Specific CSS for your home-page
+/*---Specific CSS for your home-page---*/
+*{
+  padding: 0;
+  margin:0;
+  box-sizing: border-box;
+}
+body{
+  // background-color: #191918;
+}
+html{
+  scroll-behavior: smooth;
+}

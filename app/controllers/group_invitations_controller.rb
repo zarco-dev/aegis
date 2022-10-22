@@ -7,11 +7,17 @@ class GroupInvitationsController < ApplicationController
 
   def new
     @group_invitation = GroupInvitation.new
-    @query = User.find_by(email: params[:invitation])
+    if params[:query].present?
+      @query = params[:query]
+      @usuarios = User.where("email LIKE '%#{@query}%'")
+    end
+    # raise
   end
 
   def create
-    raise
+    # @group_invitation = GroupInvitation.new
+    # params
+    # raise
   end
 
   private

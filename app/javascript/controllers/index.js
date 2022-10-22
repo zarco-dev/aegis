@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import GroupinviteController from "./groupinvite_controller"
+application.register("groupinvite", GroupinviteController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 

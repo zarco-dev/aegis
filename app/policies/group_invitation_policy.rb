@@ -4,8 +4,7 @@ class GroupInvitationPolicy < ApplicationPolicy
     def resolve
       # @group_invitation = GroupInvitation.where("group_id =?", user)
       # @all_groups = GroupInvitation.all
-      @group_invitation = GroupInvitation.group_id
-      raise
+     scope.all
     end
   end
 

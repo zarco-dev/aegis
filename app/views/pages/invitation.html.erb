@@ -1,0 +1,22 @@
+<div class="container bg-dark text-white p-3 my-5">
+  <h2>Mis invitaciones</h2>
+  <% GroupInvitation.all.each do |group_i| %>
+    <% if current_user.id == group_i.user_id %>
+      <div class="card p-2 text-dark">
+        <p>Te invita: <small><%= group_i.group.user.username %></small></p>
+        <p>Al grupo: <small><%= group_i.group.name %></small></p>
+        <small>Estado de la invitacion <span class="bg-danger text-light p-1"><%= group_i.status %></span></small>
+        <small>El usuario pertence a un grupo? <span class="bg-danger text-light p-1"><%= current_user.group_user %></span></small>
+        <p><%= current_user.username %></p>
+
+        <%= form_tag invitation_path, method: :get do  %>
+          <%= hidden_field_tag :status, params[:status], class: "form-control", value: true %>
+          <%= hidden_field_tag :group, params[:group_id], class: "form-control", value: group_i.group.id %>
+          <%= hidden_field_tag :group_invitation, params[:group_invitation_id], class: "form-control", value: group_i.id %>
+          <%= submit_tag "Aceptar", class: "btn btn-primary" %>
+        <% end %>
+        <%# <form action="/groups/:group_id/group_invitations/:id/edit" method="patch"></form> %>
+      </div>
+    <% end %>
+  <% end %>
+</div>

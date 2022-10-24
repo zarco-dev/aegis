@@ -17,6 +17,13 @@
                   <i class="fa-solid fa-circle-info"></i>
                 </button>
               <% end %></h3>
+              <p>Usuarios de este grupo:
+              <% GroupInvitation.all.each do |group_i| %>
+                <% if group.id == group_i.group.id && group_i.status == true %>
+                  <span class="bg-info text-dark p-2 mx-1"><%= group_i.user.username  %></span>
+                <% end %>
+              <% end %></p>
+
               <p><%= group.description %></p>
             </div>
           <% end %>

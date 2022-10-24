@@ -26,7 +26,7 @@ class PasswordsController < ApplicationController
     @password.update(pass_params)
     @password.save
     redirect_to dashboard_path
-   
+
   end
 
   def destroy

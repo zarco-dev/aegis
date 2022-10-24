@@ -3,12 +3,10 @@
     <div class="col-6">
       <h1>Detalles del grupo '<%= @group.name %>'</h1>
       <%= link_to '+ Agregar usuario', new_group_group_invitation_path(@group), class: "btn btn-success" %>
-      <%= link_to 'Invitaciones', group_group_invitations_path(@group), class: "btn btn-success" %>
       <!-- Button trigger modal -->
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
           Agregar Contraseña
         </button>
-                <%= current_page?(group_path) %>
 
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

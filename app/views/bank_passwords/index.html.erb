@@ -1,19 +1,30 @@
-<% @bankpasswords.each do |bankpassword| %>
-  <div class="card bg-dark p-3 text-light">
-  <% a = bankpassword.account_number.gsub("1", "*") %>
-  <% a = a.gsub("5", "*") %>
-  <% a = a.gsub("8", "*") %>
-    <h1><%= link_to a, bank_password_path(bankpassword)  %></h1>
-    <p>Tipo de cuenta: <%= bankpassword.account_type %></p>
-    <p>Banco: <%= bankpassword.bank_name %></p>
-    <%= bankpassword.cardholder %>
-    <%= link_to bankpassword, data: { turbo_method: :delete, turbo_confirm: "Quieres borrar esta contraseña?" } do %>
-    <button type="button" class="btn btn-danger" style="color: white;"><i class="fa-solid fa-trash"></i></button>
-    <% end %>
-            <%= link_to edit_bank_password_path(bankpassword) do %>
-              <button type="button" class="btn btn-primary" style="color: white;"><i class="fa-solid fa-pen-to-square"></i></button>
+<div class="dashboard-body">
+  <div class="row">
+    <div class="col-3">
+      <%= render "shared/left_navbar"%>
+    </div>
+    <div class="col-9">
+      <div class="container mt-3">
+        <% @bankpasswords.each do |bankpassword| %>
+          <div class="card bg-dark p-3 text-light">
+          <% a = bankpassword.account_number.gsub("1", "*") %>
+          <% a = a.gsub("5", "*") %>
+          <% a = a.gsub("8", "*") %>
+            <h1><%= link_to a, bank_password_path(bankpassword)  %></h1>
+            <p>Tipo de cuenta: <%= bankpassword.account_type %></p>
+            <p>Banco: <%= bankpassword.bank_name %></p>
+            <%= bankpassword.cardholder %>
+            <%= link_to bankpassword, data: { turbo_method: :delete, turbo_confirm: "Quieres borrar esta contraseña?" } do %>
+            <button type="button" class="btn btn-danger" style="color: white;"><i class="fa-solid fa-trash"></i></button>
             <% end %>
-  </div>
-<% end %>
+                    <%= link_to edit_bank_password_path(bankpassword) do %>
+                      <button type="button" class="btn btn-primary" style="color: white;"><i class="fa-solid fa-pen-to-square"></i></button>
+                    <% end %>
+          </div>
+        <% end %>
 
-<%= link_to "Almacenar bankpassword", new_bank_password_path %>
+        <%= link_to "Almacenar bankpassword", new_bank_password_path %>
+      </div>
+    </div>
+  </div>
+</div>

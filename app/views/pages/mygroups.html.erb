@@ -15,7 +15,7 @@
 
 
               <p><%= group.group.name %> (Invitado por: <span><%= group.group.user.username %></span>)</p>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#group<%= group.id %>">
           Ver contraseñas
         </button>
         <% group.group.passwords.each do |x| %>
@@ -24,25 +24,21 @@
         <% end %>
 
 
-             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+             <div class="modal fade" id="group<%= group.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
               <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Mis contraseñas</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Contraseñas del grupo <%= group.group.name %></h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
                 <p><% group.group.passwords.each do |password| %></p>
-                  <div class="card">
+                  <div class="card p-3">
                     <p>Sitio: <%= password.site_name %></p>
                     <label for="oculto">Password:</label>
-                    <input id="oculto" type="text" readonly value='<%= password.site_password %>'>
+                    <input id="oculto" class="form-control" type="text" value='<%= password.site_password %>' readonly>
                   </div>
                 <% end %>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerar</button>
-                <button type="button" class="btn btn-primary">Agregar</button>
               </div>
             </div>
           </div>

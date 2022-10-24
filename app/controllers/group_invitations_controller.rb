@@ -1,6 +1,6 @@
 class GroupInvitationsController < ApplicationController
-  before_action :find_group, only: [:new, :create]
-  after_action :authorize_group_invitation, except: [:index]
+  before_action :find_group, only: [:new, :create, :edit]
+  after_action :authorize_group_invitation, except: [:index, :invitation]
 
   def index
     @group_invitations = policy_scope(GroupInvitation)
@@ -22,6 +22,18 @@ class GroupInvitationsController < ApplicationController
       render :new
     end
   end
+
+  def invitation
+    raise
+  end
+
+  def edit
+    # @group_invitation = GroupInvitation.find(params[:id])
+  end
+
+  def update
+  end
+
 
   private
 

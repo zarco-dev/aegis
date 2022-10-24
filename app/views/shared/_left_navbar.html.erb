@@ -4,9 +4,14 @@
 
     <div class="content mt-5">
       <h5><%= link_to 'Mis contraseñas', dashboard_path, style: 'text-decoration: none;' %></h5>
+      <% if current_user.group_user.eql?(true) %>
+        <h5><%= link_to 'Grupos a los que pertenezco', mygroups_path, style: 'text-decoration: none;' %></h5>
+      <% end %>
       <% if current_user.premium_user == true %>
         <h5><%= link_to 'Mis grupos', groups_path, style: 'text-decoration: none;' %></h5>
       <% end %>
+        <h5><%= link_to 'Mis invitaciones', invitation_path , style: 'text-decoration: none;' %></h5>
+      <h5><%= link_to 'cerrar session',  destroy_user_session_path, data: {turbo_method: :delete}, style: 'text-decoration: none;' %></h5>
     </div>
   </div>
 </div>

@@ -18,12 +18,6 @@
               <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#group<%= group.id %>">
           Ver contraseñas
         </button>
-        <% group.group.passwords.each do |x| %>
-
-          <%= x.site_name %>
-        <% end %>
-
-
              <div class="modal fade" id="group<%= group.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">

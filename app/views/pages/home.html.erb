@@ -1,72 +1,101 @@
 <% unless user_signed_in? %>
-<div class="container-hero-section">
-  <div class="hero-section">
-    <div class="banner">
-      <div class="headline">
-        <%= image_tag "isotipo.svg", class: "logo-aegis" %>
-        <div class="title"><h1>If you forget it, we manage it</h1></div>
-        <div class="cta">
-          <%= link_to "¡Comienza Gratis!", new_user_registration_path, class: "btn cta-register" %>
-        </div>
-      </div>
-      <div class="img-banner">
-        <div class="image-social-media">
-          <%= image_tag "image-banner-1.png", class: "image" %>
-          <%= image_tag "facebook-hero-section.png", class: "flaticon" %>
-          <%= image_tag "facebook-message-hero-section.png", class: "flaticon" %>
-          <%= image_tag "ghost-hero-section.png", class: "flaticon" %>
-          <%= image_tag "github-hero-section.png", class: "flaticon" %>
-          <%= image_tag "google-hero-section.png", class: "flaticon" %>
-          <%= image_tag "linkedin-hero-section.png", class: "flaticon" %>
-          <%= image_tag "pinterest-hero-section.png", class: "flaticon" %>
-          <!--
-          <%= image_tag "slack-hero-section.png", class: "flaticon-d flaticon-8" %>
-          <%= image_tag "twitter-hero-section.png", class: "flaticon-c flaticon-9" %>
-          <%= image_tag "whatsapp-hero-section.png", class: "flaticon flaticon-10" %>
-          <%= image_tag "youtube-hero-section.png", class: "flaticon-b flaticon-11" %>-->
+<div class="full-container">
+    <div class="container-hero-section">
+      <div class="hero-section">
+        <div class="banner">
+          <div class="headline">
+            <h1>Traete tus contraseñas</h1>
+            <div><h2>No las olvides más, guardalas una sola vez y despreocúpate.</h2></div>
+          </div>
+          <div class="img-banner">
+            <div class="image-social-media">
+              <div class="sign-animation">
+                <i class="fa-solid fa-arrow-pointer"></i>
+                  <header>
+                    <h2>Guarda tu contraseña</h2>
+                    <%= image_tag "isotipo.svg" %>
+                  </header>
+                  <main>
+                    <div class="input-animation">
+                      <span>zarco@aegis.com</span>
+                      <i class="fa-solid fa-user"></i>
+                    </div>
+                    <div class="input-animation">
+                      <span>Aeg15AppW3b</span>
+                      <i class="fa-solid fa-lock"></i>
+                    </div>
+                  </main>
+                  <footer>
+                    <div class="button-animation">Guardar</div>
+                  </footer>
+              </div>
+              <img src="https://img.icons8.com/bubbles/100/000000/canva-app.png"class="flaticon">
+              <img src="https://img.icons8.com/bubbles/100/000000/github.png" class="flaticon">
+              <img src="https://img.icons8.com/bubbles/100/000000/dropbox.png"class="flaticon">
+              <img src="https://img.icons8.com/bubbles/100/000000/facebook-f.png"class="flaticon">
+              <img src="https://img.icons8.com/bubbles/100/000000/figma.png" class="flaticon">
+              <%= image_tag "lewagon.png", class: "flaticon" %>
+              <img src="https://img.icons8.com/bubbles/100/000000/gmail-new.png"class="flaticon">
+              <img src="https://img.icons8.com/bubbles/100/000000/epic-games.png"class="flaticon">
+              <img src="https://img.icons8.com/bubbles/100/000000/crunchyroll.png"class="flaticon">
+              <img src="https://img.icons8.com/bubbles/100/000000/instagram-new--v2.png" class="flaticon">
+              <img src="https://img.icons8.com/bubbles/100/000000/spotify.png"class="flaticon">
+              <img src="https://img.icons8.com/bubbles/100/000000/amazon.png"class="flaticon">
+              <img src="https://img.icons8.com/bubbles/100/000000/linkedin.png"class="flaticon">
+              <img src="https://img.icons8.com/bubbles/100/000000/microsoft-outlook-2019.png"class="flaticon">
+              <img src="https://img.icons8.com/bubbles/100/000000/reddit.png"class="flaticon">
+              <img src="https://img.icons8.com/bubbles/100/000000/pinterest.png"class="flaticon">
+              <img src="https://img.icons8.com/bubbles/100/000000/amazon-prime-video.png"class="flaticon">
+              <img src="https://img.icons8.com/bubbles/100/000000/tiktok.png"class="flaticon">
+              <img src="https://img.icons8.com/bubbles/100/000000/twitch.png"class="flaticon">
+              <img src="https://img.icons8.com/bubbles/100/000000/twitter-circled.png"class="flaticon">
+              <img src="https://img.icons8.com/bubbles/100/000000/youtube-squared.png"class="flaticon">
+              <img src="https://img.icons8.com/bubbles/100/000000/netflix.png"class="flaticon">
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
-      <div class="section-services">
-          <div class="ball-pink"></div>
-
-          <h2 class="subtitle">Nuestros servicios</h2>
+    <div class="services-section">
+      <div class="services-container">
+        <h2>Nuestros servicios</h2>
           <div class="cards-services">
-
-              <div class="services-pink">
-                  <img src="images/flaticon-1.png" alt="" class="item-services">
-                  <p class="">Aegis hace todo lo que tu esperarias desde administrar un password y mas.</p>
-              </div>
-              <div class="services-blue">
-                  <img src="images/flaticon-2.png" alt="" class="item-services">
-                  <p class="">Aegis hace todo lo que tu esperarias desde administrar un password y mas.</p>
-
-              </div>
-              <div class="services-pink">
-                  <img src="images/flaticon-3.png" alt="" class="item-services">
-                  <p class="">Aegis hace todo lo que tu esperarias desde administrar un password y mas.</p>
-
-              </div>
-              <div class="services-blue">
-                  <img src="images/flaticon-4.png" alt="" class="item-services">
-                  <p class="">Aegis hace todo lo que tu esperarias desde administrar un password y mas.</p>
-
-              </div>
-              <div class="services-pink">
-                  <img src="images/flaticon-5.png" alt="" class="item-services">
-                  <p class="">Aegis hace todo lo que tu esperarias desde administrar un password y mas.</p>
-
-              </div>
-              <div class="services-blue">
-                  <img src="images/flaticon-6.png" alt="" class="item-services">
-                  <p class="">Aegis hace todo lo que tu esperarias desde administrar un password y mas.</p>
-              </div>
+            <div class="services-card">
+              <img src="https://img.icons8.com/bubbles/500/000000/lock.png" class="item-services">
+              <h3>Almacena contraseñas</h3>
+              <p class="">No más "Olvidé mi contraseña". Guárdala en nuestra bóveda y despreocúpate por recordarla.</p>
+            </div>
+            <div class="services-card">
+              <img src="https://img.icons8.com/bubbles/500/000000/man-window-lock.png" class="item-services">
+              <h3>Genera contraseñas seguras</h3>
+              <p class="">¿Te da pereza tener que pensar en una contraseña segura para cada sitio? Nosotros lo hacemos por ti.</p>
+            </div>
+            <div class="services-card">
+              <img src="https://img.icons8.com/bubbles/500/000000/bank-card-front-side.png" class="item-services">
+              <h3>Guarda tarjetas bancarias</h3>
+              <p class="">¿Haces compras online y siempre olvidas los datos de tu tarjeta? Eso no volverá a pasar.</p>
+            </div>
+            <div class="services-card">
+              <img src="https://img.icons8.com/bubbles/500/000000/crowd--v2.png" class="item-services">
+              <h3>Crea grupos para compartir</h3>
+              <p class="">Quieres que tus amigos puedan acceder a tus sitios?, solo crea un grupo y comparte esas contraseñas.</p>
+            </div>
+            <div class="services-card">
+              <img src="https://img.icons8.com/bubbles/500/000000/monitor.png" class="item-services">
+              <h3>Accede desde cualquier lugar</h3>
+              <p class="">En Namibia, en los Alpes y en los Campos Elíseos, ¡desde cualquier lugar puedes acceder a tus contraseñas!</p>
+            </div>
+            <div class="services-card">
+              <img src="https://img.icons8.com/bubbles/500/000000/bookmark-ribbon.png" class="item-services">
+              <h3>Aprende y gana</h3>
+              <p class="">Recibe recompensas por completrar misiones y aprende tips de seguridad al navegar en la web.</p>
+            </div>
           </div>
       </div>
+    </div>
+</div>
 
-      <div class="section-cards-profiles">
+      <%# <div class="section-cards-profiles">
               <h2 class="subtitle"><span>Aegis</span> es para <span>todos</span></h2>
               <div class="cards-clients">
                   <div class="card">
@@ -118,11 +147,11 @@
 
                   </div>
               </div>
-      </div>
+      </div> %>
 
-      <div class="ball-pink"></div>
+      <%# <div class="ball-pink"></div> %>
 
-      <div class="section-passwords-free">
+      <%# <div class="section-passwords-free">
               <h2 class="subtitle">Prueba <span>gratis</span> nuestros <span>passwords!!!</span></h2>
 
               <div class="passwords">
@@ -138,9 +167,9 @@
               <div class="ball-pink"></div>
 
 
-      </div>
+      </div> %>
 
-      <div class="section-plan">
+      <%# <div class="section-plan">
           <h2 class="subtitle">Adquiere <span>Ya tu plan!!!</span></h2>
           <div class="cards">
               <div class="card-personal">
@@ -211,9 +240,9 @@
               </div>
           </div>
 
-      </div>
+      </div> %>
 
-      <div class="section-testimonies">
+      <%# <div class="section-testimonies">
           <h2 class="subtitle">Testimonios</h2>
           <div class="cards-testimonies">
               <div class="card cards-1">
@@ -267,9 +296,9 @@
                   </div>
               </div>
           </div>
-      </div>
+      </div> %>
 
-      <div class="section-sponsor">
+      <%# <div class="section-sponsor">
           <h2 class="subtitle">Empresas que <span>confian</span> en <span>nosotros</span></h2>
           <div class="section-company-sponsor">
               <div class="company">
@@ -295,11 +324,11 @@
               </div>
           </div>
 
-      </div>
+      </div> %>
 
-      <div class="ball-pink"></div>
+      <%# <div class="ball-pink"></div> %>
 
-      <div class="footer">
+      <%# <div class="footer">
           <div class="column-1-footer">
 
                   <img class="logo" src="images/logo-name.png" alt="">
@@ -334,7 +363,7 @@
 
               </div>
           </div>
-      </div>
+      </div> %>
       <% else %>
 
 <% date_in = current_user.subscription.begining_date %>

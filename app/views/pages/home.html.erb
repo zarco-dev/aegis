@@ -78,7 +78,7 @@
             <div class="services-card">
               <img src="https://img.icons8.com/bubbles/500/000000/crowd--v2.png" class="item-services">
               <h3>Crea grupos para compartir</h3>
-              <p class="">Quieres que tus amigos puedan acceder a tus sitios?, solo crea un grupo y comparte esas contraseñas.</p>
+              <p class="">¿Quieres que tus amigos puedan acceder a tus sitios?, solo crea un grupo y comparte esas contraseñas.</p>
             </div>
             <div class="services-card">
               <img src="https://img.icons8.com/bubbles/500/000000/monitor.png" class="item-services">
@@ -94,6 +94,59 @@
       </div>
     </div>
 </div>
+
+<div class="section-cards-profiles">
+  <div class="section-target">
+    <header>
+      <%= image_tag "isotipo.svg" %>
+      <h2>es para todos los perfiles</h2>
+    </header>
+    <div class="cards-clients">
+      <div class="card">
+        <img src="https://img.icons8.com/bubbles/500/000000/business-man-in-blue-jacket.png"/>
+        <div class="text">
+          <h3>Empresas</h3>
+          <p>Crea un grupo con acceso a las contraseñas de tu empresa y compártelas con sus miembros.</p>
+          <%# <a href="#" class="plan">Plan premium </a> %>
+          <%= link_to new_user_registration_path do %>
+            Plan premium<i class="fa-solid fa-chevron-right"></i>
+          <% end %>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://img.icons8.com/bubbles/500/000000/student-male.png"/>
+        <div class="text">
+          <h3>Estudiantes</h3>
+          <p>No dejes que una contraseña olvidada te impida entregar esa tarea. Nosotros nos encargamos de recordarlas por ti.</p>
+          <%= link_to new_user_registration_path do %>
+            Plan basic<i class="fa-solid fa-chevron-right"></i>
+          <% end %>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://img.icons8.com/bubbles/500/000000/brown-short-curly-hair-lady.png"/>
+        <div class="text">
+          <h3>Profesionales</h3>
+          <p>Almacena tus contraseñas y tarjetas de crédito en un solo lugar y ahorra tiempo al momento de ingresar en tus sitios.</p>
+          <%= link_to new_user_registration_path do %>
+            Plan premium<i class="fa-solid fa-chevron-right"></i>
+          <% end %>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://img.icons8.com/bubbles/500/000000/man-in-blue-t-shirt.png"/>
+        <div class="text">
+          <h3>Freelancers</h3>
+          <p>No importa dónde estés ni cuántas contraseñas manejes. Ten siempre todo al alcance de un solo clic.</p>
+          <%= link_to new_user_registration_path do %>
+            Plan basic<i class="fa-solid fa-chevron-right"></i>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="section-passwords-free">
   <div class="passwords-section">
     <h2>Prueba nuestro generador de contraseñas seguras</h2>
@@ -101,6 +154,7 @@
     </div>
   </div>
 </div>
+
 
       <%# <div class="section-plan">
           <h2 class="subtitle">Adquiere <span>Ya tu plan!!!</span></h2>

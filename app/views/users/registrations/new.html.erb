@@ -40,8 +40,7 @@
         <h2>PREMIUM MENSUAL</h2>
         <span>¡Ahorras $25 USD!</span>
         <div class="price-container active">
-          <span>$60</span>
-          <div class="line-stroke"></div>
+          <span><del>$60</del></span>
           <h2>$35</h2>
         </div>
       </div>
@@ -73,7 +72,7 @@
     </div>
     </div>
 
-  <div class="form-sign form-sign-up" data-signup-target="signup">
+  <div id="form-s" class="form-sign form-sign-up" data-signup-target="signup">
     <h2>Crea tu cuenta <span data-signup-target="titleplan"></span></h2>
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: false }) do |f| %>
       <%= f.error_notification %>

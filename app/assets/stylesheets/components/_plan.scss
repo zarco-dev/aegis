@@ -1,136 +1,81 @@
-.section-plan{
-    width: 100%;
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 150px;
-    margin: auto;
-    background-color: var(--deep-gray);
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", "Helvetica", "sans-serif";
 }
-.section-plan .subtitle{
-    color: var(--gray);
-    font-size: 40px ;
-    font-weight: 600;
-    padding-bottom: 150px;
-    padding-top: 150px;
-    font-family: var(--headers-font);
-}
-.section-plan .subtitle span{
-    color: var(--light-blue);
-}
-.section-plan .cards{
-    width:80%;
-    max-width: 1200px;
-    height:auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-}
-.section-plan .cards h3{
-    color: var(--gray);
-    font-size: 25px ;
-    font-weight: 600;
-    font-family: var(--headers-font);
-    padding: 30px 0px;
-}
-.section-plan .cards p{
-    color: var(--light-gray);
-    font-size: 15px;
-    font-weight: 200;
-    font-family: var(--body-font);
-}
-.section-plan .cards .card-personal .services{
-    width: 30px;
-    margin-right: 20px;
-}
-.section-plan .cards .card-premium .services{
-    width: 30px;
-    margin-right: 20px;
 
+.subs-container {
+  background-color: var(--deep-gray);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.section-plan .cards .card-premium .services-img{
-    width: 90px;
-    padding: 30px 0px;
+
+.subs-container-center {
+  // background-color: red;
+  width: 90vw;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
 }
-.section-plan .cards .card-personal .services-img{
-    width: 90px;
-    padding: 30px 0px;
+
+
+.subs-container-center > h2 {
+  color: #fff;
+  font-size: 50px ;
+  font-weight: bold;
+  // background-color: blue;
+  width: 35%;
+  height: 80%;
+  margin: 0;
+  padding: 197px 90px;
 }
-.section-plan .cards .card-personal{
-    width:350px;
-    height:auto;
+
+.subs-container-center > h2 span {
+  color: #32A6BE;
+  margin: 0;
+  padding: 0;
+}
+
+.container-plans {
+  width: 65%;
+  height: 100%;
+  // background-color: yellow;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+@media (max-width: 1370px) {
+
+  .subs-container-center > h2 {
+    font-size: 32px ;
+    // background-color: blue;
+    transform: scale(1.3);
+    width: 35%;
+    height: 80%;
+    margin: 0;
+    padding: 139px 90px;
+  }
+
+  .subs-container-center > h2 span {
+    color: #32A6BE;
+    margin: 0;
+    padding: 0;
+  }
+
+  .container-plans {
+    width: 65%;
+    height: 100%;
+    // background-color: yellow;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: var(--black);
-    border-radius: 8px;
-    box-shadow: 0 0 5px var(--white);
-    padding-bottom: 30px;
-}
-.section-plan .cards .card-premium{
-    width:350px;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: var(--black);
-    border-radius: 8px;
-    box-shadow: 0 0 5px var(--white);
-    padding-bottom: 30px;
-}
-.section-plan .cards .card-premium .cta-register{
-    width:270px;
-    height:60px;
-    color: var(--white);
-    font-size: 20px;
-    font-weight: 200;
-    font-family: var(--body-font);
-    padding: 15px 20px;
-    margin-top: 70px;
-    background-color: var(--light-blue);
-    border-radius: 8px;
-    text-decoration: none;
-    text-align: center;
-    border: 1px solid var(--light-blue);
-    transition: .5s;
-}
-.section-plan .cards .card-premium .cta-register:hover{
-    background-color: var(--deep-gray);
-    border: 1px solid var(--white);
-    color:var(--white);
-    box-shadow: 0 0 5px var(--white);
-}
-.section-plan .cards .card-personal .cta-register{
-    width:270px;
-    height:60px;
-    color: var(--white);
-    font-size: 20px;
-    font-weight: 200;
-    font-family: var(--body-font);
-    margin-top: 70px;
-    padding: 15px 20px;
-    background-color: var(--hotpink);
-    border-radius: 8px;
-    text-decoration: none;
-    text-align: center;
-    border: 1px solid var(--hotpink);
-    transition: .5s;
-}
-.section-plan .cards .card-personal .cta-register:hover{
-    background-color: var(--deep-gray);
-    border: 1px solid var(--white);
-    color:var(--white);
-    box-shadow: 0 0 5px var(--white);
-}
-.section-plan .cards .card-premium .article{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-.section-plan .cards .card-personal .article{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    justify-content: center;
+    align-items: flex-start;
+  }
 }

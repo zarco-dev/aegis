@@ -43,7 +43,7 @@
   width: 40%;
   height: 80vh;
   background-color: #192229;
-  border-top: #f5a7a7 5px solid;
+  border-top: #F9DBD1 5px solid;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   overflow: hidden;
@@ -95,7 +95,7 @@
 
 .info-plan h2 {
   font-weight: bold;
-  color: #f5a7a7;
+  color: #f7bfbf;
   font-size: 1.5em;
 }
 
@@ -106,10 +106,10 @@
 }
 
 .info-plan span {
-  color: #f5a7a7;
+  color: #f7bfbf;
   margin-bottom: 15px;
   padding: 3px 8px;
-  background-color: #f5a7a744;
+  background-color: #f7bfbf44;
   border: 1px solid #f59090;
   border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -141,7 +141,7 @@
 }
 
 .feature-container .fa-circle-xmark {
-  color: #f5a7a7;
+  color: #f7bfbf;
 }
 
 .feature-container p {
@@ -167,7 +167,7 @@
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
-  background-color: #f5a7a7;
+  background-color: #f7bfbf;
   color: #000;
   transition: .1s;
   -webkit-transition: .1s;
@@ -211,16 +211,6 @@
   border: none;
   font-weight: bold;
   position: relative;
-}
-
-.line-stroke {
-  width: 30px;
-  height: 3px;
-  background-color: #8e9ba4e0;
-  position: absolute;
-  top: 334px;
-  right: 766px;
-  transform: rotate(321deg);
 }
 
 .button-premium button{
@@ -339,4 +329,43 @@
 .buttons-footer p {
   margin: 0;
   padding: 0;
+}
+
+@media (max-width: 1370px) {
+
+  .info-plan h2 {
+    font-size: 1.2em;
+  }
+
+  .price-container h2 {
+    font-size: 3em;
+  }
+
+  .info-plan span {
+    transform: scale(0.9);
+  }
+
+  .feature-container {
+    height: 25%;
+    padding-left: 20px;
+  }
+
+  .feature-container i {
+    font-size: 2em;
+    margin-right: 10px;
+  }
+
+
+  .feature-container p {
+    font-size: 0.85em;
+  }
+
+  .button-basic button {
+    transform: scale(0.9);
+  }
+
+  .button-basic button:hover {
+    transform: scale(0.95);
+  }
+
 }

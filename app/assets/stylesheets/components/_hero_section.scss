@@ -79,7 +79,7 @@
 }
 
 .sign-animation {
-  background: rgba(25, 34, 41, 0.671);
+  background: var(--deep-gray);
   box-shadow: 0 4px 15px 0 rgb(25, 34, 41);
   backdrop-filter: blur( 0px );
   -webkit-backdrop-filter: blur( 0px );

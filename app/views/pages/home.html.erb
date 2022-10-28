@@ -152,6 +152,51 @@
   <div class="passwords-section">
     <h2>Prueba nuestro generador de contraseñas seguras</h2>
     <div class="passwords-generate">
+
+
+          <div class="passwords">
+            <div class="try-passwords">
+              <form action="/my-handling-form-page" method="post">
+                  <label for="" class="try_my_password"></label>
+                  <input type="text" class="my-kewword">
+                  <p class="">Personalice su contraseña</p>
+                <div class="custom-password">
+                  <div class="try-custom-password">
+
+                    <p class="">Longitud de contraseña</p>
+                    <input type="text" id="cbox1" value=""><label>Caracteres</label>
+                  </div>
+                  <div class="item-password">
+                    <label><input type="checkbox" id="cbox1" value="first_checkbox"> Mayusculas</label>
+                    <label><input type="checkbox" id="cbox1" value="second_checkbox"> Minusculas</label>
+                    <label><input type="checkbox" id="cbox1" value="third_checkbox"> Números</label>
+                  </div>
+
+                </div>
+              </form>
+            </div>
+
+            <div class="email">
+              <form action="/my-handling-form-page" method="post">
+                <ul>
+                  <li>
+                    <label for="name" >
+                      <input type="text" id="name" name="user_name" placeholder="Nombre">
+                    </label>
+                  </li>
+                  <li>
+                    <label for="mail">
+                      <input type="email" id="mail" name="user_mail" placeholder="Email">
+                    </label>
+                  </li>
+                  <label><input type="checkbox" id="cbox1" value="first_checkbox"> Desea recibir información</label>
+                </ul>
+              </form>
+            </div>
+
+          </div>
+
+          <button href="#" class="passwords-cta">Guardar contraseña</button>
     </div>
   </div>
 </div>
@@ -411,4 +456,3 @@
     <% end %>
   </div>
       <% end %>
-

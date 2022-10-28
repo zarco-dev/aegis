@@ -21,4 +21,7 @@ class PagesController < ApplicationController
 
   def mygroups
   end
+
+  def generate
+  end
 end

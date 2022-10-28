@@ -1,0 +1,613 @@
+.container-cards{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    gap: 50px;
+}
+
+/*----Woman profile-1------*/
+
+.woman-profile-1{
+    width: 40%;
+    display:flex;
+    flex-direction: column;
+    background-color: var(--deep-gray);
+    border: 1px solid var(--blue);
+    border-radius: 4px;
+    position: relative;
+    margin-top: 30px;
+}
+.woman-profile-1 .icon-4{
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    margin: 30px auto;
+}
+.woman-profile-1 .icon-6{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: -25px;
+    right: -25px;
+}
+.woman-profile-1 .links{
+    margin: 10px auto;
+}
+.woman-profile-1 .links .link{
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: var(--body-font);
+    color: var(--blue);
+    text-decoration: none;
+    margin: 10px 0;
+}
+.woman-profile-1 .links .link:hover{
+    text-decoration: underline;
+}
+.woman-profile-1 .btn{
+    text-decoration: none;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: var(--body-font);
+    color: var(--hotpink);
+    margin: 20px;
+    padding:10px 15px;
+    border-radius: 4px;
+    border: 1px solid var(--hotpink);
+    transition: .3s;
+}
+.woman-profile-1 .btn:hover{
+    border: 1px solid var(--deep-gray);
+    background-color: var(--light-blue-opacity);
+    box-shadow: 0 0 3px var(--white);
+    color: var(--gray);
+}
+.woman-profile-1{
+    width: 40%;
+    display:flex;
+    flex-direction: column;
+    background-color: var(--deep-gray);
+    border: 1px solid var(--blue);
+    border-radius: 4px;
+    position: relative;
+    margin-top: 30px;
+}
+.woman-profile-1 .icon-4{
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    margin: 30px auto;
+}
+.woman-profile-1 .icon-6{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: -25px;
+    right: -25px;
+}
+.woman-profile-1 .links{
+    margin: 10px auto;
+}
+.woman-profile-1 .links .link{
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: var(--body-font);
+    color: var(--blue);
+    text-decoration: none;
+    margin: 10px 0;
+}
+
+/*----Woman profile-2------*/
+
+.woman-profile-2{
+    width: 40%;
+    display:flex;
+    flex-direction: column;
+    background-color: var(--deep-gray);
+    border: 1px solid var(--blue);
+    border-radius: 4px;
+    position: relative;
+    margin-top: 30px;
+}
+.woman-profile-2 .icon-5{
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    margin: 30px auto;
+}
+.woman-profile-2 .icon-6{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: -25px;
+    right: -25px;
+}
+.woman-profile-2 .links{
+    margin: 10px auto;
+}
+.woman-profile-2 .links .link{
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: var(--body-font);
+    color: var(--blue);
+    text-decoration: none;
+    margin: 10px 0;
+}
+.woman-profile-2 .links .link:hover{
+    text-decoration: underline;
+}
+.woman-profile-2 .btn{
+    text-decoration: none;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: var(--body-font);
+    color: var(--hotpink);
+    margin: 20px;
+    padding:10px 15px;
+    border-radius: 4px;
+    border: 1px solid var(--hotpink);
+    transition: .3s;
+}
+.woman-profile-2 .btn:hover{
+    border: 1px solid var(--deep-gray);
+    background-color: var(--light-blue-opacity);
+    box-shadow: 0 0 3px var(--white);
+    color: var(--gray);
+}
+.woman-profile-2{
+    width: 40%;
+    display:flex;
+    flex-direction: column;
+    background-color: var(--deep-gray);
+    border: 1px solid var(--blue);
+    border-radius: 4px;
+    position: relative;
+    margin-top: 30px;
+}
+.woman-profile-2 .icon-5{
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    margin: 30px auto;
+}
+.woman-profile-2 .icon-6{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: -25px;
+    right: -25px;
+}
+.woman-profile-2 .links{
+    margin: 10px auto;
+}
+.woman-profile-2 .links .link{
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: var(--body-font);
+    color: var(--blue);
+    text-decoration: none;
+    margin: 10px 0;
+}
+
+/*-----Woman Profile - 3 ---------*/
+
+.woman-profile-3{
+    width: 40%;
+    display:flex;
+    flex-direction: column;
+    background-color: var(--deep-gray);
+    border: 1px solid var(--blue);
+    border-radius: 4px;
+    position: relative;
+    margin-top: 30px;
+}
+.woman-profile-3 .icon-7{
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    margin: 30px auto;
+}
+.woman-profile-3 .icon-6{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: -25px;
+    right: -25px;
+}
+.woman-profile-3 .links{
+    margin: 10px auto;
+}
+.woman-profile-3 .links .link{
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: var(--body-font);
+    color: var(--blue);
+    text-decoration: none;
+    margin: 10px 0;
+}
+.woman-profile-3 .links .link:hover{
+    text-decoration: underline;
+}
+.woman-profile-3 .btn{
+    text-decoration: none;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: var(--body-font);
+    color: var(--hotpink);
+    margin: 20px;
+    padding:10px 15px;
+    border-radius: 4px;
+    border: 1px solid var(--hotpink);
+    transition: .3s;
+}
+.woman-profile-3 .btn:hover{
+    border: 1px solid var(--deep-gray);
+    background-color: var(--light-blue-opacity);
+    box-shadow: 0 0 3px var(--white);
+    color: var(--gray);
+}
+.woman-profile-3{
+    width: 40%;
+    display:flex;
+    flex-direction: column;
+    background-color: var(--deep-gray);
+    border: 1px solid var(--blue);
+    border-radius: 4px;
+    position: relative;
+    margin-top: 30px;
+}
+.woman-profile-3 .icon-7{
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    margin: 30px auto;
+}
+.woman-profile-3 .icon-6{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: -25px;
+    right: -25px;
+}
+.woman-profile-3 .links{
+    margin: 10px auto;
+
+}
+.woman-profile-3 .links .link{
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: var(--body-font);
+    color: var(--blue);
+    text-decoration: none;
+    margin: 10px 0;
+}
+
+/*-----Woman Profile - 4 ---------*/
+
+.woman-profile-4{
+    width: 40%;
+    display:flex;
+    flex-direction: column;
+    background-color: var(--deep-gray);
+    border: 1px solid var(--blue);
+    border-radius: 4px;
+    position: relative;
+    margin-top: 30px;
+}
+.woman-profile-4 .icon-8{
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    margin: 30px auto;
+}
+.woman-profile-4 .icon-6{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: -25px;
+    right: -25px;
+}
+.woman-profile-4 .links{
+    margin: 10px auto;
+
+}
+.woman-profile-4 .links .link{
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: var(--body-font);
+    color: var(--blue);
+    text-decoration: none;
+    margin: 10px 0;
+}
+.woman-profile-4 .links .link:hover{
+    text-decoration: underline;
+}
+.woman-profile-4 .btn{
+    text-decoration: none;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: var(--body-font);
+    color: var(--hotpink);
+    margin: 20px;
+    padding:10px 15px;
+    border-radius: 4px;
+    border: 1px solid var(--hotpink);
+    transition: .3s;
+}
+.woman-profile-4 .btn:hover{
+    border: 1px solid var(--deep-gray);
+    background-color: var(--light-blue-opacity);
+    box-shadow: 0 0 3px var(--white);
+    color: var(--gray);
+}
+.woman-profile-4{
+    width: 40%;
+    display:flex;
+    flex-direction: column;
+    background-color: var(--deep-gray);
+    border: 1px solid var(--blue);
+    border-radius: 4px;
+    position: relative;
+    margin-top: 30px;
+}
+.woman-profile-4 .icon-8{
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    margin: 30px auto;
+}
+.woman-profile-4 .icon-6{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: -25px;
+    right: -25px;
+}
+.woman-profile-4 .links{
+    margin: 10px auto;
+
+}
+.woman-profile-4 .links .link{
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: var(--body-font);
+    color: var(--blue);
+    text-decoration: none;
+    margin: 10px 0;
+}
+
+/*-----Man Profile - 1  -banking ---------*/
+
+.man-profile-1{
+    width: 40%;
+    display:flex;
+    flex-direction: column;
+    background-color: var(--deep-gray);
+    border: 1px solid var(--blue);
+    border-radius: 4px;
+    position: relative;
+    margin-top: 30px;
+}
+.man-profile-1 .icon-9{
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    margin: 30px auto;
+}
+.man-profile-1 .icon-10{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: -25px;
+    right: -25px;
+}
+.man-profile-1 .links{
+    margin: 10px auto;
+
+}
+.man-profile-1 .links .link{
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: var(--body-font);
+    color: var(--blue);
+    text-decoration: none;
+    margin: 10px 0;
+}
+.man-profile-1 .links .link:hover{
+    text-decoration: underline;
+}
+.man-profile-1 .btn{
+    text-decoration: none;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: var(--body-font);
+    color: var(--hotpink);
+    margin: 20px;
+    padding:10px 15px;
+    border-radius: 4px;
+    border: 1px solid var(--hotpink);
+    transition: .3s;
+}
+.man-profile-1 .btn:hover{
+    border: 1px solid var(--deep-gray);
+    background-color: var(--light-blue-opacity);
+    box-shadow: 0 0 3px var(--white);
+    color: var(--gray);
+}
+.man-profile-1{
+    width: 40%;
+    display:flex;
+    flex-direction: column;
+    background-color: var(--deep-gray);
+    border: 1px solid var(--blue);
+    border-radius: 4px;
+    position: relative;
+    margin-top: 30px;
+}
+.man-profile-1 .icon-9{
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    margin: 30px auto;
+}
+.man-profile-1.icon-10{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: -25px;
+    right: -25px;
+}
+.man-profile-1 .links{
+    margin: 10px auto;
+
+}
+.man-profile-1 .links .link{
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: var(--body-font);
+    color: var(--blue);
+    text-decoration: none;
+    margin: 10px 0;
+}
+
+/*-----Man Profile - 2  -banking ---------*/
+
+.man-profile-2{
+    width: 40%;
+    display:flex;
+    flex-direction: column;
+    background-color: var(--deep-gray);
+    border: 1px solid var(--blue);
+    border-radius: 4px;
+    position: relative;
+    margin-top: 30px;
+}
+.man-profile-2 .icon-11{
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    margin: 30px auto;
+}
+.man-profile-2 .icon-10{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: -25px;
+    right: -25px;
+}
+.man-profile-2 .links{
+    margin: 10px auto;
+
+}
+.man-profile-2 .links .link{
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: var(--body-font);
+    color: var(--blue);
+    text-decoration: none;
+    margin: 10px 0;
+}
+.man-profile-2 .links .link:hover{
+    text-decoration: underline;
+}
+.man-profile-2 .btn{
+    text-decoration: none;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: var(--body-font);
+    color: var(--hotpink);
+    margin: 20px;
+    padding:10px 15px;
+    border-radius: 4px;
+    border: 1px solid var(--hotpink);
+    transition: .3s;
+}
+.man-profile-2 .btn:hover{
+    border: 1px solid var(--deep-gray);
+    background-color: var(--light-blue-opacity);
+    box-shadow: 0 0 3px var(--white);
+    color: var(--gray);
+}
+.man-profile-2{
+    width: 40%;
+    display:flex;
+    flex-direction: column;
+    background-color: var(--deep-gray);
+    border: 1px solid var(--blue);
+    border-radius: 4px;
+    position: relative;
+    margin-top: 30px;
+}
+.man-profile-2 .icon-11{
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    margin: 30px auto;
+}
+.man-profile-2 .icon-10{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: -25px;
+    right: -25px;
+}
+.man-profile-2 .links{
+    margin: 10px auto;
+
+}
+.man-profile-2 .links .link{
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: var(--body-font);
+    color: var(--blue);
+    text-decoration: none;
+    margin: 10px 0;
+}
+
+

@@ -15,6 +15,7 @@
             <h3>Nombre del sitio: <%= link_to password.site_name, password_path(password), style: 'text-decoration: none;' %></h3>
             <p>Categoría: <%= password.category %></p>
             <p>Dirección: <%= password.url %></p>
+            <p>Contraseña: <%= password.site_password %></p>
 
             <%= link_to password, data: { turbo_method: :delete, turbo_confirm: "Quieres borrar esta contraseña?" } do %>
               <button type="button" class="btn btn-danger" style="color: white;"><i class="fa-solid fa-trash"></i></button>
@@ -26,7 +27,11 @@
           </div>
         <% end %>
 
-        <%= link_to '+ Crear contraseña', new_password_path, class: "btn btn-success" %>
+        <% if @password.size >= 5 && current_user.premium_user == false %>
+          <h4>No puedes crear más contraseñas, cambiate a premium!</h4>
+        <% else %>
+          <%= link_to '+ Crear contraseña', new_password_path, class: "btn btn-success" %>
+        <% end %>
 
       </div>
     </div>

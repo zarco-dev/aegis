@@ -2,10 +2,30 @@
   <div class="row">
     <div class="col-12">
       <h1>Invitar a un usuario</h1>
-      <%= simple_form_for @group_invitation, url: group_group_invitations_path, method: :post do |f| %>
-        <input class="form-control string required" placeholder="johndoe@gmail.com" type="invite" name="invitation" value="">
-        <%= f.submit 'Agregar usuario', class: "btn btn-primary" %>
+      <%= form_tag new_group_group_invitation_path, method: :get do  %>
+        <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "ex: user@mail.com" %>
+        <%= submit_tag "Buscar", class: "btn btn-primary" %>
       <% end %>
     </div>
+
+    <% if @usuarios.present? %>
+      <% @usuarios.each do |user| %>
+        <div class="card p-3 my-3">
+          <%= user.email %>
+          <%= simple_form_for @group_invitation, url: group_group_invitations_path, method: :post do |f| %>
+            <%= f.hidden_field :user_id,
+            value: user.id %>
+            <%= f.hidden_field :group_id,
+            value: @group.id %>
+            <%= f.submit 'Invitar usuario', class: 'btn btn-success' %>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+
+
   </div>
 </div>

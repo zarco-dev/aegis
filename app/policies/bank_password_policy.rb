@@ -8,4 +8,16 @@ class BankPasswordPolicy < ApplicationPolicy
   def create?
     return true
   end
+
+  def show?
+    user == record.user
+  end
+
+  def destroy?
+    return true
+  end
+
+  def update?
+    user == record.user
+  end
 end

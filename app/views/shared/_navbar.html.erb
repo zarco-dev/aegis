@@ -8,20 +8,12 @@
         <li style="--i:0.1s;"><%= link_to root_path do %><i class="fa-solid fa-house"></i><% end %></li>
         <li style="--i:0.2s;"><%= link_to new_user_registration_path do %><i class="fa-solid fa-user-plus"></i><% end %></li>
         <li></li>
-        <li style="--i:0.2s;"><a href="#"><i class="fa-solid fa-lock"></i></a></li>
+        <li style="--i:0.2s;"><%= link_to root_path(anchor: "generator") do %><i class="fa-solid fa-lock"></i><% end %></li>
         <li style="--i:0.1s;"><%= link_to new_user_session_path do %><i class="fa-solid fa-right-to-bracket"></i><% end %></li>
       </ul>
     </div>
   </div>
-<% else %>
-    <div class="card p-5 d-flex">
-      <%= link_to "Home", root_path %>
-      <%= link_to "almacenar contraseña", new_password_path %>
-      <%= link_to "almacenar contraseña bancaria", new_bank_password_path %>
-      <%= link_to "Cerrar Sesion", destroy_user_session_path, data: {turbo_method: :delete}%>
-    </div>
 <% end %>
-
 
 
 

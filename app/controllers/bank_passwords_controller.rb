@@ -4,6 +4,11 @@ class BankPasswordsController < ApplicationController
     @bankpasswords = policy_scope(BankPassword)
   end
 
+  def show
+    @bankpassword = BankPassword.find(params[:id])
+    authorize @bankpassword
+  end
+
   def new
     @bankpassword = BankPassword.new
     authorize @bankpassword
@@ -18,6 +23,26 @@ class BankPasswordsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+    @bankpassword = BankPassword.find(params[:id])
+    authorize @bankpassword
+  end
+
+  def update
+    @bankpassword = BankPassword.find(params[:id])
+    authorize @bankpassword
+    @bankpassword.update(bank_params)
+    @bankpassword.save
+    redirect_to bank_passwords_path
+  end
+
+  def destroy
+    @bankpassword = BankPassword.find(params[:id])
+    authorize @bankpassword
+    @bankpassword.destroy
+    redirect_to bank_passwords_path
   end
 
   private

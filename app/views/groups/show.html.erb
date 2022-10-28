@@ -1,9 +1,57 @@
 <div class="container mt-5">
   <div class="row">
-    <div class="col-12">
+    <div class="col-6">
       <h1>Detalles del grupo '<%= @group.name %>'</h1>
       <%= link_to '+ Agregar usuario', new_group_group_invitation_path(@group), class: "btn btn-success" %>
-      <%= link_to 'volver', groups_path%>
+      <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Agregar Contraseña
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Mis contraseñas</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <% current_user.passwords.each do |password| %>
+                  <%= simple_form_for password, method: :patch do |f| %>
+                      <% if password.group_id == nil %>
+                      <%= f.hidden_field :group_id, value: @group.id %>
+                      <%= f.submit password.site_name, class: "card bg-secondary p-5 text-white my-5 w-100"  %>
+                        <% else %>
+                        <%= f.hidden_field :group_id, value: nil %>
+                      <%= f.submit password.site_name, class: "card bg-info p-5 text-white my-5 w-100"  %>
+                      <% end %>
+                  <% end %>
+                <% end %>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerar</button>
+                <button type="button" class="btn btn-primary">Agregar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <%= link_to 'volver', groups_path%>
+        <div class="bg-secondary my-5">
+          <h2>Contraseñas de este grupo</h2>
+          <% current_user.passwords.each do |pass| %>
+            <% if pass.group_id == @group.id %>
+            <div class="card p-2 my-2">
+              <%= pass.site_name  %>
+            </div>
+            <% end %>
+          <% end %>
+        </div>
+      <p><% $idgroup = @group.id %></p>
+    </div>
+
+    <div class="col-6">
+      <iframe src="<%= group_group_invitations_path(@group) %>" frameborder="0"></iframe>
     </div>
   </div>
 </div>

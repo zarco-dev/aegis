@@ -1,0 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Manrope:wght@600&family=Raleway:wght@600&family=Ubuntu&display=swap');
+
+:root{
+    --body-font: "Inter", "Manrope", "sans-serif";
+    --headers-font: "Raleway", "Ubuntu", "sans-serif";
+}

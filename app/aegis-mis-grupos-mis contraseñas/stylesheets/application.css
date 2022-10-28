@@ -1,0 +1,14 @@
+/*--Graphical variables--*/
+@import url("config/_fonts.css");
+@import url("config/_colors.css");
+
+/*--External libraries---*/
+@import "font-awesome";
+
+/*/---Your CSS partials---*/
+/*@import url("components/_index.css");*/
+@import url("components/_teams.css");
+@import url("components/_passwords.css");
+@import url("components/_cards.css");
+
+@import url("pages/_index.css");

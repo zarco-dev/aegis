@@ -9,6 +9,22 @@
   width: 100%;
 }
 
+.circle-fondo-hero {
+
+  width: 60vw;
+  height: 100vh;
+  background: linear-gradient(162deg, #0e4974, #05283f);
+  z-index: 1;
+  position: absolute;
+  border-radius: 0% 10% 11% 0% / 0% 41% 51% 0%;
+  left: 0;
+
+}
+
+.hero-section {
+  z-index: 20;
+}
+
 .container-hero-section{
   background: linear-gradient(162deg, #154c74 , #07273d);
   width: 100%;

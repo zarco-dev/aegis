@@ -1,4 +1,5 @@
 class BankPassword < ApplicationRecord
   belongs_to :user
-end
 
+  # validates :account_number, :cardholder, presence: true
+end

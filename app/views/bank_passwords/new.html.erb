@@ -1,19 +1,100 @@
-<div class="container mt-3">
-  <div class="row">
-    <div class="col-12">
+<div class="container-bank" data-controller="bank">
+    <div class="container-center-bank">
+      <div class="tex-bank">
+        <h2>Guarda tus tarjetas <span> bancarias</span>, y ten acceso cuando las necesites.</h2>
+        <div class="selecciona-color">
+          <label for="">Escoge el color de tu tarjeta:</label>
+          <input type="color" value="#32a6be" data-bank-target="colorpicker", data-action="input->bank#colorpick">
+        </div>
+      </div>
+      <div class="card-bank-left">
+        <section class="tarjeta" data-bank-target="tarjeta" data-action="click->bank#show">
+          <div class="front" data-bank-target="colorcard">
+            <div class="logo-bank" data-bank-target="logofranquicia"><img src="https://i.imgur.com/CgUPMHR.png" alt=""></div>
+            <div class="chip-less">
+              <img src="https://i.imgur.com/csJj7iF.png" class="chip" alt="">
+              <img src="https://i.imgur.com/sMJGT15.png" class="chip" alt="">
+            </div>
+            <div class="dates">
+              <div class="groups-info-bank">
+                <p class="bank-label">Numero Tarjeta</p>
+                <p class="bank-number" data-bank-target="numbercard">#### #### #### ####</p>
+              </div>
+              <div class="flexbox">
+                <div class="groups-info-bank">
+                  <p class="bank-label">Nombre Tarjeta</p>
+                  <p class="bank-name" data-bank-target="namecard">Sebas Restrepo</p>
+                </div>
+                <div class="groups-info-bank">
+                  <p class="bank-label">Expiración</p>
+                  <p class="bank-expired"><span class="month" data-bank-target="expiratemonth">MM</span> / <span class="year" data-bank-target="expirateyear">AA</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="back" data-bank-target="colorcard">
+            <div class="barra-magnetica"></div>
+            <div class="dates">
+              <div class="groups-info-bank" id="firma">
+                <p class="bank-label">Firma</p>
+                <div class="bank-firma"><p data-bank-target="firma"></p></div>
+              </div>
+              <div class="groups-info-bank" id="cvc">
+                <p class="bank-label">CVC</p>
+                <p class="cvc" data-bank-target="cvc"></p>
+              </div>
+            </div>
+            <p class="leyenda">
+              Esta tarjeta es una representación visual de la tarjeta que estas ingresando aqui, puedes cambiarle el color para identificarla mejor.</p>
+              <a href="#" class="link-bank">aegis.com</a>
+          </div>
+        </section>
+        <div class="contenedor-btn">
+          <button class="btn-abrir-form" data-bank-target="btnabrir" data-action="click->bank#open">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </div>
+              <%= simple_form_for @bankpassword, html: { class: "form-tarjeta", data: { bank_target: 'form' } } do |f| %>
+                <div class="groups-info-bank">
+                  <%= f.input :account_number,
+                              label: "Número Tarjeta",
+                              input_html: { data: { bank_target: 'inputnumero', action: "keyup->bank#acnumber" }, maxlength: 19, autocomplete: 'off' } %>
+                </div>
+                <div class="groups-info-bank">
+                  <%= f.input :cardholder,
+                              label: "Nombre",
+                              input_html: { data: { bank_target: 'inputnombre', action: "keyup->bank#acname" }, maxlength: 16, autocomplete: 'off' } %>
+                </div>
+                <div class="flexbox">
+                  <div class="groups-info-bank expira">
+                    <div class="flexbox">
+                      <div class="grupo-select" data-bank-target="groupselect">
+                        <%= f.input :expiration_date,
+                                    as: :date,
+                                    start_year: Date.today.year,
+                                    end_year: Date.today.year + 10,
+                                    input_html: { data: { bank_target: 'selectdate', action: "change->bank#selectdate" } },
+                                    discard_day: true,
+                                    order: [:month, :year],
+                                    label: "Expiración" %>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="groups-info-bank cvc"></div>
+                    <%= f.input :secure_code,
+                                label: "CVC",
+                                input_html: { data: { bank_target: 'inputcvc', action: "keyup->bank#cvc" }, maxlength: 3 } %>
+                  </div>
 
-      <%= simple_form_for @bankpassword do |f| %>
-        <%= f.input :cardholder, placeholder: '' %>
-        <%= f.input :account_type %>
-        <%= f.input :bank_name %>
-        <%= f.input :franchise %>
-        <%= f.input :account_number %>
-        <%= f.input :secure_code %>
-        <%= f.input :expiration_date %>
-        <%= f.submit 'Guardar contraseña bancaria', class: 'btn btn-success' %>
-      <% end %>
-
-
+                  <%= f.input :franchise, label: false,
+                              input_html: { data: { bank_target: 'franq' }, value: "https://i.imgur.com/CgUPMHR.png", class: "redred" } %>
+                  <%= f.input :account_type, label: false, input_html: { data: { bank_target: 'colorground' }, value: "#141c11a3", class: "redred" } %>
+                  <%= f.submit 'Guardar tarjeta', class: 'btn-enviar' %>
+                  <!--
+                  <%= f.input :bank_name %>
+                  <%= f.input :franchise %>-->
+              <% end %>
+      </div>
     </div>
-  </div>
+    <div class="circle-fondo"></div>
 </div>

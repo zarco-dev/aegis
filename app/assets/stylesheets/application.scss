@@ -2,11 +2,40 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  cursor: url(cursor.png), auto;
+}
+
+a, button, .fa-house, .fa-user-plus, .fa-right-to-bracket, .fa-lock, input[type="color"], section.tarjeta *, input.btn-enviar, .contenedor-btn, .fa-plus{
+  cursor: url(cpointer.png), auto !important;
 }
 
 body {
   font-family: 'Nunito ExtraLight';
 }
+
+
+body::-webkit-scrollbar-button {
+  display: none;
+}
+
+body::-webkit-scrollbar {
+  width: 14px;
+  background-color: #25282d;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #32A6BE;
+  border-radius: 10px;
+  transition: .2s ease;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background-color: #37b7d1;
+}
+
+
+
+
 
 // Graphical variables
 @import "config/fonts";

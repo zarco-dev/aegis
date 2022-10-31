@@ -13,7 +13,8 @@ Rails.application.routes.draw do
   resources :bank_passwords
 
   resources :groups do
-    resources :group_invitations
+    resources :group_invitations, except: [:destroy]
+    delete "group_invitations/:id", to: "group_invitations#destroy", as: :delete_invitation
   end
 
 end

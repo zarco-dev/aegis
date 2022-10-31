@@ -5,49 +5,49 @@
       <%= render "shared/left_navbar"%>
     </div>
 
-    <div class="col-9">
+    <div class="col-9 blue-bg text-white">
+
       <div class="container mt-3">
+        <h1 class="title-slide-in">Grupos a los que pertenezco</h1>
 
-        <h1>Mis grupos en los que estoy</h1>
-          <% current_user.group_invitations.each do |group| %>
-            <% if group.status.eql?(true) %>
-            <div class="card p-5 my-2">
-
-
-              <p><%= group.group.name %> (Invitado por: <span><%= group.group.user.username %></span>)</p>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#group<%= group.id %>">
-          Ver contraseñas
-        </button>
-        <% group.group.passwords.each do |x| %>
-
-          <%= x.site_name %>
-        <% end %>
-
-
-             <div class="modal fade" id="group<%= group.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Contraseñas del grupo <%= group.group.name %></h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <p><% group.group.passwords.each do |password| %></p>
-                  <div class="card p-3">
-                    <p>Sitio: <%= password.site_name %></p>
-                    <label for="oculto">Password:</label>
-                    <input id="oculto" class="form-control" type="text" value='<%= password.site_password %>' readonly>
-                  </div>
-                <% end %>
-              </div>
-            </div>
+          <div class="bg-icon">
+            <img src="https://img.icons8.com/bubbles/500/000000/crowd--v2.png"/>
           </div>
-        </div>
-            </div>
-            <% end %>
 
-              <% end %>
+        <% current_user.group_invitations.each_with_index do |group, num| %>
+          <% if group.status.eql?(true) %>
+            <div class="group-card p-4 mt-4" style="
+            animation: cardSlide <%= num + 1 - num * 0.75 %>s;
+            ">
+
+              <p>Grupo <strong>'<%= group.group.name %>'</strong> (Invitado por: <span>@<%= group.group.user.username %></span>) </p>
+              <button type="button" class="btn btn-view" data-bs-toggle="modal" data-bs-target="#group<%= group.id %>">
+              Ver contraseñas
+              </button>
+
+            </div>
+
+            <div class="modal fade" id="group<%= group.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content modal-styles">
+                  <div class="d-flex justify-content-between m-header">
+                    <h4 class="modal-title" id="exampleModalLabel">Contraseñas del grupo '<%= group.group.name %>'</h4>
+                    <button type="button" class="btn close-modal" data-bs-dismiss="modal" aria-label="Close">X</button>
+                  </div>
+                  <div class="modal-body">
+                    <p><% group.group.passwords.each do |password| %></p>
+                      <div class="group-card p-3">
+                        <p>Sitio: <%= password.site_name %></p>
+                        <label for="oculto">Password:</label>
+                        <input id="oculto" class="form-control" type="text" value='<%= password.site_password %>' readonly>
+                      </div>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          <% end %>
+        <% end %>
       </div>
     </div>
-  </div>
-</div>

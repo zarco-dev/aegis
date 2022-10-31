@@ -13,6 +13,9 @@ application.register("groupinvite", GroupinviteController)
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+import InvitationController from "./invitation_controller"
+application.register("invitation", InvitationController)
+
 import NavbarController from "./navbar_controller"
 application.register("navbar", NavbarController)
 

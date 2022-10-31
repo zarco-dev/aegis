@@ -1,22 +1,67 @@
-<div class="container bg-dark text-white p-3 my-5">
-  <h2>Mis invitaciones</h2>
-  <% GroupInvitation.all.each do |group_i| %>
-    <% if current_user.id == group_i.user_id %>
-      <div class="card p-2 text-dark">
-        <p>Te invita: <small><%= group_i.group.user.username %></small></p>
-        <p>Al grupo: <small><%= group_i.group.name %></small></p>
-        <small>Estado de la invitacion <span class="bg-danger text-light p-1"><%= group_i.status %></span></small>
-        <small>El usuario pertence a un grupo? <span class="bg-danger text-light p-1"><%= current_user.group_user %></span></small>
-        <p><%= current_user.username %></p>
+<div class="body pt-5" data-controller="invitation">
+  <div class="container">
 
-        <%= form_tag invitation_path, method: :get do  %>
-          <%= hidden_field_tag :status, params[:status], class: "form-control", value: true %>
-          <%= hidden_field_tag :group, params[:group_id], class: "form-control", value: group_i.group.id %>
-          <%= hidden_field_tag :group_invitation, params[:group_invitation_id], class: "form-control", value: group_i.id %>
-          <%= submit_tag "Aceptar", class: "btn btn-primary" %>
-        <% end %>
-        <%# <form action="/groups/:group_id/group_invitations/:id/edit" method="patch"></form> %>
+    <div class="row">
+      <div class="col-3 position-fixed">
+        <div class="my-invi-card d-flex justify-content-center">
+          <img src="https://img.icons8.com/bubbles/500/000000/crowd--v1.png" class="group-icon">
+        </div>
+
+        <div class="my-invi-card d-flex justify-content-center text-center mt-4 p-4 text-white">
+          <h4><strong>@<%= current_user.username %></strong>, conoce quien te ha invitado a hacer parte de su grupo!</h4>
+        </div>
       </div>
-    <% end %>
-  <% end %>
+
+      <div class="col-8 right-side">
+
+        <div class="my-invi-card text-white mb-5 p-3">
+          <h2>Mis invitaciones</h2>
+          <% c = 1 %>
+          <% @group_invitation.each do |group_i| %>
+            <% if current_user.id == group_i.user_id %>
+              <div class="invitation-card mt-3 p-3" id="container<%= group_i.id %>" data-invitation-target="invitationcard">
+
+                <div class="d-flex justify-content-between">
+
+                  <!-- Mensaje de invitación: "User" te ha invitado a "Grupo" -->
+
+                  <p>
+                  <strong>@<%= group_i.group.user.username %></strong>
+                  Te ha invitado a su grupo
+                  <strong><%= group_i.group.name %></strong>
+                  </p>
+
+                  <%= link_to group_delete_invitation_path(group_i.group.id, group_i), data: { turbo_method: :delete, turbo_confirm: "Quieres borrar esta invitación?" } do %>
+                    <button type="button" class="btn btn-sm delete-invitation">X</button>
+                  <% end %>
+
+
+                </div>
+
+                <p>"<%= group_i.group.description %>"</p>
+
+                <div class="d-flex justify-content-between align-items-end">
+
+                  <%= form_tag invitation_path, method: :get do  %>
+                    <%= hidden_field_tag :status, params[:status], class: "form-control", value: true %>
+                    <%= hidden_field_tag :group, params[:group_id], class: "form-control", value: group_i.group.id %>
+                    <%= hidden_field_tag :group_invitation, params[:group_invitation_id], class: "form-control", value: group_i.id %>
+                    <%= submit_tag "Aceptar", class: "btn btn-accept" %>
+                  <% end %>
+
+                  <!-- Longevidad de la invitación -->
+
+                  <p class="text-muted m-0"><em><%= time_ago_in_words(group_i.created_at) %> ago</em></p>
+                </div>
+
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
 </div>

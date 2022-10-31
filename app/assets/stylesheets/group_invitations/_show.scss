@@ -1,5 +1,73 @@
+.body {
+  background-image: url("assets/background-color-blue.png");
+  width: 100%;
+  height: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.my-invi-card {
+  background: rgba(33, 45, 54, 0.671);
+  box-shadow: 0 4px 15px 0 rgb(25, 34, 41);
+  backdrop-filter: blur( 0px );
+  -webkit-backdrop-filter: blur( 0px );
+  border-radius: 10px;
+}
+
 iframe {
-  background-color: red;
   width: 100%;
   height: 80vh;
+}
+
+.invitation-card {
+  background-color: #191918;
+  border-radius: 4px;
+}
+
+.btn-accept {
+  background-color: #3CB0D0;
+  color: #FFFFFF;
+  border-radius: 9px;
+  padding: 8px;
+
+  transition: 0.15s ease-in-out;
+}
+
+.btn-accept:hover{
+  color: #FFFFFF;
+  background-color: #1f9bbd;
+  transform: scale(1.07);
+}
+
+.group-icon {
+  width: 300px;
+  height: 300px;
+}
+
+.right-side {
+  position: relative;
+  left: 385px;
+}
+
+.group-warn-primary {
+  width: 18%;
+  font-weight: bold;
+  font-size: 0.79rem;
+
+  position: relative;
+  top: 25px;
+  left: 10px;
+  background-color: #2a74a5;
+  padding: 4px;
+  border-radius: 12px;
+}
+
+.delete-invitation {
+  color: #5f5f5b;
+}
+
+.delete-invitation:hover {
+  color: rgb(255, 255, 255);
 }

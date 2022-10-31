@@ -18,6 +18,10 @@ class GroupInvitationPolicy < ApplicationPolicy
   end
 
   def update?
-    true
+    return true
+  end
+
+  def destroy?
+    return true
   end
 end

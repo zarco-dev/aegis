@@ -1,5 +1,5 @@
 class GroupInvitationsController < ApplicationController
-  before_action :find_group, only: [:new, :create, :edit]
+  before_action :find_group, only: [:new, :create, :edit, :destroy]
   after_action :authorize_group_invitation, except: [:index, :invitation]
 
   def index
@@ -32,6 +32,12 @@ class GroupInvitationsController < ApplicationController
   end
 
   def update
+  end
+
+  def destroy
+    @group_invitation = GroupInvitation.find(params[:id])
+    @group_invitation.destroy
+    redirect_to invitation_path
   end
 
 

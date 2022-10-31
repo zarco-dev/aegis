@@ -4,7 +4,6 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
 
   static targets = ["basic", "premium", "buttonpremium", "buttonbasic", "subscontainer", "signup", "titleplan", "premiumuser"]
-  // static values = ["buttonpremium"]
 
 
   hover() {

@@ -1,0 +1,500 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", "Helvetica", "sans-serif";
+}
+
+.container-bank {
+  background: #192229;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.circle-fondo {
+  width: 41vw;
+  height: 100vh;
+  background: linear-gradient(162deg, #154c74 , #07273d);
+  z-index: 20;
+  position: absolute;
+  border-radius: 29% 0% 0% 17% / 28% 0% 0% 44%;
+  right: 0;
+}
+
+.container-center-bank {
+  /* background-color: red; */
+  width: 80%;
+  height: 95vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  position: relative;
+}
+
+.tex-bank {
+  height: 100%;
+  width: 33%;
+  /* background-color: hotpink; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* padding: 0 50px; */
+  margin-bottom: 5px;
+}
+
+.selecciona-color {
+  /* background-color: #024579; */
+  width: 100%;
+  height: 19%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+
+
+.selecciona-color label {
+  color: #fff;
+  font-size: 2em;
+  margin: 0;
+  margin-right: 50px;
+  padding: 0;
+}
+
+.selecciona-color input {
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+  margin: 0;
+  padding: 0;
+  margin-top: 6px;
+  border: none;
+  background-color: transparent;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  transition: .2s all;
+}
+
+.selecciona-color input:hover {
+  transform: scale(1.1);
+}
+
+.selecciona-color input::after {
+  font: var(--fa-font-solid);
+  content: "\f043";
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  transform: scale(1.7);
+}
+
+.selecciona-color input::-webkit-color-swatch {
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  box-shadow: none;
+}
+
+.tex-bank h2 {
+  color: #fff;
+  font-size: 3.5em;
+}
+
+.tex-bank h2 span {
+  color: #32A6BE;
+  font-weight: bold;
+}
+
+.card-bank-left {
+  height: 100%;
+  width: 60%;
+  /* background-color: gold; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+section.tarjeta {
+  width: 100%;
+	max-width: 550px;
+	position: relative;
+	color: #fff;
+	transition: .8s ease all;
+	transform: rotateY(0deg);
+	transform-style: preserve-3d;
+	cursor: pointer;
+	z-index: 2;
+  height: 315px;
+}
+
+section.tarjeta.active {
+  transform: rotateY(180deg);
+}
+
+section.tarjeta > div {
+  padding: 30px;
+	border-radius: 15px;
+  height: 315px;
+	min-height: 315px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	// box-shadow: 0 10px 10px 0 rgba(90,116,148,0.3);
+  background: #141c11a3;
+  box-shadow: 0 4px 15px 0 rgba(17, 19, 39, 0.527);
+  backdrop-filter: blur(4.5px);
+  -webkit-backdrop-filter: blur(3.5px);
+}
+
+section.tarjeta .front {
+  width: 100%;
+  backface-visibility: hidden;
+}
+
+
+.front .logo-bank {
+  text-align: right;
+  min-height: 50px;
+}
+.front .logo-bank img {
+  width: 100%;
+	height: 100%;
+	object-fit: cover;
+  max-width: 121px;
+  min-height: 62px;
+}
+
+.front .chip {
+  width: 100%;
+	max-width: 50px;
+	margin-bottom: 20px;
+  // background-color: rebeccapurple;
+}
+
+.chip-less {
+  // background-color: red;
+}
+
+.front .groups-info-bank .bank-label {
+  font-size: 16px;
+	color: #9ca5ad;
+	margin-bottom: 5px;
+}
+
+.front .groups-info-bank .bank-number,
+.front .groups-info-bank .bank-name,
+.front .groups-info-bank .bank-expired {
+  color: #fff;
+	font-size: 22px;
+	text-transform: uppercase;
+}
+
+.front .flexbox {
+  display: flex;
+	justify-content: space-between;
+	margin-top: 20px;
+}
+
+.back {
+  position: absolute;
+	top: 0;
+	transform: rotateY(180deg);
+	backface-visibility: hidden;
+}
+
+.redred{
+  display: none;
+}
+
+.back .barra-magnetica {
+  height: 40px;
+	background: #000;
+	width: 100%;
+	position: absolute;
+	top: 30px;
+	left: 0;
+}
+
+.back .dates {
+  margin-top: 60px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.back .dates p{
+  margin-bottom: 5px;
+}
+
+.back .dates #firma {
+  width: 70%;
+  color: #9ca5ad;
+}
+
+.back .dates #firma .bank-firma {
+  height: 40px;
+	background: repeating-linear-gradient(#32A6BE 0, #32A6BE 5px, #F5BF38 5px, #F5BF38 10px);
+}
+
+.back .dates #firma .bank-firma p {
+  line-height: 40px;
+	font-family: 'Liu Jian Mao Cao', cursive;
+	color: #000;
+	font-size: 30px;
+	padding: 0 10px;
+	text-transform: capitalize;
+  font-weight: bold;
+}
+
+.back .dates #cvc {
+  width: 20%;
+  color: #9ca5ad;
+}
+
+.back .dates #cvc .cvc {
+  background: #fff;
+  height: 40px;
+  color: #000;
+  padding: 7px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.back .leyenda {
+  font-size: 14px;
+	line-height: 24px;
+  color: #9ca5ad;
+}
+
+.back .link-bank {
+  font-size: 14px;
+	color: #9ca5ad;
+}
+
+.contenedor-btn .btn-abrir-form {
+  width: 50px;
+	height: 50px;
+	font-size: 20px;
+	line-height: 20px;
+	background: #32A6BE;
+	color: #fff;
+	position: relative;
+	top: -25px;
+	z-index: 3;
+	border-radius: 100%;
+	box-shadow: -5px 4px 8px rgba(24,56,182,0.4);
+	padding: 5px;
+	transition: all 1s ease;
+	border: none;
+	cursor: pointer;
+}
+
+.contenedor-btn .btn-abrir-form:hover {
+  background-color: #38c0db;
+}
+
+.contenedor-btn .btn-abrir-form.active {
+  transform: rotate(45deg);
+}
+
+.container-bank-form {
+  background-color: #526472;
+  height: 90%;
+  width: 50%;
+  display: flex;
+  padding: 50px;
+}
+
+
+.form-tarjeta {
+  background: #141c11a3;
+  box-shadow: 0 4px 15px 0 rgba(17, 19, 39, 0.527);
+  backdrop-filter: blur(4.5px);
+  display: none;
+  -webkit-backdrop-filter: blur(3.5px);
+  width: 53.712%;
+  padding: 30px 30px 30px 30px;
+  max-width: 700px;
+  border-radius: 15px;
+  position: relative;
+  top: -43px;
+  z-index: 1;
+  // clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+	transition: clip-path .3s ease-out;
+  transition: 5s;
+}
+
+.display-form-bank {
+  display: block !important;
+}
+
+.form-tarjeta.active {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.form-tarjeta label {
+  display: block;
+  color: #fff;
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.form-tarjeta input, .form-tarjeta select, .btn-enviar {
+  border: 2px solid #CED6E0;
+	font-size: 18px;
+	height: 50px;
+	width: 100%;
+	padding: 5px 20px;
+	transition: .3s ease all;
+	border-radius: 10px;
+  font-weight: bold;
+}
+
+.form-tarjeta input:hover,
+.form-tarjeta select:hover {
+	// border: 3px solid #32A6BE;
+  outline: 4px solid #32A6BE
+}
+
+.form-tarjeta input:focus,
+.form-tarjeta select:focus {
+	outline: 4px solid #32A6BE;
+  box-shadow: 1px 7px 10px -5px #1258669a;
+}
+
+.form-tarjeta input {
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.form-tarjeta .flexbox {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-tarjeta .expira {
+  width: 72%;
+}
+
+.form-tarjeta .cvc {
+  min-width: 0;
+}
+
+.form-tarjeta .grupo-select {
+  width: 100%;
+  margin-right: 15px;
+  position: relative;
+}
+
+.form-tarjeta .btn-enviar {
+  border: none;
+	padding: 10px;
+	font-size: 22px;
+	color: #fff;
+	background: #32A6BE;
+	cursor: pointer;
+  text-transform: none;
+}
+
+.form-tarjeta .btn-enviar:hover {
+	transform: scale(1.02);
+  background-color: #0f7387;
+  outline: none !important;
+}
+
+
+@media (max-width: 1370px) {
+  .tex-bank h2, .tex-bank .h2 {
+    color: #fff;
+    font-size: 2.5em;
+  }
+
+  .selecciona-color label {
+    font-size: 1.2em;
+    margin-right: 22px;
+  }
+
+  .selecciona-color input {
+    width: 45px;
+    height: 45px;
+}
+
+  .selecciona-color input::after {
+    top: 15px;
+    right: 17px;
+  }
+
+  .container-center-bank {
+    width: 90%;
+  }
+
+  .front .chip {
+    max-width: 42px;
+}
+
+  .front .groups-info-bank .bank-label {
+    font-size: 14px;
+  }
+
+  .front .groups-info-bank .bank-number, .front .groups-info-bank .bank-name, .front .groups-info-bank .bank-expired {
+    font-size: 18px;
+  }
+
+  section.tarjeta {
+    max-width: 480px;
+    height: 315px;
+  }
+
+  section.tarjeta > div {
+    padding: 10px 23px 0px 25px;
+    height: 265px;
+    min-height: 265px;
+  }
+
+  .form-tarjeta {
+    width: 66.712%;
+    height: 335px;
+  }
+
+  .form-tarjeta label {
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+
+  .form-tarjeta input, .form-tarjeta select, .btn-enviar {
+    font-size: 18px;
+    height: 37px;
+  }
+
+  .mb-3 {
+    margin-bottom: 0.4rem !important;
+  }
+
+  .form-tarjeta .btn-enviar {
+    padding: 0;
+  }
+
+  .form-tarjeta .flexbox {
+    height: 77px;
+  }
+
+  .card-bank-left {
+
+    padding-top: 50px;
+  }
+
+  .contenedor-btn .btn-abrir-form {
+    top: -22px;
+}
+
+}

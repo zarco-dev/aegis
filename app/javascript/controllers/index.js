@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import BankController from "./bank_controller"
+application.register("bank", BankController)
+
 import GroupinviteController from "./groupinvite_controller"
 application.register("groupinvite", GroupinviteController)
 

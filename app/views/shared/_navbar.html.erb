@@ -8,7 +8,7 @@
         <li style="--i:0.1s;"><%= link_to root_path do %><i class="fa-solid fa-house"></i><% end %></li>
         <li style="--i:0.2s;"><%= link_to new_user_registration_path do %><i class="fa-solid fa-user-plus"></i><% end %></li>
         <li></li>
-        <li style="--i:0.2s;"><a href="#"><i class="fa-solid fa-lock"></i></a></li>
+        <li style="--i:0.2s;"><%= link_to root_path(anchor: "generator") do %><i class="fa-solid fa-lock"></i><% end %></li>
         <li style="--i:0.1s;"><%= link_to new_user_session_path do %><i class="fa-solid fa-right-to-bracket"></i><% end %></li>
       </ul>
     </div>

@@ -1,341 +1,446 @@
 <% unless user_signed_in? %>
-<div class="container-hero-section">
-  <div class="hero-section">
-    <div class="banner">
-      <div class="headline">
-        <%= image_tag "isotipo.svg", class: "logo-aegis" %>
-        <div class="title"><h1>If you forget it, we manage it</h1></div>
-        <div class="cta">
-          <%= link_to "¡Comienza Gratis!", new_user_registration_path, class: "btn cta-register" %>
+<div class="full-container">
+    <div class="container-hero-section">
+      <div class="hero-section">
+        <div class="banner">
+          <div class="headline">
+            <h1>Traete tus contraseñas</h1>
+            <div><h2>No las olvides más, guardalas una sola vez y despreocúpate.</h2></div>
+          </div>
+          <div class="img-banner">
+            <div class="image-social-media">
+              <div class="sign-animation">
+                <i class="fa-solid fa-arrow-pointer"></i>
+                  <header>
+                    <h2>Guarda tu contraseña</h2>
+                    <%= image_tag "isotipo.svg" %>
+                  </header>
+                  <main>
+                    <div class="input-animation">
+                      <span>zarco@aegis.com</span>
+                      <i class="fa-solid fa-user"></i>
+                    </div>
+                    <div class="input-animation">
+                      <span>Aeg15AppW3b</span>
+                      <i class="fa-solid fa-lock"></i>
+                    </div>
+                  </main>
+                  <footer>
+                    <div class="button-animation">Guardar</div>
+                  </footer>
+              </div>
+              <img src="https://img.icons8.com/bubbles/100/000000/canva-app.png"class="flaticon">
+              <img src="https://img.icons8.com/bubbles/100/000000/github.png" class="flaticon">
+              <img src="https://img.icons8.com/bubbles/100/000000/dropbox.png"class="flaticon">
+              <img src="https://img.icons8.com/bubbles/100/000000/facebook-f.png"class="flaticon">
+              <img src="https://img.icons8.com/bubbles/100/000000/figma.png" class="flaticon">
+              <%= image_tag "lewagon.png", class: "flaticon" %>
+              <img src="https://img.icons8.com/bubbles/100/000000/gmail-new.png"class="flaticon">
+              <img src="https://img.icons8.com/bubbles/100/000000/epic-games.png"class="flaticon">
+              <img src="https://img.icons8.com/bubbles/100/000000/crunchyroll.png"class="flaticon">
+              <img src="https://img.icons8.com/bubbles/100/000000/instagram-new--v2.png" class="flaticon">
+              <img src="https://img.icons8.com/bubbles/100/000000/spotify.png"class="flaticon">
+              <img src="https://img.icons8.com/bubbles/100/000000/amazon.png"class="flaticon">
+              <img src="https://img.icons8.com/bubbles/100/000000/linkedin.png"class="flaticon">
+              <img src="https://img.icons8.com/bubbles/100/000000/microsoft-outlook-2019.png"class="flaticon">
+              <img src="https://img.icons8.com/bubbles/100/000000/reddit.png"class="flaticon">
+              <img src="https://img.icons8.com/bubbles/100/000000/pinterest.png"class="flaticon">
+              <img src="https://img.icons8.com/bubbles/100/000000/amazon-prime-video.png"class="flaticon">
+              <img src="https://img.icons8.com/bubbles/100/000000/tiktok.png"class="flaticon">
+              <img src="https://img.icons8.com/bubbles/100/000000/twitch.png"class="flaticon">
+              <img src="https://img.icons8.com/bubbles/100/000000/twitter-circled.png"class="flaticon">
+              <img src="https://img.icons8.com/bubbles/100/000000/youtube-squared.png"class="flaticon">
+              <img src="https://img.icons8.com/bubbles/100/000000/netflix.png"class="flaticon">
+            </div>
+          </div>
         </div>
       </div>
-      <div class="img-banner">
-        <div class="image-social-media">
-          <%= image_tag "image-banner-1.png", class: "image" %>
-          <%= image_tag "facebook-hero-section.png", class: "flaticon" %>
-          <%= image_tag "facebook-message-hero-section.png", class: "flaticon" %>
-          <%= image_tag "ghost-hero-section.png", class: "flaticon" %>
-          <%= image_tag "github-hero-section.png", class: "flaticon" %>
-          <%= image_tag "google-hero-section.png", class: "flaticon" %>
-          <%= image_tag "linkedin-hero-section.png", class: "flaticon" %>
-          <%= image_tag "pinterest-hero-section.png", class: "flaticon" %>
-          <!--
-          <%= image_tag "slack-hero-section.png", class: "flaticon-d flaticon-8" %>
-          <%= image_tag "twitter-hero-section.png", class: "flaticon-c flaticon-9" %>
-          <%= image_tag "whatsapp-hero-section.png", class: "flaticon flaticon-10" %>
-          <%= image_tag "youtube-hero-section.png", class: "flaticon-b flaticon-11" %>-->
+      <div class="circle-fondo-hero"></div>
+    </div>
+
+    <div id="services" class="services-section">
+      <div class="services-container">
+        <h2>Nuestros servicios</h2>
+          <div class="cards-services">
+            <div class="services-card">
+              <img src="https://img.icons8.com/bubbles/500/000000/lock.png" class="item-services">
+              <h3>Almacena contraseñas</h3>
+              <p class="">No más "Olvidé mi contraseña". Guárdala en nuestra bóveda y despreocúpate por recordarla.</p>
+            </div>
+            <div class="services-card">
+              <img src="https://img.icons8.com/bubbles/500/000000/man-window-lock.png" class="item-services">
+              <h3>Genera contraseñas seguras</h3>
+              <p class="">¿Te da pereza tener que pensar en una contraseña segura para cada sitio? Nosotros lo hacemos por ti.</p>
+            </div>
+            <div class="services-card">
+              <img src="https://img.icons8.com/bubbles/500/000000/bank-card-front-side.png" class="item-services">
+              <h3>Guarda tarjetas bancarias</h3>
+              <p class="">¿Haces compras online y siempre olvidas los datos de tu tarjeta? Eso no volverá a pasar.</p>
+            </div>
+            <div class="services-card">
+              <img src="https://img.icons8.com/bubbles/500/000000/crowd--v2.png" class="item-services">
+              <h3>Crea grupos para compartir</h3>
+              <p class="">¿Quieres que tus amigos puedan acceder a tus sitios? Solo crea un grupo y comparte esas contraseñas.</p>
+            </div>
+            <div class="services-card">
+              <img src="https://img.icons8.com/bubbles/500/000000/monitor.png" class="item-services">
+              <h3>Accede desde cualquier lugar</h3>
+              <p class="">En Namibia, en los Alpes y en los Campos Elíseos, ¡desde cualquier lugar puedes acceder a tus contraseñas!</p>
+            </div>
+            <div class="services-card">
+              <img src="https://img.icons8.com/bubbles/500/000000/bookmark-ribbon.png" class="item-services">
+              <h3>Aprende y gana</h3>
+              <p class="">Recibe recompensas por completrar misiones y aprende tips de seguridad al navegar en la web.</p>
+            </div>
+          </div>
+      </div>
+    </div>
+</div>
+
+<div id="profiles" class="section-cards-profiles">
+  <div class="section-target">
+    <header>
+      <%= image_tag "isotipo.svg" %>
+      <h2>es para todos los perfiles</h2>
+    </header>
+    <div class="cards-clients">
+      <div class="card">
+        <img src="https://img.icons8.com/bubbles/500/000000/business-man-in-blue-jacket.png"/>
+        <div class="text">
+          <h3>Empresas</h3>
+          <p>Crea un grupo con acceso a las contraseñas de tu empresa y compártelas con sus miembros.</p>
+          <%# <a href="#" class="plan">Plan premium </a> %>
+          <%= link_to new_user_registration_path do %>
+            Plan premium<i class="fa-solid fa-chevron-right"></i>
+          <% end %>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://img.icons8.com/bubbles/500/000000/student-male.png"/>
+        <div class="text">
+          <h3>Estudiantes</h3>
+          <p>No dejes que una contraseña olvidada te impida entregar esa tarea. Nosotros nos encargamos de recordarlas por ti.</p>
+          <%= link_to new_user_registration_path do %>
+            Plan basic<i class="fa-solid fa-chevron-right"></i>
+          <% end %>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://img.icons8.com/bubbles/500/000000/brown-short-curly-hair-lady.png"/>
+        <div class="text">
+          <h3>Profesionales</h3>
+          <p>Almacena tus contraseñas y tarjetas de crédito en un solo lugar y ahorra tiempo al momento de ingresar en tus sitios.</p>
+          <%= link_to new_user_registration_path do %>
+            Plan premium<i class="fa-solid fa-chevron-right"></i>
+          <% end %>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://img.icons8.com/bubbles/500/000000/man-in-blue-t-shirt.png"/>
+        <div class="text">
+          <h3>Freelancers</h3>
+          <p>No importa dónde estés ni cuántas contraseñas manejes. Ten siempre todo al alcance de un solo clic.</p>
+          <%= link_to new_user_registration_path do %>
+            Plan basic<i class="fa-solid fa-chevron-right"></i>
+          <% end %>
         </div>
       </div>
     </div>
   </div>
 </div>
-      <div class="section-services">
-          <div class="ball-pink"></div>
 
-          <h2 class="subtitle">Nuestros servicios</h2>
-          <div class="cards-services">
+<div id="generator" class="section-passwords-free">
+  <div class="passwords-section">
+    <h2>Prueba nuestro generador de contraseñas seguras</h2>
+    <div class="passwords-generate">
 
-              <div class="services-pink">
-                  <img src="images/flaticon-1.png" alt="" class="item-services">
-                  <p class="">Aegis hace todo lo que tu esperarias desde administrar un password y mas.</p>
-              </div>
-              <div class="services-blue">
-                  <img src="images/flaticon-2.png" alt="" class="item-services">
-                  <p class="">Aegis hace todo lo que tu esperarias desde administrar un password y mas.</p>
 
-              </div>
-              <div class="services-pink">
-                  <img src="images/flaticon-3.png" alt="" class="item-services">
-                  <p class="">Aegis hace todo lo que tu esperarias desde administrar un password y mas.</p>
+          <div class="passwords">
+            <div class="try-passwords">
+              <form action="/my-handling-form-page" method="post">
+                  <label for="" class="try_my_password"></label>
+                  <input type="text" class="my-kewword">
+                  <p class="">Personalice su contraseña</p>
+                <div class="custom-password">
+                  <div class="try-custom-password">
 
-              </div>
-              <div class="services-blue">
-                  <img src="images/flaticon-4.png" alt="" class="item-services">
-                  <p class="">Aegis hace todo lo que tu esperarias desde administrar un password y mas.</p>
-
-              </div>
-              <div class="services-pink">
-                  <img src="images/flaticon-5.png" alt="" class="item-services">
-                  <p class="">Aegis hace todo lo que tu esperarias desde administrar un password y mas.</p>
-
-              </div>
-              <div class="services-blue">
-                  <img src="images/flaticon-6.png" alt="" class="item-services">
-                  <p class="">Aegis hace todo lo que tu esperarias desde administrar un password y mas.</p>
-              </div>
-          </div>
-      </div>
-
-      <div class="section-cards-profiles">
-              <h2 class="subtitle"><span>Aegis</span> es para <span>todos</span></h2>
-              <div class="cards-clients">
-                  <div class="card">
-                      <figure>
-                          <img src="images/pic-woman-1.png" alt="" class="services">
-                      </figure>
-                      <div class="text">
-                          <h3>Empresas</h3>
-                          <p>Aegis hace todo lo que tu esperarias desde administrar un password y mas.</p>
-                          <a href="#" class="plan">Plan premium ></a>
-                      </div>
-                      <img src="images/flaticon-7.png" alt="" class="flaticon">
-
+                    <p class="">Longitud de contraseña</p>
+                    <input type="text" id="cbox1" value=""><label>Caracteres</label>
                   </div>
-                  <div class="card">
-                      <figure>
-                          <img src="images/pic-woman-2.png" alt="" class="services">
-                      </figure>
-                      <div class="text">
-                          <h3>Estudiantes</h3>
-                          <p>Aegis hace todo lo que tu esperarias desde administrar un password y mas.</p>
-                          <a href="#" class="plan">Plan personal ></a>
-                      </div>
-                      <img src="images/flaticon-8.png" alt="" class="flaticon">
-
+                  <div class="item-password">
+                    <label><input type="checkbox" id="cbox1" value="first_checkbox"> Mayusculas</label>
+                    <label><input type="checkbox" id="cbox1" value="second_checkbox"> Minusculas</label>
+                    <label><input type="checkbox" id="cbox1" value="third_checkbox"> Números</label>
                   </div>
-                  <div class="card">
-                      <figure>
-                          <img src="images/pic-man-1.png" alt="" class="services">
-                      </figure>
-                      <div class="text">
-                          <h3>Profesionales</h3>
-                          <p>Aegis hace todo lo que tu esperarias desde administrar un password y mas.</p>
-                          <a href="#" class="plan">Plan premium ></a>
-                      </div>
-                      <img src="images/flaticon-9.png" alt="" class="flaticon">
 
-                  </div>
-                  <div class="card">
-                      <figure>
-                          <img src="images/pic-man-2.png" alt="" class="services">
-                      </figure>
-                      <div class="text">
-                          <h3>Emprendedores</h3>
-                          <p>Aegis hace todo lo que tu esperarias desde administrar un password y mas.</p>
-                          <a href="#" class="plan">Plan personal ></a>
-                      </div>
-                          <img src="images/flaticon-10.png" alt="" class="flaticon">
+                </div>
+              </form>
+            </div>
 
-                  </div>
-              </div>
-      </div>
+            <div class="email">
+              <form action="/my-handling-form-page" method="post">
+                <ul>
+                  <li>
+                    <label for="name" >
+                      <input type="text" id="name" name="user_name" placeholder="Nombre">
+                    </label>
+                  </li>
+                  <li>
+                    <label for="mail">
+                      <input type="email" id="mail" name="user_mail" placeholder="Email">
+                    </label>
+                  </li>
+                  <label><input type="checkbox" id="cbox1" value="first_checkbox"> Desea recibir información</label>
+                </ul>
+              </form>
+            </div>
 
-      <div class="ball-pink"></div>
-
-      <div class="section-passwords-free">
-              <h2 class="subtitle">Prueba <span>gratis</span> nuestros <span>passwords!!!</span></h2>
-
-              <div class="passwords">
-                  <div class="try-passwords">
-
-
-                  </div>
-                  <div class="email">
-
-                  </div>
-              </div>
-              <a href="#" class="passwords-cta">Guardar contraseña</a>
-              <div class="ball-pink"></div>
-
-
-      </div>
-
-      <div class="section-plan">
-          <h2 class="subtitle">Adquiere <span>Ya tu plan!!!</span></h2>
-          <div class="cards">
-              <div class="card-personal">
-                  <h3>Personal ae<span>gis</span></h3>
-                  <img src="images/flaticon-2.png" alt="" class="services-img">
-
-                  <div class="article-text">
-                      <div class="article">
-                          <img src="images/check-list-favicon.png" alt="" class="services">
-                          <p>20 passwords</p>
-                      </div>
-                      <div class="article">
-
-                      </div>
-                      <div class="article">
-                          <img src="images/check-list-favicon.png" alt="" class="services">
-                          <p>Crea tus propias categorias</p>
-
-                      </div>
-                      <div class="article">
-                          <img src="images/check-list-favicon.png" alt="" class="services">
-                                      <p>Passwords bancarios</p>
-                      </div>
-                      <div class="article">
-                          <img src="images/check-list-favicon.png" alt="" class="services">
-                          <p>Actualizar passwords</p>
-                      </div>
-                      <div class="article">
-
-                      <img src="images/cancel-list-favicon.png" alt="" class="services">
-                      <p>Crea y administra sus grupos</p>
-
-                      </div>
-                  </div>
-                <a href="#" class="cta-register">Registrate</a>
-              </div>
-
-              <div class="card-premium">
-                  <h3>Premium ae<span>gis</span></h3>
-                  <img src="images/flaticon-10.png" alt="" class="services-img">
-                  <div class="article-text">
-                      <div class="article">
-                          <img src="images/check-list-favicon.png" alt="" class="services">
-                          <p>Passwords ilimitados</p>
-                      </div>
-                      <div class="article">
-                          <img src="images/check-list-favicon.png" alt="" class="services">
-                          <p>Crea tus propias categorias</p>
-
-                      </div>
-                      <div class="article">
-                          <img src="images/check-list-favicon.png" alt="" class="services">
-                          <p>Passwords bancarios</p>
-
-                      </div>
-                      <div class="article">
-                          <img src="images/check-list-favicon.png" alt="" class="services">
-                          <p>Actualizar passwords</p>
-
-                      </div>
-                      <div class="article">
-                          <img src="images/check-list-favicon.png" alt="" class="services">
-                          <p>Crea y administra sus grupos</p>
-
-                      </div>
-                  </div>
-                      <a href="#" class="cta-register">Registrate</a>
-              </div>
           </div>
 
+          <button href="#" class="passwords-cta">Guardar contraseña</button>
+    </div>
+  </div>
+</div>
+
+<div id="plains" class="subs-container" data-controller="signup">
+  <div class="subs-container-center">
+    <h2>Empieza gratis sube a <span>premium</span> y deja de olvidar tus contraseñas </h2>
+    <div class="container-plans">
+      <div class="subscription-container" data-signup-target="subscontainer">
+        <div class="basic-container" data-action="mouseover->signup#hover" data-signup-target="basic">
+          <div class="info-plan">
+            <h2>BASIC PLAN</h2>
+            <span>¡Comienza Gratis!</span>
+              <div class="price-container">
+                <h2>FREE</h2>
+              </div>
+          </div>
+          <div class="basic-features">
+            <div class="feature-container">
+              <i class="fa-solid fa-circle-check"></i>
+              <p>Almacena hasta 5 passwords</p>
+            </div>
+            <div class="feature-container">
+              <i class="fa-solid fa-circle-check"></i>
+              <p>Crea categorias para las passwords</p>
+            </div>
+            <div class="feature-container">
+              <i class="fa-solid fa-circle-check"></i>
+              <p>Guarda tus passwords bancarios</p>
+            </div>
+            <div class="feature-container">
+              <i class="fa-sharp fa-solid fa-circle-xmark"></i>
+              <p>Crea grupos y controla accesos</p>
+            </div>
+            <div class="feature-container">
+              <i class="fa-sharp fa-solid fa-circle-xmark"></i>
+              <p>Comparte tus passwords</p>
+            </div>
+          </div>
+          <div class="button-basic">
+            <a href="users/sign_up">
+              <button type="submit" data-signup-target="buttonbasic" type="submit" value="basic">Comienza Gratis</button>
+            </a href="users/sign_up">
+          </div>
+        </div>
+        <div class="basic-container premium-container" data-action="mouseover->signup#hoverp" data-signup-target="premium">
+          <div class="info-plan">
+            <h2>PREMIUM MENSUAL</h2>
+            <span>¡Ahorras $25 USD!</span>
+            <div class="price-container active">
+              <span><del>$60</del></span>
+              <h2>$35</h2>
+            </div>
+          </div>
+          <div class="basic-features">
+            <div class="feature-container">
+              <i class="fa-solid fa-circle-check"></i>
+              <p>Almacena passwords ilimitados</p>
+            </div>
+            <div class="feature-container">
+              <i class="fa-solid fa-circle-check"></i>
+              <p>Crea categorias para las passwords</p>
+            </div>
+            <div class="feature-container">
+              <i class="fa-solid fa-circle-check"></i>
+              <p>Guarda tus passwords bancarios</p>
+            </div>
+            <div class="feature-container">
+              <i class="fa-solid fa-circle-check"></i>
+              <p>Crea grupos y controla accesos</p>
+            </div>
+            <div class="feature-container">
+              <i class="fa-solid fa-circle-check"></i>
+              <p>Comparte tus passwords</p>
+            </div>
+          </div>
+          <div class="button-basic button-premium">
+            <a href="users/sign_up">
+              <button type="submit" value="premium">¡Sube a premium ahora!</button>
+            </a>
+          </div>
+        </div>
       </div>
+    </div>
+  </div>
+</div>
 
-      <div class="section-testimonies">
-          <h2 class="subtitle">Testimonios</h2>
-          <div class="cards-testimonies">
-              <div class="card cards-1">
-                  <div class="text-1">
-                      <img src="images/testimony-1.png" alt="" class="services">
-                      <h3>Jacob Jones</h3>
-                  </div>
-                  <div class="text-2">
-                      <p>¡Esta app es muy útil! La uso constantemente para llevar un registro de todas las contraseñas!</p>
-                      <img src="images/rating-stars.png" alt="" class="rating-stars">
-                  </div>
-              </div>
-              <div class="card cards-2">
-                  <div class="text-1">
-                      <img src="images/testimony-2.png" alt="" class="services">
-                      <h3>Devon Lane</h3>
-                  </div>
-                  <div class="text-2">
-                      <p>Sinceramente, no podría vivir sin esta aplicación.</p>
-                      <img src="images/rating-stars.png" alt="" class="rating-stars">
-                  </div>
-              </div>
-              <div class="card cards-3">
-                  <div class="text-1">
-                      <img src="images/testimony-3.png" alt="" class="services">
-                      <h3>Darrell Steward</h3>
-                  </div>
-                  <div class="text-2">
-                      <p>Soy  bastante exigente y esta aplicación ha superado mis expectativas en todos los niveles.</p>
-                      <img src="images/rating-stars.png" alt="" class="rating-stars">
-                  </div>
-              </div>
-              <div class="card cards-4">
-                  <div class="text-1">
-                      <img src="images/testimony-4.png" alt="" class="services">
-                      <h3>Jane Cooper</h3>
-                  </div>
-                  <div class="text-2">
-                      <p>Adoro esta aplicación, de verdad.</p>
-                      <img src="images/rating-stars.png" alt="" class="rating-stars">
-                  </div>
-              </div>
-              <div class="card cards-5">
-                  <div class="text-1">
-                      <img src="images/testimony-5.png" alt="" class="services">
-                      <h3>Leslie Alexander</h3>
-                  </div>
-                  <div class="text-2">
-                      <p>Hacen que mi vida sea más segura y fácil.</p>
-                      <img src="images/rating-stars.png" alt="" class="rating-stars">
-                  </div>
-              </div>
+<div class="section-testimonies">
+  <div class="testimonies-center">
+    <header>
+      <h2>Nuestros usuarios confirman que <%= image_tag "isotipo.svg" %> funciona</h2>
+    </header>
+      <div class="cards-testimonies">
+        <div class="card-t">
+          <header>
+            <img src="https://img.icons8.com/bubbles/500/000000/popular-man.png"/>
+            <div class="name-t">
+              <h3>Sebas Restrepo</h3>
+              <small>Estudiante</small>
+            </div>
+          </header>
+          <div class="body-t">
+            <i class="fa-solid fa-quote-left"></i>
+            <p>A mis amigos y a mí nos gusta mucho ver series en streaming. La opción de crear grupos nos permite compartir entre nosotros las credenciales de los sitios.</p>
           </div>
+        </div>
+        <div class="card-t">
+          <header>
+            <img src="https://img.icons8.com/bubbles/500/000000/happy-woman.png"/>
+            <div class="name-t">
+              <h3>Alejandra Zapata</h3>
+              <small>Diseñadora Gráfica</small>
+            </div>
+          </header>
+          <div class="body-t">
+            <i class="fa-solid fa-quote-left"></i>
+            <p>Aegis es lo que necesitaba. Compro mucho por internet, y la función de almacenar los datos de mi tarjeta me ayuda a agilizar todo el proceso.</p>
+          </div>
+        </div>
+        <div class="card-t">
+          <header>
+            <img src="https://img.icons8.com/bubbles/100/000000/male-in-love.png"/>
+            <div class="name-t">
+              <h3>Diego Marin</h3>
+              <small>Desarrollador UX/UI</small>
+            </div>
+          </header>
+          <div class="body-t">
+            <i class="fa-solid fa-quote-left"></i>
+            <p>La aplicación es maravillosa. Olvido la contraseña de mi correo electrónico cada momento y siempre tengo que recuperar la contraseña.</p>
+          </div>
+        </div>
+        <div class="card-t">
+          <header>
+            <img src="https://img.icons8.com/bubbles/100/000000/popular-woman.png"/>
+            <div class="name-t">
+              <h3>Ana Lopez</h3>
+              <small>Community Manager</small>
+            </div>
+          </header>
+          <div class="body-t">
+            <i class="fa-solid fa-quote-left"></i>
+            <p>Manejo muchas contraseñas de diferentes sitios de mi empresa. Esta aplicación me ayuda a no tener que preocuparme por recordarlas todos.</p>
+          </div>
+        </div>
+        <div class="card-t">
+          <header>
+            <img src="https://img.icons8.com/bubbles/500/000000/male-beloved.png"/>
+            <div class="name-t">
+              <h3>Juan Quintero</h3>
+              <small>Desarrollador Backend</small>
+            </div>
+          </header>
+          <div class="body-t">
+            <i class="fa-solid fa-quote-left"></i>
+            <p> Una aplicación genial. Me ha ayudado a recordar los datos de inicio de sesión de todas mis redes sociales. Se las recomiendo al 100.</p>
+          </div>
+        </div>
+        </div>
       </div>
+  </div>
+</div>
 
-      <div class="section-sponsor">
-          <h2 class="subtitle">Empresas que <span>confian</span> en <span>nosotros</span></h2>
-          <div class="section-company-sponsor">
-              <div class="company">
-                  <img src="images/sponsor-1.jpg" alt="" class="sponsor">
-              </div>
-              <div class="company">
-                  <img src="images/sponsor-2.jpg" alt="" class="sponsor">
-              </div>
-              <div class="company">
-                  <img src="images/sponsor-3.jpg" alt="" class="sponsor">
-              </div>
-              <div class="company">
-                  <img src="images/sponsor-4.jpg" alt="" class="sponsor">
-              </div>
-              <div class="company">
-                  <img src="images/sponsor-5.jpg" alt="" class="sponsor">
-              </div>
-              <div class="company">
-                  <img src="images/sponsor-6.jpg" alt="" class="sponsor">
-              </div>
-              <div class="company">
-                  <img src="images/sponsor-7.jpg" alt="" class="sponsor">
-              </div>
-          </div>
-
+<div id="sponsors" class="section-sponsor">
+  <h2>Empresas que confían en nosotros</h2>
+  <div class="sponsor-center">
+    <div class="section-company-sponsor">
+      <div class="company">
+        <%= image_tag "fastbox.png" %>
       </div>
-
-      <div class="ball-pink"></div>
-
-      <div class="footer">
-          <div class="column-1-footer">
-
-                  <img class="logo" src="images/logo-name.png" alt="">
-                  <div class="column-social-media">
-                      <p>Medellin | Colombia</p>
-                      <div class="social-media">
-                          <a href="https://es-la.facebook.com/"><img src="images/facebook.png" alt="" class="item-media"></a>
-                          <a href="https://www.instagram.com/"><img src="images/instagram.png" alt="" class="item-media"></a>
-                          <a href="https://www.youtube.com/"><img src="images/youtube.png" alt="" class="item-media"></a>
-                          <a href="https://twitter.com/?lang=es"><img src="images/twitter.png" alt="" class="item-media"></a>
-                      </div>
-                  </div>
-          </div>
-          <div class="column-2-footer">
-              <h4>Conectate con aegis</h4>
-              <div class="connect-aegis">
-                  <p>Soporte al cliente</p>
-                  <p>Politica de privacidad</p>
-                  <p>Terminos y condiciones</p>
-                  <p>Servicios externos</p>
-
-
-              </div>
-          </div>
-          <div class="column-3-footer">
-              <h4>Acerca de aegis</h4>
-              <div class="about-aegis">
-                  <p>Que es aegis</p>
-                  <p>Nuestra identidad</p>
-                  <p>Marca y logotipo</p>
-                  <p>Mision y vision</p>
-
-              </div>
-          </div>
+      <div class="company">
+        <%= image_tag "referent.png" %>
       </div>
-      <% else %>
+      <div class="company">
+        <%= image_tag "gamefinder.png" %>
+      </div>
+      <div class="company">
+        <%= image_tag "quehaypahacer.png" %>
+      </div>
+      <div class="company">
+        <%= image_tag "fastbox.png" %>
+      </div>
+      <div class="company">
+        <%= image_tag "talenty.png" %>
+      </div>
+      <div class="company">
+        <%= image_tag "gamefinder.png" %>
+      </div>
+      <div class="company">
+        <%= image_tag "pawsfinder.png" %>
+      </div>
+      <div class="company">
+        <%= image_tag "fastbox.png" %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="about-container">
+  <div class="about-center">
+      <%= image_tag "isologotipo.svg" %>
+      <h2>Confía en nuestra bóveda</h2>
+      <p>Aegis te acompaña sin importar adónde vayas. Tus credenciales seguras en un solo lugar y al alcance de tu mano. ¿Qué esperas para unirte?</p>
+      <footer>
+        <a href="users/sign_up">¡Comienza gratis!</a>
+      </footer>
+  </div>
+</div>
+<footer class="footer">
+  <div class="column-1-footer">
+    <div class="column-social-media">
+      <h3>aegis</h3>
+      <p>Medellín | Colombia</p>
+      <p>Hecho con <i class="fa-solid fa-heart"></i> por estudiantes de <a id="lewagon" href="https://www.lewagon.com/es" target="_blank">Le Wagon</a></p>
+    </div>
+  </div>
+  <div class="column-2-footer">
+    <h4>Acerca de la empresa</h4>
+    <div class="connect-aegis">
+      <p><%= link_to "Servicios", root_path(anchor: "services") %></p>
+      <p><%= link_to "Generador de contraseñas", root_path(anchor: "generator") %></p>
+      <p><%= link_to "Planes de subscripción", root_path(anchor: "plains") %></p>
+      <p><%= link_to "Empresas aliadas", root_path(anchor: "sponsors") %></p>
+    </div>
+  </div>
+  <div class="column-3-footer">
+    <h4>Development Team</h4>
+    <div class="about-aegis">
+      <div class="development-team">
+        <img src="https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1663368269/bbn7fim0p3fsrznek2nu.jpg"/>
+        <p><a href="https://github.com/zarco-dev" target="_blank">Sebas Restrepo</a></p>
+      </div>
+      <div class="development-team">
+        <img src="https://avatars.githubusercontent.com/u/88150970?v=4"/>
+        <p><a href="https://github.com/DIGORACCOON4279" target="_blank">Diego Marín&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></p>
+      </div>
+      <div class="development-team">
+        <img src="https://avatars.githubusercontent.com/u/63026883?v=4"/>
+        <p><a href="https://github.com/JuanSebastian0602" target="_blank">Juanse Quintero</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+<% else %>
 
 <% date_in = current_user.subscription.begining_date %>
   <% date_start = "#{date_in.day}/#{date_in.month}/#{date_in.year}" %>

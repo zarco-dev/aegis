@@ -25,14 +25,14 @@
   background-color: transparent;
   height: 150px;
   width: 100vw;
-  z-index: 30;
+  z-index: 300;
 }
 
 .menuToggle{
   position: relative;
   width: 65px;
   height: 65px;
-  background-color: #1B2831;
+  background: #192229;
   border: 5px solid transparent;
   border-radius: 50%;
   -webkit-border-radius: 50%;
@@ -192,5 +192,12 @@
 }
 
 .menu ul li:hover a {
-  color: #3cb0d0;
+  color: #32A6BE;
+}
+
+
+@media (max-width: 1370px) {
+  .navigation{
+    transform: scale(0.7);
+  }
 }

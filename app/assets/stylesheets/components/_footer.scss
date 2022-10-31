@@ -1,76 +1,127 @@
-.footer{
-    width: 100%;
-    display:flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    padding-top: 100px;
-    padding-bottom: 100px;
-    margin: auto;
-    background-color: var(--deep-gray);
+footer.footer{
+  width: 100%;
+  height: 40vh;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #11222c;
 }
+
 .footer .column-1-footer .logo{
     width: 60px;
     padding: 40px auto;
     margin-bottom: 50px;
     justify-content: center;
 }
+
 .footer .column-1-footer .column-social-media{
-    color: var(--light-gray);
+    color: #b7c1c8;
     font-size: 15px ;
     font-weight: 600;
-    font-family: var(--body-font);
-    border-left: 1px solid var(--light-blue);
+    border-left: 1px solid #3cb0d0;
     padding-left: 20px;
     padding-bottom: 20px;
 }
-.footer .column-1-footer .column-social-media p{
-    padding-bottom: 20px;
+
+.fa-heart {
+  color: #f7bfbf;
 }
-.footer .column-1-footer .column-social-media .social-media .item-media{
-    width:25px;
+
+
+.footer .column-2-footer h4, .column-3-footer h4{
+    color: #3cb0d0;
+    font-size: 17px ;
+    font-weight: bold;
+    margin-bottom: 40px;
 }
+
 .footer .column-2-footer .connect-aegis{
-    color: var(--light-gray);
-    font-size: 15px ;
-    font-weight: 600;
-    font-family: var(--body-font);
-    border-left: 1px solid var(--light-blue);
-    padding-left: 20px;
+  border-left: 1px solid #3cb0d0;
+  padding-left: 20px;
 }
-.footer .column-2-footer h4{
-    color: var(--light-blue);
-    font-size: 15px ;
-    font-weight: 600;
-    font-family: var(--body-font);
-    margin-bottom: 50px;
+
+.footer .column-2-footer .connect-aegis p a{
+  color: #b7c1c8;
+  font-size: 15px ;
+  font-weight: lighter;
+  padding-bottom: 20px;
+  text-decoration: none;
+  transition: .2s;
 }
-.footer .column-2-footer .connect-aegis p{
-    color: var(--light-gray);
-    font-size: 15px ;
-    font-weight: 600;
-    font-family: var(--body-font);
-    padding-bottom: 20px;
+
+.footer .column-2-footer .connect-aegis p a:hover{
+  text-decoration: underline #3cb0d0;
 }
+
+#lewagon {
+  text-decoration: none;
+  color: #f7bfbf;
+}
+
+#lewagon:hover {
+  text-decoration: underline #f7bfbf;
+}
+
+footer .column-3-footer {
+  // background-color: #f7bfbf;
+  width: 190px;
+}
+
+
 .footer .column-3-footer .about-aegis{
-    color: var(--light-gray);
-    font-size: 15px ;
-    font-weight: 600;
-    font-family: var(--body-font);
-    border-left: 1px solid var(--light-blue);
+    border-left: 1px solid #3cb0d0;
     padding-left: 20px;
+    // background-color: red;
+    width: 100%;
+    height: 156px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
 }
-.footer .column-3-footer h4{
-        color: var(--light-blue);
-        font-size: 15px ;
-        font-weight: 600;
-        font-family: var(--body-font);
-        margin-bottom: 50px;
-}
+
 .footer .column-3-footer .about-aegis p{
-    color: var(--light-gray);
-    font-size: 15px ;
-    font-weight: 600;
-    font-family: var(--body-font);
-    padding-bottom: 20px;
+  color: #b7c1c8;
+  font-size: 15px ;
+  font-weight: lighter;
+  text-decoration: none;
+  transition: .2s;
+}
+
+.development-team {
+  // background-color: aquamarine;
+  width: 100%;
+  height: 30%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.development-team img {
+  width: 40px;
+  padding: 0;
+  margin: 0;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.development-team p {
+  padding: 0;
+  margin: 0;
+  // background-color: yellow;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.development-team p a {
+  text-decoration: none;
+  color: #b7c1c8;
+  padding: 0;
+  margin: 0;
+}
+
+.development-team p a:hover {
+  text-decoration: underline #3cb0d0;
 }

@@ -28,6 +28,11 @@ class PagesController < ApplicationController
   def mygroups
   end
 
+
   def destroy
   end
+
+  def generate
+  end
+  
 end

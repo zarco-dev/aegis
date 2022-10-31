@@ -1,44 +1,83 @@
-.section-sponsor{
-    width:80%;
-    height:auto;
-    padding: 150px 0px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-}
-.section-sponsor .subtitle{
-    color: var(--gray);
-    font-size: 40px ;
-    font-weight: 600;
-    padding-bottom: 150px;
-    font-family: var(--headers-font);
-}
-.section-sponsor .subtitle  span{
-    color: var(--light-blue);
- }
-.section-sponsor .section-company-sponsor{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 20px
-}
-.section-sponsor .section-company-sponsor .company .sponsor{
-    margin: 0px 20px;
-    border-radius: 8px;
-    width: 210px;
-    height: 150px;
-    opacity:.5;
-    transition: .2s;
-}
-.section-sponsor .section-company-sponsor .company .sponsor:hover{
-    box-shadow: 0 0 3px var(--hotpink);
-    opacity: .8;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", "Helvetica", "sans-serif";
 }
 
+.section-sponsor {
+  background: #192229;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
+.section-sponsor h2 {
+  width: 90vh;
+  height: 15%;
+  // background-color: yellow;
+  padding: 0;
+  margin: 0;
+  font-size: 50px;
+  font-weight: bold;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
 
+.sponsor-center {
+  // background-color: red;
+  height: 50vh;
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
+.section-company-sponsor {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  // background-color: rgb(3, 75, 51);
+  padding: 50px 0;
+  height: 100%;
+  width: 100%;
+}
+
+.section-company-sponsor .company {
+  // background-color: aqua;
+  width: 19%;
+  height: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-company-sponsor .company img {
+  width: 270px;
+  filter: saturate(0%);
+  transition: .4s;
+}
+
+.section-company-sponsor .company img:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 1370px) {
+  .section-sponsor h2 {
+    font-size: 37px;
+  }
+
+  .section-company-sponsor .company img {
+    width: 182px;
+    filter: saturate(0%);
+    transition: .4s;
+  }
+}

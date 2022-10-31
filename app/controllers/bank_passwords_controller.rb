@@ -51,7 +51,7 @@ class BankPasswordsController < ApplicationController
     params.require(:bank_password).permit(
       :cardholder,
       :account_type,
-      :bank_name,
+      # :bank_name,
       :franchise,
       :account_number,
       :secure_code,

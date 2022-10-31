@@ -1,32 +1,32 @@
 <div class="dashboard-body">
   <div class="row">
-
+​
     <div class="col-3">
       <%= render "shared/left_navbar"%>
     </div>
-
+​
     <div class="col-9 blue-bg text-white">
-
+​
       <div class="container mt-3">
         <h1 class="title-slide-in">Grupos a los que pertenezco</h1>
-
+​
           <div class="bg-icon">
             <img src="https://img.icons8.com/bubbles/500/000000/crowd--v2.png"/>
           </div>
-
+​
         <% current_user.group_invitations.each_with_index do |group, num| %>
           <% if group.status.eql?(true) %>
             <div class="group-card p-4 mt-4" style="
             animation: cardSlide <%= num + 1 - num * 0.75 %>s;
             ">
-
+​
               <p>Grupo <strong>'<%= group.group.name %>'</strong> (Invitado por: <span>@<%= group.group.user.username %></span>) </p>
               <button type="button" class="btn btn-view" data-bs-toggle="modal" data-bs-target="#group<%= group.id %>">
               Ver contraseñas
               </button>
-
+​
             </div>
-
+​
             <div class="modal fade" id="group<%= group.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content modal-styles">
@@ -42,28 +42,11 @@
                         <input id="oculto" class="form-control" type="text" value='<%= password.site_password %>' readonly>
                       </div>
                     <% end %>
-              <p><%= group.group.name %> (Invitado por: <span><%= group.group.user.username %></span>)</p>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#group<%= group.id %>">
-          Ver contraseñas
-        </button>
-             <div class="modal fade" id="group<%= group.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Contraseñas del grupo <%= group.group.name %></h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <p><% group.group.passwords.each do |password| %></p>
-                  <div class="card p-3">
-                    <p>Sitio: <%= password.site_name %></p>
-                    <label for="oculto">Password:</label>
-                    <input id="oculto" class="form-control" type="text" value='<%= password.site_password %>' readonly>
                   </div>
                 </div>
               </div>
             </div>
-
+​
           <% end %>
         <% end %>
       </div>

@@ -5,8 +5,12 @@
   cursor: url(cursor.png), auto;
 }
 
-a, button, .fa-house, .fa-user-plus, .fa-right-to-bracket, .fa-lock, input[type="color"], section.tarjeta *, input.btn-enviar, .contenedor-btn, .fa-plus{
+a, button, .fa-house, .fa-user-plus, .fa-right-to-bracket, .fa-lock, input[type="color"], section.tarjeta *, input.btn-enviar, .contenedor-btn, .fa-plus, input[type="submit"], .fa-circle-arrow-left, .fa-circle-arrow-left span, span.icon-input .fa-eye-slash, span.icon-input .fa-eye {
   cursor: url(cpointer.png), auto !important;
+}
+
+input[type="text"], input[type="password"], input[type="number"], input[type="email"] {
+  cursor: url(cursortext.png), auto !important;
 }
 
 body {

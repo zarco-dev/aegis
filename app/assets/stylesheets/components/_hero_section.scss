@@ -10,7 +10,6 @@
 }
 
 .circle-fondo-hero {
-
   width: 60vw;
   height: 100vh;
   background: linear-gradient(162deg, #0e4974, #05283f);
@@ -18,7 +17,16 @@
   position: absolute;
   border-radius: 0% 10% 11% 0% / 0% 41% 51% 0%;
   left: 0;
+}
 
+.circle-fondo-hero-sign {
+  width: 60vw;
+  height: 100vh;
+  background: linear-gradient(162deg, #0e4974, #05283f);
+  z-index: 20;
+  position: absolute;
+  border-radius: 29% 0% 0% 17% / 28% 0% 0% 44%;
+  right: 0;
 }
 
 .hero-section {

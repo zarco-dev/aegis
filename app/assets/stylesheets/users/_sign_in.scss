@@ -13,26 +13,43 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  position: relative;
 }
 
-.circle-login {
-  background-color: #053c5e;
+.back-font {
   position: absolute;
-  width: 54vw;
-  height: 100vh;
-  left: 0px;
-  z-index: 1;
-  border-radius: 26% 74% 58% 42% / 46% 15% 85% 54%  ;
-  -webkit-border-radius: 26% 74% 58% 42% / 46% 15% 85% 54%  ;
-  -moz-border-radius: 26% 74% 58% 42% / 46% 15% 85% 54%  ;
-  -ms-border-radius: 26% 74% 58% 42% / 46% 15% 85% 54%  ;
-  -o-border-radius: 26% 74% 58% 42% / 46% 15% 85% 54%  ;
+  top: 32px;
+  left: 27px;
+  font-size: 2em;
+  color: #3cb0d0;
+  text-decoration: none;
+  z-index: 500;
+}
+
+.display-ojo {
+  display: none;
+}
+
+.fa-circle-arrow-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .3s;
+}
+
+.fa-circle-arrow-left:hover {
+  color: #1f9bbd;
+}
+
+.fa-circle-arrow-left span {
+  font-size: 0.7em;
+  margin: 0 0 0 11px;
 }
 
 .icon-input {
   position: relative;
-  top: -47px;
-  left: 397px;
+  top: -46px;
+  left: 396px;
   font-size: 1.2em;
   color: #053C5E;
 }
@@ -41,4 +58,54 @@
   box-shadow: none !important;
   outline: none;
   border: none;
+}
+
+@media (max-width: 1370px) {
+  .back-font {
+    font-size: 1.5em;
+  }
+
+  .form-sign {
+    width: 45vw;
+    padding: 60px 60px 0 60px;
+    height: 80vh;
+    margin-top: 47px;
+  }
+
+.form-sign h2, .form-sign .h2 {
+  font-size: 1.6em;
+  }
+
+  .form-sign label {
+    font-size: 0.9em;
+  }
+
+  .buttons-footer p {
+    font-size: 0.9em;
+  }
+
+  .form-sign form {
+    width: 35vw;
+    padding: 24px 50px;
+  }
+
+  .buttons-footer {
+    width: 213px;
+  }
+
+  .btn-login {
+    width: 109px !important;
+    height: 36px !important;
+    font-size: 14px !important;
+    padding: 0 !important;
+  }
+
+  .icon-input {
+    top: -38px;
+    left: 342px;
+  }
+
+  .log-in-container {
+    padding-top: 57px;
+  }
 }

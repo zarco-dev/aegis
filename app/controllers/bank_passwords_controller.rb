@@ -21,7 +21,7 @@ class BankPasswordsController < ApplicationController
     if @bankpassword.save
       redirect_to bank_passwords_path
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 

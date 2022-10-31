@@ -1,8 +1,10 @@
-<div class="log-in-container">
-<div class="circle-login"></div>
+<div class="log-in-container" data-controller="signup">
+<div class="circle-fondo-hero"></div>
   <div class="form-sign" id="sign-in-valid">
+  <%= link_to :back, class: "back-font" do %>
+    <i class="fa-solid fa-circle-arrow-left"> <span>Regresar<span></i>
+  <% end %>
     <h2>Inicia Sesión</h2>
-
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: false }) do |f| %>
       <div class="form-inputs">
         <%= f.input :email,
@@ -12,13 +14,13 @@
         <span class="icon-input"><i class="fa-solid fa-envelope"></i></span>
         <span><%= f.input :password,
                     label: "Contraseña",
-                    input_html: { autocomplete: "current-password" } %></span>
-        <span class="icon-input"><i class="fa-solid fa-eye-slash"></i></span>
+                    input_html: { autocomplete: "current-password", data: { signup_target: 'inputpass' } } %></span>
+        <span class="icon-input" data-action="click->signup#showpass"><i class="fa-solid fa-eye-slash" data-signup-target="eyeslash"></i><i class="fa-solid fa-eye display-ojo" data-signup-target="eyenormal"></i></span>
         <%= f.input :remember_me, label: "Recuerdame", as: :boolean if devise_mapping.rememberable? %>
       </div>
 
       <div class="form-actions form-footer">
-        <%= f.button :submit, "Inicia sesión" %>
+        <%= f.button :submit, "Inicia sesión", class: "btn-login" %>
         <div class="buttons-footer">
         <p>¿No tienes cuenta?</p>
         <p><%= render "devise/shared/links" %></p>

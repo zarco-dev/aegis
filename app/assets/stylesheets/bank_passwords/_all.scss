@@ -24,12 +24,62 @@
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  align-items: flex-start;
+  margin-top: 66px;
 }
 
 .options-cards {
-  // background-color: green;
-  height: 30%;
+  background: #192229a4;
+  // background: #d8b209;
+  height: 94px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  z-index: 500;
+  padding-left: 50px;
+  transition: .2s;
 }
+
+.search-form-control {
+  position: relative;
+}
+
+.search-form-control .btn {
+  position: absolute;
+  top: 2px;
+  bottom: 8px;
+  right: 8px;
+}
+
+a .fa-circle-plus {
+  margin-left: 12px;
+  position: relative;
+  top: 3px;
+  font-size: 1.3em;
+  transition: .2s;
+}
+
+a:hover .fa-circle-plus, .options-cards a:hover {
+  color: #32A6BE;
+}
+
+.search-form-control .form-control {
+  height: 2.5rem;
+  // box-shadow: 0 2px 6px rgb(0 0 0 / 8%);
+  border: 1px solid #E7E7E7;
+  width: 500px;
+  margin-left: 45px;
+  border-radius: 10px;
+}
+
+.search-form-control .form-control:focus {
+  border: 1px solid #1EDD88;
+  outline: none !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
 
 .options-cards a {
   text-decoration: none;
@@ -37,17 +87,150 @@
   font-weight: bold;
 }
 
+.circle-fondo-bank {
+  width: 80%;
+  height: 100%;
+  background: linear-gradient(162deg, #154c74, #07273d);
+  z-index: 1;
+  position: absolute;
+  border-radius: 29% 0% 0% 17% / 28% 0% 0% 44%;
+  right: 0;
+}
+
 .row-test .index-cards{
-  background: url(https://wallpapercave.com/wp/wp3274904.jpg);
+  // background: radial-gradient(circle at center, #3e85b1 , #172934);
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  background: #172934;
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: space-evenly;
+  // justify-content: space-evenly;
   // align-items: s;
   flex-direction: column;
+  position: relative;
+
+  width: calc(100% - 25%);
+  left: 25%;
+  transition: var(--tran-05);
 }
 
 .tarjetas-bank {
-  margin-bottom: 9px;
-  margin-top: 123px;
+  margin-top: 98px;
+  margin-bottom: 15px;
+}
+
+a i#agregar-bank {
+  background-color: transparent;
+  width: 70px;
+  height: 70px;
+  position: fixed;
+  right: 15px;
+  top: 875px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3.3em;
+  color: #32A6BE;
+  cursor: pointer;
+  animation-name: addcard;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  z-index: 10;
+}
+
+.btncard-delete {
+  position: absolute;
+  z-index: 10;
+  right: -15px;
+  top: -10px;
+  border-radius: 50%;
+  transition: .2s;
+  border: none;
+}
+
+.btncard-delete i.fa-solid.fa-circle-xmark {
+  font-size: 2.5em;
+  // transition: .2s;
+  color: #f7bfbf;
+  // backface-visibility: hidden;
+}
+
+.btncard-delete i.fa-solid.fa-circle-xmark:hover {
+  transform: scale(1.02);
+  color: #f19f9f;
+}
+
+.btncard-delete img {
+  width: 50px;
+}
+
+.btncard-delete img:hover {
+  transform: scale(1.1);
+}
+
+a i#agregar-bank:hover {
+  transform: scale(1.1);
+  color: #2298af;
+}
+
+@keyframes addcard {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.15);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+@media (max-width: 1370px) {
+
+  .tarjetas-bank {
+    margin-top: 65px;
+    margin-bottom: 0px;
+}
+
+  section.tarjeta {
+    max-width: 440px;
+    height: 275px;
+  }
+
+  .btncard-delete {
+    right: -16px;
+    top: -11px;
+  }
+
+  .btncard-delete img {
+    width: 45px;
+  }
+
+  .options-cards {
+    height: 83px;
+  }
+
+  .search-form-control .form-control {
+    height: 2rem;
+    width: 450px;
+  }
+
+  .search-form-control .btn {
+    top: 0px;
+    font-size: 0.8em;
+  }
+
+  a i#agregar-bank {
+    width: 50px;
+    height: 50px;
+    right: 14px;
+    top: 593px;
+    font-size: 2.5em;
+  }
+
 }

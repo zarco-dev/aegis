@@ -2,6 +2,15 @@ class BankPasswordsController < ApplicationController
 
   def index
     @bankpasswords = policy_scope(BankPassword)
+
+    if params[:query].present?
+      @bankpasswords = @bankpasswords.where('account_number LIKE ?', "#{params[:query]}%")
+    end
+
+    respond_to do |format|
+      format.html # Follow regular flow of Rails
+      format.text { render partial: "bank_passwords/parm", locals: {bank_passwords: @bankpasswords}, formats: [:html] }
+    end
   end
 
   def show

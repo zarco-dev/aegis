@@ -1,0 +1,52 @@
+<section class="tarjeta tarjetas-bank" data-bank-target="tarjeta" data-action="click->bank#show" data-controller="bank">
+  <div class="front" data-bank-target="colorcard" style="background-color: <%= bankpassword.account_type %>;">
+  <%= link_to bankpassword, data: { turbo_method: :delete, turbo_confirm: "¿Quieres borrar esta tarjeta?" } do %>
+    <button type="button" class="btn btncard-delete">
+      <%# <i class="fa-solid fa-circle-xmark"></i> %>
+      <%= image_tag "close3.png" %>
+    </button>
+  <% end %>
+    <div class="logo-bank" data-bank-target="logofranquicia"><img src="<%= bankpassword.franchise %>" alt=""></div>
+    <div class="chip-less">
+      <img src="https://i.imgur.com/csJj7iF.png" class="chip" alt="">
+      <img src="https://i.imgur.com/sMJGT15.png" class="chip" alt="">
+    </div>
+    <div class="dates">
+      <div class="groups-info-bank">
+        <p class="bank-label">Numero Tarjeta</p>
+        <p class="bank-number" data-bank-target="numbercard"><%= bankpassword.account_number %></p>
+      </div>
+      <div class="flexbox">
+        <div class="groups-info-bank">
+          <p class="bank-label">Nombre Tarjeta</p>
+          <p class="bank-name" data-bank-target="namecard"><%= bankpassword.cardholder %></p>
+        </div>
+        <div class="groups-info-bank">
+          <p class="bank-label">Expiración</p>
+          <% if bankpassword.expiration_date.month < 10 %>
+            <% month = "0#{bankpassword.expiration_date.month}" %>
+            <% else %>
+            <% month =  bankpassword.expiration_date.month%>
+          <% end %>
+          <p class="bank-expired"><span class="month" data-bank-target="expiratemonth"><%= month %></span> / <span class="year" data-bank-target="expirateyear"><%= bankpassword.expiration_date.year.to_s.chars[2,3].join%></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="back" data-bank-target="colorcard" style="background-color: <%= bankpassword.account_type %>;">
+    <div class="barra-magnetica"></div>
+    <div class="dates">
+      <div class="groups-info-bank" id="firma">
+        <p class="bank-label">Firma</p>
+        <div class="bank-firma"><p data-bank-target="firma"><%= bankpassword.cardholder %></p></div>
+      </div>
+      <div class="groups-info-bank" id="cvc">
+        <p class="bank-label">CVC</p>
+        <p class="cvc" data-bank-target="cvc"><%= bankpassword.secure_code %></p>
+      </div>
+    </div>
+    <p class="leyenda">
+      Esta tarjeta es una representación visual de la tarjeta que estas ingresando aqui, puedes cambiarle el color para identificarla mejor.</p>
+      <a href="#" class="link-bank">aegis.com</a>
+  </div>
+</section>

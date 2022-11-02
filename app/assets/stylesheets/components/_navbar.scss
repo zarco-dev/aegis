@@ -54,11 +54,25 @@
   -moz-transition: box-shadow .1s;
   -ms-transition: box-shadow .1s;
   -o-transition: box-shadow .1s;
+  animation-name: menutoggle;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
 }
 
-.menuToggle:hover{
-  box-shadow: 0 0 4px 2px #3cb0d0;
+@keyframes menutoggle {
+  0% {
+    box-shadow: 0 0 4px 2px #3cb0d054;
+  }
+
+  50% {
+    box-shadow: 0 0 4px 2px #3cb0d0;
+  }
+
+  100% {
+    box-shadow: 0 0 4px 2px #3cb0d054;
+  }
 }
+
 
 .menuToggle img{
   width: 60px;

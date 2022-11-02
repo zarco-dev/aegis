@@ -1,62 +1,34 @@
 <div class="banking-all">
+<script>
+  document.title = "Aegis: Tus tarjetas";
+</script>
   <div class="row row-test">
-    <div class="col-3 navbar-full">
-      <%= render "shared/left_navbar" %>
-    </div>
-    <div class="col-9 index-cards">
-      <div class="options-cards">
-        <%= link_to "Almacenar bankpassword", new_bank_password_path %>
-      </div>
-      <div class="cards-all">
-        <% @bankpasswords.each do |bankpassword| %>
-          <section class="tarjeta tarjetas-bank" data-bank-target="tarjeta" data-action="click->bank#show" data-controller="bank">
-            <div class="front" data-bank-target="colorcard" style="background-color: <%= bankpassword.account_type %>;">
-              <div class="logo-bank" data-bank-target="logofranquicia"><img src="<%= bankpassword.franchise %>" alt=""></div>
-              <div class="chip-less">
-                <img src="https://i.imgur.com/csJj7iF.png" class="chip" alt="">
-                <img src="https://i.imgur.com/sMJGT15.png" class="chip" alt="">
-              </div>
-              <div class="dates">
-                <div class="groups-info-bank">
-                  <p class="bank-label">Numero Tarjeta</p>
-                  <p class="bank-number" data-bank-target="numbercard"><%= bankpassword.account_number %></p>
-                </div>
-                <div class="flexbox">
-                  <div class="groups-info-bank">
-                    <p class="bank-label">Nombre Tarjeta</p>
-                    <p class="bank-name" data-bank-target="namecard"><%= bankpassword.cardholder %></p>
-                  </div>
-                  <div class="groups-info-bank">
-                    <p class="bank-label">Expiración</p>
-                    <% if bankpassword.expiration_date.month < 10 %>
-                      <% month = "0#{bankpassword.expiration_date.month}" %>
-                      <% else %>
-                      <% month =  bankpassword.expiration_date.month%>
-                    <% end %>
-                    <p class="bank-expired"><span class="month" data-bank-target="expiratemonth"><%= month %></span> / <span class="year" data-bank-target="expirateyear"><%= bankpassword.expiration_date.year.to_s.chars[2,3].join%></span></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="back" data-bank-target="colorcard" style="background-color: <%= bankpassword.account_type %>;">
-              <div class="barra-magnetica"></div>
-              <div class="dates">
-                <div class="groups-info-bank" id="firma">
-                  <p class="bank-label">Firma</p>
-                  <div class="bank-firma"><p data-bank-target="firma"><%= bankpassword.cardholder %></p></div>
-                </div>
-                <div class="groups-info-bank" id="cvc">
-                  <p class="bank-label">CVC</p>
-                  <p class="cvc" data-bank-target="cvc"><%= bankpassword.secure_code %></p>
-                </div>
-              </div>
-              <p class="leyenda">
-                Esta tarjeta es una representación visual de la tarjeta que estas ingresando aqui, puedes cambiarle el color para identificarla mejor.</p>
-                <a href="#" class="link-bank">aegis.com</a>
-            </div>
-          </section>
+    <%= render "shared/left_navbar" %>
+    <div class="col-9 index-cards" data-controller="searchcards">
+      <div class="options-cards" data-sidebar-target="colorbank">
+        <%= link_to new_bank_password_path do %>
+          Almacenar tarjeta<i class="fa-solid fa-circle-plus"></i>
+        <% end %>
+        <%= form_with url: bank_passwords_path, method: :get, html: { data: { searchcards_target: "searchcard" } } do |f| %>
+          <div class="search-form-control form-group">
+            <%= f.text_field :query,
+                              class: "form-control",
+                              value: params[:query],
+                              data: { searchcards_target: "inputsearch", action: "keyup->searchcards#showcards"} %>
+            <button class="btn btn-flat">
+              <i class="fas fa-search"></i> Buscar tarjeta por número
+            </button>
+          </div>
         <% end %>
       </div>
+        <%= link_to new_bank_password_path do %>
+          <i class="fa-solid fa-circle-plus" id="agregar-bank"></i>
+          <%# <%= image_tag "plus.png", class: "fa-circle-plus" %>
+        <% end %>
+
+        <%= render "parm", bank_passwords: @bankpasswords %>
+        <div class="circle-fondo-bank"></div>
+
     </div>
   </div>
 </div>

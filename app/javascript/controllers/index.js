@@ -19,5 +19,11 @@ application.register("invitation", InvitationController)
 import NavbarController from "./navbar_controller"
 application.register("navbar", NavbarController)
 
+import SearchcardsController from "./searchcards_controller"
+application.register("searchcards", SearchcardsController)
+
+import SidebarController from "./sidebar_controller"
+application.register("sidebar", SidebarController)
+
 import SignupController from "./signup_controller"
 application.register("signup", SignupController)

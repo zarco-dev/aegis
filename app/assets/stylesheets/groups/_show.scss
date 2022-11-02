@@ -1,0 +1,158 @@
+.group-bg {
+  background: linear-gradient(0deg, #1d2b3a 0%, #298cae 100%);
+  min-width: 100%;
+  min-height: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.groupinv-bg {
+  background: linear-gradient(0deg, #1c334a 0%, #246f8a 100%);
+  min-width: 100%;
+  min-height: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+.option-card {
+  background: rgba(48, 66, 82, 0.671);
+  box-shadow: 0 4px 10px 0 rgba(11, 15, 19, 0.6);
+  border-radius: 5px;
+}
+
+.passwords-card {
+  background: rgba(48, 66, 82, 0.671);
+  box-shadow: 0 4px 15px 0 rgb(11, 15, 19);
+  border-radius: 5px;
+}
+
+.group-img {
+  width: 200px;
+  height: 200px;
+}
+
+.password-info {
+  background: radial-gradient(circle at left bottom, #2c4057 , #247e9c);
+  box-shadow: 0 4px 15px 0 rgb(11, 15, 19);
+  border-radius: 5px;
+  height: 50px;
+  font-size: 18px;
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+.iframe-box {
+
+  iframe {
+    width: 45%;
+    height: 85vh;
+    border-radius: 6px;
+    position: fixed;
+  }
+}
+
+.status {
+  width: fit-content;
+  padding: 5px;
+  border-radius: 5px;
+
+  p {
+    margin: 0;
+  }
+}
+
+.accepted {
+  position: relative;
+  background-color: #2c4057;
+}
+
+.accepted:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 5px;
+  padding: 1px;
+  background:linear-gradient(45deg, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000);
+  -webkit-mask:
+     linear-gradient(#fff 0 0) content-box,
+     linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+
+  animation: rainbowAnimation .90s ease 1s infinite normal;
+}
+
+.pending {
+  background-color: #1c334a;
+}
+
+.active-pass {
+  background: radial-gradient(circle at right top, #437fad , #25397a);
+  border: none;
+  box-shadow: 0 4px 10px 0 rgba(11, 15, 19, 0.6);
+
+  transition: transform .5s;
+}
+
+.active-pass:hover {
+  transform: scale(1.04);
+}
+
+.disabled-pass {
+  background: radial-gradient(circle at right top, #696969 , #292829);
+  border: none;
+  box-shadow: 0 4px 10px 0 rgba(11, 15, 19, 0.6);
+
+  transition: transform .5s;
+}
+
+.disabled-pass:hover {
+  transform: scale(1.04);
+}
+
+.group-badge {
+  width: fit-content;
+  padding: 5px;
+  border-radius: 5px;
+  position: relative;
+  background: #298cae;
+  font-size: 12px;
+
+  bottom: 17px;
+
+  transition: transform .5s;
+
+  left: 12px;
+
+  p {
+    margin: 0;
+  }
+}
+
+.group-badge:hover {
+  transform: scale(1.04);
+}
+
+@keyframes rainbowAnimation {
+  20% { background:linear-gradient(45deg, #ff0000, #fb0094, #0000ff, #00ff00, #ffff00); }
+  40% { background:linear-gradient(45deg, #ffff00, #ff0000, #fb0094, #0000ff, #00ff00); }
+  60% { background:linear-gradient(45deg, #00ff00, #ffff00, #ff0000, #fb0094, #0000ff); }
+  80% { background:linear-gradient(45deg, #0000ff, #00ff00, #ffff00, #ff0000, #fb0094); }
+  100% { background:linear-gradient(45deg, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000); }
+}

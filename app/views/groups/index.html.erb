@@ -5,30 +5,30 @@
       <%= render "shared/left_navbar"%>
     </div>
 
-    <div class="col-9">
+    <div class="col-9 blue-bg text-white">
       <div class="container mt-3">
 
         <h1>Mis grupos</h1>
 
           <% @groups.each do |group| %>
-            <div class="mt-5 mb-5">
+            <div class="group-card p-3 mt-4 mb-4">
               <h3><%= group.name %> <%= link_to group_path(group) do %>
-                <button type="button" class="btn btn-primary" style="color: white;">
+                <button type="button" class="btn-group-info" style="color: white;">
                   <i class="fa-solid fa-circle-info"></i>
                 </button>
               <% end %></h3>
               <p>Usuarios de este grupo:
               <% GroupInvitation.all.each do |group_i| %>
                 <% if group.id == group_i.group.id && group_i.status == true %>
-                  <span class="bg-info text-dark p-2 mx-1"><%= group_i.user.username  %></span>
+                  <span class="user-badge p-1 mx-1">@<%= group_i.user.username  %></span>
                 <% end %>
               <% end %></p>
 
-              <p><%= group.description %></p>
+              <p>"<%= group.description %>"</p>
             </div>
           <% end %>
 
-          <%= link_to '+ Crear grupo', new_group_path, class: "btn btn-success" %>
+          <%= link_to '+ Crear grupo', new_group_path, class: "btn btn-blue" %>
 
       </div>
     </div>

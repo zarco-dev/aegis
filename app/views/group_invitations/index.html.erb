@@ -1,16 +1,24 @@
-<div class="dashboard-body">
+<div class="dashboard-body groupinv-bg">
   <div class="row">
 
-    <div class="col-9">
-      <div class="container mt-3">
+    <div class="col-12 pt-4 text-white">
+      <div class="container">
 
         <h1>Invitaciones</h1>
 
         <% @group_invitations.each do |group_invitation| %>
-          <div class="mt-5 mb-5">
-            <h3>Invitacion para <%= group_invitation.user.username %></h3>
-            <em><small>Invitado por: <%= group_invitation.group.user.username %></small></em>
-            <p>Estado: <%= group_invitation.status %></p>
+          <div class="option-card mt-5 mb-5 p-3">
+            <h3>Invitacion para <strong>@<%= group_invitation.user.username %></strong></h3>
+            <small>Invitado por: <%= group_invitation.group.user.username %></small>
+            <% if group_invitation.status == true %>
+              <div class="status accepted mt-2">
+                <p>@<%= group_invitation.user.username %> ya hace parte del grupo!</p>
+              </div>
+            <% else %>
+              <div class="status pending mt-2">
+                <p>Pendiente</p>
+              </div>
+            <% end %>
           </div>
         <% end %>
 

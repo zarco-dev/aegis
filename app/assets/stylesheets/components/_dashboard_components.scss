@@ -1,3 +1,18 @@
+.blue-bg {
+  background: radial-gradient(circle at left bottom, #001124 , #325977);
+  min-width: 100%;
+  min-height: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  z-index: -2;
+}
+
+.dashboard-body {
+  height: 100vh;
+}
+
 .dash-card {
   position: relative;
 
@@ -7,6 +22,10 @@
   -webkit-backdrop-filter: blur( 0px );
   border-radius: 10px;
   width: 98%;
+
+  p {
+    margin: 0;
+  }
 }
 
 .btn-view {
@@ -41,7 +60,7 @@
 
 .modal-styles {
   background: radial-gradient(circle at left bottom, #00162e , #2d516c);
-  box-shadow: 0 2px 10px 0 rgb(21, 9, 22);
+  box-shadow: 0 2px 10px 0 rgba(21, 9, 22, 0.6);
   backdrop-filter: blur( 0px );
   -webkit-backdrop-filter: blur( 0px );
   border-radius: 10px;

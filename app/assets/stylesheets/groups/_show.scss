@@ -1,5 +1,5 @@
 .group-bg {
-  background: linear-gradient(0deg, #1d2b3a 0%, #298cae 100%);
+  background: linear-gradient(0deg, #1d2b3a 0%, #185468 100%);
   min-width: 100%;
   min-height: 100%;
   -webkit-background-size: cover;
@@ -9,13 +9,17 @@
 }
 
 .groupinv-bg {
-  background: linear-gradient(0deg, #1c334a 0%, #246f8a 100%);
+  background: linear-gradient(0deg, #16283a 0%, #325a79 100%);
   min-width: 100%;
   min-height: 100%;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+
+  h1 {
+    font-size: 3rem;
+  }
 }
 
 
@@ -23,6 +27,22 @@
   background: rgba(48, 66, 82, 0.671);
   box-shadow: 0 4px 10px 0 rgba(11, 15, 19, 0.6);
   border-radius: 5px;
+  margin: 0;
+  height: 325px;
+
+  color: white;
+
+  transition: all .75s;
+}
+
+.option-card:hover {
+  background: linear-gradient(180deg, #1f6d86 0%, #1d2b3a 100%);
+  transform: scale(1.1);
+}
+
+a:-webkit-any-link {
+  text-decoration: none;
+  cursor: auto;
 }
 
 .passwords-card {
@@ -32,8 +52,8 @@
 }
 
 .group-img {
-  width: 200px;
-  height: 200px;
+  width: 175px;
+  height: 175px;
 }
 
 .password-info {
@@ -65,41 +85,6 @@
     border-radius: 6px;
     position: fixed;
   }
-}
-
-.status {
-  width: fit-content;
-  padding: 5px;
-  border-radius: 5px;
-
-  p {
-    margin: 0;
-  }
-}
-
-.accepted {
-  position: relative;
-  background-color: #2c4057;
-}
-
-.accepted:before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 5px;
-  padding: 1px;
-  background:linear-gradient(45deg, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000);
-  -webkit-mask:
-     linear-gradient(#fff 0 0) content-box,
-     linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-          mask-composite: exclude;
-
-  animation: rainbowAnimation .90s ease 1s infinite normal;
-}
-
-.pending {
-  background-color: #1c334a;
 }
 
 .active-pass {
@@ -147,12 +132,4 @@
 
 .group-badge:hover {
   transform: scale(1.04);
-}
-
-@keyframes rainbowAnimation {
-  20% { background:linear-gradient(45deg, #ff0000, #fb0094, #0000ff, #00ff00, #ffff00); }
-  40% { background:linear-gradient(45deg, #ffff00, #ff0000, #fb0094, #0000ff, #00ff00); }
-  60% { background:linear-gradient(45deg, #00ff00, #ffff00, #ff0000, #fb0094, #0000ff); }
-  80% { background:linear-gradient(45deg, #0000ff, #00ff00, #ffff00, #ff0000, #fb0094); }
-  100% { background:linear-gradient(45deg, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000); }
 }

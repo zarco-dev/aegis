@@ -1,1 +1,11 @@
 @import "show";
+@import "new";
+
+.invi-card {
+  background: rgba(48, 66, 82, 0.671);
+  box-shadow: 0 4px 10px 0 rgba(11, 15, 19, 0.6);
+  border-radius: 5px;
+  margin: 0;
+
+  color: white;
+}

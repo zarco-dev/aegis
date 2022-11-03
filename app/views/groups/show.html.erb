@@ -1,25 +1,21 @@
-<div class="group-bg">
+<div class="blue-bg">
   <div class="container pt-5">
   <div class="row">
     <div class="col-6 text-white">
       <h1>Detalles del grupo '<%= @group.name %>'</h1>
-        <div class="row text-center mt-4">
-          <div class="col-6">
-            <div class="option-card p-3">
-              <img src="https://img.icons8.com/bubbles/500/000000/add-user-group-man-man.png" class="group-img">
-              <h5>Agrega a tus amigos a este grupo para que puedas compartir tus contraseñas con ellos!</h5>
-
-              <%= link_to '+ Agregar usuario', new_group_group_invitation_path(@group), class: "btn btn-blue mt-2" %>
-            </div>
+        <div class="row text-center mt-5 d-flex justify-content-around">
+          <div class="col-5">
+            <%= link_to new_group_group_invitation_path(@group) do %>
+              <div class="option-card p-3">
+                <img src="https://img.icons8.com/bubbles/500/000000/add-user-group-man-man.png" class="group-img">
+                <h5>Agrega amigos a este grupo para que puedas compartir tus contraseñas!</h5>
+              </div>
+            <% end %>
           </div>
-          <div class="col-6">
-            <div class="option-card p-3">
+          <div class="col-5">
+            <div class="option-card p-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
               <img src="https://img.icons8.com/bubbles/500/000000/lock.png" class="group-img">
               <h5>Selecciona que contraseña quieres compartir con tus amigos!</h5>
-
-              <button type="button" class="btn btn-blue mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                + Agregar Contraseña
-              </button>
             </div>
           </div>
         </div>
@@ -52,7 +48,7 @@
           </div>
         </div>
 
-        <div class="passwords-card p-3 my-5">
+        <div class="p-3 my-5">
           <h2>Contraseñas de este grupo</h2>
           <% current_user.passwords.each do |pass| %>
             <% if pass.group_id == @group.id %>

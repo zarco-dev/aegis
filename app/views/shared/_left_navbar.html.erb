@@ -43,7 +43,11 @@
         <li class="nav-link">
           <%= link_to invitation_path do %>
             <i class="bx bxs-bell-ring icon-nav"></i>
-            <span class="text-nav nav-text">Notificaciones</span>
+              <span class="text-nav nav-text noti">Notificaciones </span>
+              <% count_notifications = GroupInvitation.where(user_id: current_user.id).group(:status).count %>
+              <% unless count_notifications[false] == nil %>
+                <small class="span-noti"><%= count_notifications[false] %></small>
+              <% end %>
           <% end %>
         </li>
         <li class="nav-link">

@@ -1,11 +1,43 @@
 @import "show";
 @import "new";
 
-.invi-card {
-  background: rgba(48, 66, 82, 0.671);
-  box-shadow: 0 4px 10px 0 rgba(11, 15, 19, 0.6);
-  border-radius: 5px;
+.invitation-card {
+  background-color: #1922297e;
+  border-radius: 15px;
   margin: 0;
-
   color: white;
+}
+
+.position-invitation {
+  flex-direction: row !important;
+}
+
+
+.primer-div {
+  width: 60%;
+  margin-left: 65px;
+  margin-right: 27px;
+  margin-top: 91px !important;
+  z-index: 20;
+}
+
+.circle-fondo-invitation {
+  width: 75%;
+  height: 100%;
+  background: linear-gradient(126deg, #1d4460, #192b37);
+  z-index: 1;
+  position: absolute;
+  border-radius: 0% 28% 16% 0% / 0% 26% 46% 0%;
+  left: 0;
+}
+
+.segundo-div {
+  width: 30%;
+  margin-top: 124px !important;
+  z-index: 20;
+}
+
+.options-cards h2.title-invitation {
+  color: #fff;
+  font-weight: bold;
 }

@@ -3,7 +3,16 @@ import { Controller } from "@hotwired/stimulus"
 // Connects to data-controller="signup"
 export default class extends Controller {
 
-  static targets = ["basic", "premium", "buttonpremium", "buttonbasic", "subscontainer", "signup", "titleplan", "premiumuser", "inputpass", "eyeslash", "eyenormal"]
+  static targets = ["basic", "premium", "buttonpremium", "buttonbasic", "subscontainer", "signup", "titleplan", "premiumuser", "inputpass", "eyeslash", "eyenormal", "paramsbutton", "usernameinput"]
+
+  connect() {
+    if (this.paramsbuttonTarget.textContent == "true") {
+      this.submitpremium();
+    } else if (this.paramsbuttonTarget.textContent == "false") {
+      this.submitbasic();
+    }
+    console.log(this.usernameinputTarget.value);
+  }
 
 
   hover() {
@@ -40,6 +49,16 @@ export default class extends Controller {
       this.eyeslashTarget.classList.remove("display-ojo");
       this.eyenormalTarget.classList.add("display-ojo");
     }
+  }
+
+  test() {
+    console.log("hola");
+  }
+
+  useruser(event) {
+    let valorInput = event.target.value;
+    this.usernameinputTarget.value = valorInput.replace(/[0-9]/g, '');
+    // console.log(this.usernameinputTarget.value);
   }
 
 }

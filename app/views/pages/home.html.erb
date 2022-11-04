@@ -4,7 +4,7 @@
   <i class='bx bx-loader-alt bx-spin' style='color:#32A6BE' ></i>
 </div>
 
-<div id="landing" class="landing-d">
+<div id="landing" class="landing-d" >
   <div class="full-container">
       <div class="container-hero-section">
         <div class="hero-section">
@@ -12,6 +12,7 @@
             <div class="headline">
               <h1>Traete tus contraseñas</h1>
               <div><h2>No las olvides más, guardalas una sola vez y despreocúpate.</h2></div>
+              <%= link_to "¡Comienza gratis!", new_user_registration_path(premium: "false") %>
             </div>
             <div class="img-banner">
               <div class="image-social-media">
@@ -115,8 +116,7 @@
           <div class="text">
             <h3>Empresas</h3>
             <p>Crea un grupo con acceso a las contraseñas de tu empresa y compártelas con sus miembros.</p>
-            <%# <a href="#" class="plan">Plan premium </a> %>
-            <%= link_to new_user_registration_path do %>
+            <%= link_to new_user_registration_path(premium: "true") do %>
               Plan premium<i class="fa-solid fa-chevron-right"></i>
             <% end %>
           </div>
@@ -126,7 +126,7 @@
           <div class="text">
             <h3>Estudiantes</h3>
             <p>No dejes que una contraseña olvidada te impida entregar esa tarea. Nosotros nos encargamos de recordarlas por ti.</p>
-            <%= link_to new_user_registration_path do %>
+            <%= link_to new_user_registration_path(premium: "false") do %>
               Plan basic<i class="fa-solid fa-chevron-right"></i>
             <% end %>
           </div>
@@ -136,7 +136,7 @@
           <div class="text">
             <h3>Profesionales</h3>
             <p>Almacena tus contraseñas y tarjetas de crédito en un solo lugar y ahorra tiempo al momento de ingresar en tus sitios.</p>
-            <%= link_to new_user_registration_path do %>
+            <%= link_to new_user_registration_path(premium: "true") do %>
               Plan premium<i class="fa-solid fa-chevron-right"></i>
             <% end %>
           </div>
@@ -146,7 +146,7 @@
           <div class="text">
             <h3>Freelancers</h3>
             <p>No importa dónde estés ni cuántas contraseñas manejes. Ten siempre todo al alcance de un solo clic.</p>
-            <%= link_to new_user_registration_path do %>
+            <%= link_to new_user_registration_path(premium: "false") do %>
               Plan basic<i class="fa-solid fa-chevron-right"></i>
             <% end %>
           </div>
@@ -155,55 +155,43 @@
     </div>
   </div>
 
-  <div id="generator" class="section-passwords-free">
+  <div id="generator" class="section-passwords-free" data-controller="passgenerate">
     <div class="passwords-section">
       <h2>Prueba nuestro generador de contraseñas seguras</h2>
       <div class="passwords-generate">
-
-
-            <div class="passwords">
-              <div class="try-passwords">
-                <form action="/my-handling-form-page" method="post">
-                    <label for="" class="try_my_password"></label>
-                    <input type="text" class="my-kewword">
-                    <p class="">Personalice su contraseña</p>
-                  <div class="custom-password">
-                    <div class="try-custom-password">
-
-                      <p class="">Longitud de contraseña</p>
-                      <input type="text" id="cbox1" value=""><label>Caracteres</label>
-                    </div>
-                    <div class="item-password">
-                      <label><input type="checkbox" id="cbox1" value="first_checkbox"> Mayusculas</label>
-                      <label><input type="checkbox" id="cbox1" value="second_checkbox"> Minusculas</label>
-                      <label><input type="checkbox" id="cbox1" value="third_checkbox"> Números</label>
-                    </div>
-
-                  </div>
-                </form>
-              </div>
-
-              <div class="email">
-                <form action="/my-handling-form-page" method="post">
-                  <ul>
-                    <li>
-                      <label for="name" >
-                        <input type="text" id="name" name="user_name" placeholder="Nombre">
-                      </label>
-                    </li>
-                    <li>
-                      <label for="mail">
-                        <input type="email" id="mail" name="user_mail" placeholder="Email">
-                      </label>
-                    </li>
-                    <label><input type="checkbox" id="cbox1" value="first_checkbox"> Desea recibir información</label>
-                  </ul>
-                </form>
-              </div>
-
+        <div class="password-generating">
+          <form action="" class="generating-form">
+            <input class="inputpass-g" type="text" maxlength="35" data-passgenerate-target="textinput" data-action="keyup->passgenerate#text">
+            <i class="fa-regular fa-copy" data-action="click->passgenerate#copypass"></i>
+            <span class="texto-aparece" data-passgenerate-target="textshow">Contraseña copiada <i class="fa-solid fa-check"></i></span>
+            <div class="progress-pass">
+              <div class="carga-barra" data-passgenerate-target="divcarga"></div>
             </div>
-
-            <button href="#" class="passwords-cta">Guardar contraseña</button>
+        </div>
+        <div class="options-password">
+            <div class="longitud-password">
+              <label for="longitud">Longitud de la contraseña</label>
+              <div>
+                <input type="number" min="0" max="35" readonly value="18" data-passgenerate-target="lengthnumber" id="numberlength">
+                <input type="range" name="longitud" id="longitud" min="0" max="35" value="18" data-action="input->passgenerate#range" data-passgenerate-target="rangeinput">
+              </div>
+            </div>
+            <div class="options-check">
+                <div>
+                  <label for="mayu">Mayúsculas</label>
+                  <input type="checkbox" value="Mayus" data-passgenerate-target="mayus" data-action="input->passgenerate#checkbox1" checked id="mayu">
+                </div>
+                <div>
+                  <label for="number">Números</label>
+                  <input type="checkbox" value="Numeros" data-passgenerate-target="numbers" data-action="input->passgenerate#checkbox2" checked id="number">
+                </div>
+                <div>
+                  <label for="symbol">Símbolos</label>
+                  <input type="checkbox" value="Simbolos" data-passgenerate-target="symbols" data-action="input->passgenerate#checkbox3" checked id="symbol">
+                </div>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </div>
@@ -244,9 +232,9 @@
               </div>
             </div>
             <div class="button-basic">
-              <a href="users/sign_up">
-                <button type="submit" data-signup-target="buttonbasic" type="submit" value="basic">Comienza Gratis</button>
-              </a href="users/sign_up">
+              <%= link_to new_user_registration_path(premium: "false") do %>
+                <button value="premium">Comienza gratis</button>
+              <% end %>
             </div>
           </div>
           <div class="basic-container premium-container" data-action="mouseover->signup#hoverp" data-signup-target="premium">
@@ -281,9 +269,9 @@
               </div>
             </div>
             <div class="button-basic button-premium">
-              <a href="users/sign_up">
-                <button type="submit" value="premium">¡Sube a premium ahora!</button>
-              </a>
+              <%= link_to new_user_registration_path(premium: "true") do %>
+                <button value="premium">¡Sube a premium ahora!</button>
+              <% end %>
             </div>
           </div>
         </div>
@@ -396,7 +384,7 @@
           <%= image_tag "pawsfinder.png" %>
         </div>
         <div class="company">
-          <%= image_tag "fastbox.png" %>
+          <%= image_tag "tattofinder.png" %>
         </div>
       </div>
     </div>
@@ -408,7 +396,7 @@
         <h2>Confía en nuestra bóveda</h2>
         <p>Aegis te acompaña sin importar adónde vayas. Tus credenciales seguras en un solo lugar y al alcance de tu mano. ¿Qué esperas para unirte?</p>
         <footer>
-          <a href="users/sign_up">¡Comienza gratis!</a>
+          <%= link_to "¡Comienza gratis!", new_user_registration_path(premium: "false") %>
         </footer>
     </div>
   </div>
@@ -455,22 +443,7 @@
     <i class='bx bx-loader-alt bx-spin' style='color:#32A6BE' ></i>
   </div>
   <div class="home-before-dashboard"></div>
-  <!--<% date_in = current_user.subscription.begining_date %>
-    <% date_start = "#{date_in.day}/#{date_in.month}/#{date_in.year}" %>
-    <div class="container p-5 bg-secondary">
-      <h1>Tienes un plan: <%= current_user.subscription.subscription_plan.title %></h1>
-      <p>Se activo el: <%= date_in.day  %>-<%= date_in.month  %>-<%= date_in.year  %></p>
-      <% if current_user.subscription.expired_date.eql?(nil) %>
-        <p>No se vence</p>
-      <% else %>
-        <% date_out = current_user.subscription.expired_date %>
-        <% date_end = "#{date_out.day}/#{date_out.month}/#{date_out.year}" %>
-        <p>Se vence en: <%= date_out.day %>-<%= date_out.month %>-<%= date_out.year %></p>
-        <p>Te quedan: <%= (Date.parse(date_end) - Date.parse(date_start)).to_i %> días</p>
-      <% end %>
-    </div>-->
 <% end %>
-
 <script>
   var loader = document.getElementById("preloader");
   var landing = document.getElementById("landing");

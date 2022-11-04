@@ -5,6 +5,7 @@ class BankPassword < ApplicationRecord
 
   validates :cardholder, presence: true
   validates :secure_code, presence: true
+  # validates :expiration_date, presence: true
 
 
   # t.string "cardholder"

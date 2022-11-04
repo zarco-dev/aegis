@@ -5,33 +5,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
-  # def new
-  #   super
-  # end
+  def new
+    super
+  end
 
   # POST /resource
   def create
     super
-    if params[:user][:id].nil?
-      def after_sign_in_path_for(resource)
-        root_path
-      end
-    end
-      if params[:user][:premium_user] == "true"
-        planid = 2
-        exp_date = Date.today.next_month
-      elsif params[:user][:premium_user] == "false"
-        planid = 1
-        exp_date = nil
-      end
-      @subscription = Subscription.new(
-        begining_date: Date.today,
-        expired_date: exp_date
-      )
-      @subscription.user_id = current_user.id
-      @subscription.subscription_plan_id = planid
-      @subscription.save
-
+    # raise
   end
 
   # GET /resource/edit

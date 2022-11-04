@@ -1,12 +1,23 @@
 .blue-bg {
-  background: radial-gradient(circle at left bottom, #001124 , #325977);
+  background: #172934;
   min-width: 100%;
   min-height: 100%;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  z-index: -2;
+
+  position: relative;
+}
+
+.blue-border-box-1 {
+  background: linear-gradient(162deg, #154c74, #07273d);
+  border-radius: 100% 0% 70% 30% / 46% 76% 24% 54% ;
+  min-width: 80%;
+  min-height: 93%;
+  left: 500px;
+
+  position: absolute;
 }
 
 .dashboard-body {

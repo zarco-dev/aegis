@@ -1,17 +1,26 @@
-<div class="container mt-3">
+<div class="dashboard-body text-white">
+  <div class="blue-bg container p-5">
   <div class="row">
-    <div class="col-12">
+    <div class="col-3">
+      <%= render "shared/left_navbar"%>
+    </div>
+
+    <div class="col-9">
+
+    <h1>Guarda tu sitio web!</h1>
 
       <%= simple_form_for @password do |f| %>
-        <%= f.input :site_name, placeholder: 'Facebook, Youtube, etc...' %>
-        <%= f.input :category %>
-        <%= f.input :site_username %>
-        <%= f.input :site_password %>
-        <%= f.input :url %>
+        <%= f.input :site_name, label: "Nombre del sitio web", placeholder: 'Netflix, facebook, etc...' %>
+        <%= f.input :category, label: "Categoría", placeholder: "Red social, plataforma de streaming, etc..." %>
+        <%= f.input :site_username, label: "Nombre de usuario", placeholder: "Username dentro de la plataforma." %>
+        <%= f.input :site_password, label: "Contraseña", placeholder: "..." %>
+        <%= f.input :url, label: "Dirección", placeholder: "https://www.facebook.com" %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
 
-        <%= f.submit 'Editar contraseña', class: 'btn btn-success' %>
+        <%= f.submit 'Crear contraseña', class: 'btn btn-blue mt-3' %>
       <% end %>
 
     </div>
+  </div>
   </div>
 </div>

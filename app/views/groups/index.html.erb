@@ -1,34 +1,35 @@
-<div class="dashboard-body">
-  <div class="row">
+<div class="dashboard-body text-white">
+  <div class="blue-bg container p-5">
+    <div class="row">
 
-    <div class="col-3">
-      <%= render "shared/left_navbar"%>
-    </div>
+      <div class="col-3">
+        <%= render "shared/left_navbar"%>
+      </div>
 
-    <div class="col-9 blue-bg text-white pb-5">
-      <div class="container mt-3">
+      <div class="col-9 pb-5">
 
-        <h1>Mis grupos</h1>
+          <h1>Mis grupos</h1>
 
-          <% @groups.each do |group| %>
-            <div class="group-card p-3 mt-4 mb-4">
-              <h3><%= group.name %> <%= link_to group_path(group) do %>
-                <button type="button" class="btn-group-info" style="color: white;">
-                  <i class="fa-solid fa-circle-info"></i>
-                </button>
-              <% end %></h3>
-              <p>Usuarios de este grupo:
-              <% GroupInvitation.all.each do |group_i| %>
-                <% if group.id == group_i.group.id && group_i.status == true %>
-                  <span class="user-badge p-1 mx-1">@<%= group_i.user.username  %></span>
-                <% end %>
-              <% end %></p>
+            <% @groups.each do |group| %>
+              <div class="group-card p-3 mt-4 mb-4">
+                <h3><%= group.name %> <%= link_to group_path(group) do %>
+                  <button type="button" class="btn-group-info" style="color: white;">
+                    <i class="fa-solid fa-circle-info"></i>
+                  </button>
+                <% end %></h3>
+                <p>Usuarios de este grupo:
+                <% GroupInvitation.all.each do |group_i| %>
+                  <% if group.id == group_i.group.id && group_i.status == true %>
+                    <span class="user-badge p-1 mx-1">@<%= group_i.user.username  %></span>
+                  <% end %>
+                <% end %></p>
 
-              <p>"<%= group.description %>"</p>
-            </div>
-          <% end %>
+                <p>"<%= group.description %>"</p>
+              </div>
+            <% end %>
 
-          <%= link_to '+ Crear grupo', new_group_path, class: "btn btn-blue" %>
+            <%= link_to '+ Crear grupo', new_group_path, class: "btn btn-blue" %>
+
 
       </div>
     </div>

@@ -1,19 +1,18 @@
-<div class="dashboard-body">
-  <div class="row">
-​
-    <div class="col-3">
-      <%= render "shared/left_navbar"%>
-    </div>
-​
-    <div class="col-9 blue-bg text-white">
-​
-      <div class="container mt-3">
+<div class="dashboard-body text-white">
+  <div class="blue-bg container p-5">
+    <div class="row">
+
+      <div class="col-3">
+        <%= render "shared/left_navbar"%>
+      </div>
+
+      <div class="bg-icon">
+        <img src="https://img.icons8.com/bubbles/500/000000/crowd--v2.png"/>
+        </div>
+
+      <div class="col-9">
         <h1 class="title-slide-in">Grupos a los que pertenezco</h1>
-​
-          <div class="bg-icon">
-            <img src="https://img.icons8.com/bubbles/500/000000/crowd--v2.png"/>
-          </div>
-​
+
         <% current_user.group_invitations.each_with_index do |group, num| %>
           <% if group.status.eql?(true) %>
             <div class="group-card p-4 mt-4" style="
@@ -50,4 +49,7 @@
           <% end %>
         <% end %>
       </div>
+
     </div>
+  </div>
+</div>

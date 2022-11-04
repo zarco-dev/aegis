@@ -57,6 +57,9 @@
           <i class="fa-solid fa-plus"></i>
         </button>
       </div>
+      <div id="form-render" style="display: none;">
+        <p data-bank-target="validform"><%= @page %></p>
+      </div>
             <%= simple_form_for @bankpassword, html: { class: "form-tarjeta", data: { bank_target: 'form' } } do |f| %>
               <div class="groups-info-bank">
                 <%= f.input :account_number,

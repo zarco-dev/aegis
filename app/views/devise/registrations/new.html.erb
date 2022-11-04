@@ -1,8 +1,8 @@
 <script>
   document.title = "Aegis: Regístrate";
 </script>
-
 <div class="sign-up-container" data-controller="signup">
+<p style="display: none;" data-signup-target="paramsbutton"><%= params[:premium] %></p>
   <div class="circle-fondo-hero-sign"></div>
   <%= link_to :back, class: "back-font" do %>
     <i class="fa-solid fa-circle-arrow-left"> <span>Regresar<span></i>
@@ -71,6 +71,7 @@
         <div class="feature-container">
           <i class="fa-solid fa-circle-check"></i>
           <p>Comparte tus passwords</p>
+  <p style="display: none;" data-signup-target="currentuser"><%= current_user ==  nil %></p>
         </div>
       </div>
       <div class="button-basic button-premium">
@@ -78,13 +79,13 @@
       </div>
     </div>
     </div>
-
   <div id="formsee" class="form-sign form-sign-up" data-signup-target="signup">
     <h2>Crea tu cuenta <span data-signup-target="titleplan"></span></h2>
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: false }) do |f| %>
       <%= f.error_notification %>
         <div class="form-inputs">
-          <%= f.input :username, label: "Nombre de usuario", required: false, minlength: 3 %>
+          <%= f.input :username, label: "Nombre de usuario",
+          input_html: { data: { signup_target: "usernameinput", action: "keyup->signup#useruser" } }, required: false, minlength: 3  %>
           <%= f.input :email,
                       label: "Correo electrónico",
                       input_html: { autocomplete: "email" }, required: false%>

@@ -8,7 +8,7 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
-    <%= favicon_link_tag asset_path('favicon.png') %>
+    <%= favicon_link_tag %>
     <link href="https://fonts.googleapis.com/css?family=Lato|Liu+Jian+Mao+Cao&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   </head>
@@ -17,5 +17,6 @@
   <%= render "shared/navbar" %>
     <%= render "shared/flashes" %>
     <%= yield %>
+    <script src="https://cdn.lordicon.com/qjzruarw.js"></script>
   </body>
 </html>

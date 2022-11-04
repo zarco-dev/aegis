@@ -19,6 +19,9 @@ application.register("invitation", InvitationController)
 import NavbarController from "./navbar_controller"
 application.register("navbar", NavbarController)
 
+import PassgenerateController from "./passgenerate_controller"
+application.register("passgenerate", PassgenerateController)
+
 import SearchcardsController from "./searchcards_controller"
 application.register("searchcards", SearchcardsController)
 

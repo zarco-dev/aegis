@@ -1,10 +1,10 @@
 <% unless user_signed_in? %>
-<!--<div id="preloader">
+<div id="preloader">
   <%= image_tag "isologotipo.svg" %>
   <i class='bx bx-loader-alt bx-spin' style='color:#32A6BE' ></i>
-</div>-->
+</div>
 
-<div id="landing"> <!--class="landing-d"-->
+<div id="landing" class="landing-d"> <!---->
   <div class="full-container">
       <div class="container-hero-section">
         <div class="hero-section">
@@ -438,13 +438,13 @@
   </footer>
 </div>
 <% else %>
-  <!--<div id="preloader2">
+  <div id="preloader2">
     <%= image_tag "isologotipo.svg" %>
     <i class='bx bx-loader-alt bx-spin' style='color:#32A6BE' ></i>
   </div>
-  <div class="home-before-dashboard"></div>-->
+  <div class="home-before-dashboard"></div>
 <% end %>
-<%# <script>
+<script>
   var loader = document.getElementById("preloader");
   var landing = document.getElementById("landing");
   var loader2 = document.getElementById("preloader2");
@@ -457,4 +457,4 @@
     loader2.style.display = "none";
     window.location.replace("https://managemypass.herokuapp.com/dashboard")
   }, 2000);
-</script> %>
+</script>

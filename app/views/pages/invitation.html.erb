@@ -1,64 +1,57 @@
-<div class="banking-all">
+<div class="banking-all" >
   <script>
     document.title = "Aegis: Tus invitaciones";
   </script>
   <div class="row row-test">
     <%= render "shared/left_navbar" %>
-    <div class="col-9 index-cards position-invitation" data-controller="searchcards">
+    <div class="col-9 index-cards position-invitation">
       <div class="options-cards" data-sidebar-target="colorbank">
         <h2 class="title-invitation">Mis invitaciones</h2>
       </div>
       <div class="text-white my-5 p-3 primer-div">
-        <% c = 1 %>
           <% @group_invitation.each do |group_i| %>
             <% if current_user.id == group_i.user_id && group_i.status == false %>
-              <div class="invitation-card mt-3 p-3" id="container<%= group_i.id %>" data-invitation-target="invitationcard">
+              <div data-controller="invitation" class="invitation-card mt-3 p-3" id="container<%= group_i.id %>" data-invitation-target="invitationcard">
                 <div class="d-flex justify-content-between">
                   <p>
+                    <img class="img-invitation" src="https://img.icons8.com/bubbles/500/null/gender-neutral-user.png"/>
                     <strong>@<%= group_i.group.user.username %></strong>
-                    Te ha invitado a su grupo
-                    <strong><%= group_i.group.name %></strong>
-                    </p>
-
-                  <%= link_to group_delete_invitation_path(group_i.group.id, group_i), data: { turbo_method: :delete, turbo_confirm: "Quieres borrar esta invitación?" } do %>
-                    <button type="button" class="btn btn-sm delete-invitation">X</button>
+                    te invita unirte al grupo
+                    <strong class="grupo-text"><%= group_i.group.name %></strong>
+                  </p>
+                  <%= link_to group_delete_invitation_path(group_i.group.id, group_i), data: { turbo_method: :delete, turbo_confirm: "¿Quieres rechazar esta invitación?" } do %>
+                    <button type="button" class="btn btn-sm delete-invitation"><%= image_tag "close.png" %></button>
                   <% end %>
-
-
                 </div>
-
-                <p>"<%= group_i.group.description %>"</p>
-
+                <p class="description-invitation">Descripción: <%= group_i.group.description %></p>
                 <div class="d-flex justify-content-between align-items-end">
-
                   <%= form_tag invitation_path, method: :get do  %>
                     <%= hidden_field_tag :status, params[:status], class: "form-control", value: true %>
                     <%= hidden_field_tag :group, params[:group_id], class: "form-control", value: group_i.group.id %>
                     <%= hidden_field_tag :group_invitation, params[:group_invitation_id], class: "form-control", value: group_i.id %>
                     <%= submit_tag "Aceptar", class: "btn btn-accept" %>
                   <% end %>
-
-                  <!-- Longevidad de la invitación -->
-
                   <p class="text-muted m-0"><em><%= time_ago_in_words(group_i.created_at) %> ago</em></p>
                 </div>
-
               </div>
             <% end %>
           <% end %>
-
         </div>
         <div class="segundo-div my-5">
-          <div class="my-invi-card d-flex justify-content-center">
-            <img src="https://img.icons8.com/bubbles/500/000000/crowd--v1.png" class="group-icon">
+          <div class="d-flex justify-content-center align-items-center icon-invitation">
+              <lord-icon
+                src="https://cdn.lordicon.com/zpxybbhl.json"
+                trigger="loop"
+                delay="5000"
+                colors="primary:#ffffff,secondary:#43e5ab"
+                style="width:450px;height:450px">
+              </lord-icon>
           </div>
-
-          <div class="my-invi-card d-flex justify-content-center text-center mt-4 p-4 text-white">
-            <h4><strong>@<%= current_user.username %></strong>, conoce quien te ha invitado a hacer parte de su grupo!</h4>
+          <div class="texto-in d-flex justify-content-center text-center mt-4 p-4 text-white">
+            <h4><strong>@<%= current_user.username %></strong>, ¡conoce quien te ha invitado a hacer parte de su grupo!</h4>
           </div>
         </div>
         <div class="circle-fondo-invitation"></div>
-
     </div>
   </div>
 </div>

@@ -3,7 +3,7 @@
   <%= link_to bankpassword, data: { turbo_method: :delete, turbo_confirm: "¿Quieres borrar esta tarjeta?" } do %>
     <button type="button" class="btn btncard-delete">
       <%# <i class="fa-solid fa-circle-xmark"></i> %>
-      <%= image_tag "close3.png" %>
+      <%= image_tag "close.png" %>
     </button>
   <% end %>
     <div class="logo-bank" data-bank-target="logofranquicia"><img src="<%= bankpassword.franchise %>" alt=""></div>

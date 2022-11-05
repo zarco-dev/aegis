@@ -2,13 +2,11 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="invitation"
 export default class extends Controller {
-  // static targets = ["invitationcard", "btn"]
+
+  static targets = ["invitationcard"]
+
   connect() {
 
   }
 
-  // rechazar(){
-  //   console.log(this.invitationcardTarget)
-  //   console.log(this.btnTarget)
-  // }
 }

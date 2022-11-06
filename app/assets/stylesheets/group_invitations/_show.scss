@@ -8,6 +8,16 @@
   background-size: cover;
 }
 
+.noyet {
+  height: 90%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  font-size: 3.8em;
+  color: #90909078;
+}
+
 .my-invi-card {
   background: rgba(33, 45, 54, 0.671);
   box-shadow: 0 4px 15px 0 rgb(25, 34, 41);
@@ -65,4 +75,17 @@
 
 .delete-invitation:hover {
   color: rgb(255, 255, 255);
+}
+
+@media (max-width: 1370px) {
+  .noyet {
+    height: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    font-size: 2.5em;
+    color: #90909078;
+  }
+
 }

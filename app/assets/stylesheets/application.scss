@@ -9,7 +9,7 @@ a, button, .fa-house, .fa-user-plus, .fa-right-to-bracket, .fa-lock, input[type=
   cursor: url(cpointer.png), auto !important;
 }
 
-input[type="text"], input[type="password"], input[type="number"], input[type="email"] {
+input[type="text"], input[type="password"], input[type="number"], input[type="email"], textarea {
   cursor: url(cursortext.png), auto !important;
 }
 
@@ -57,4 +57,5 @@ body::-webkit-scrollbar-thumb:hover {
 @import "users/index";
 @import "group_invitations/index";
 @import "bank_passwords/index";
-@import "groups/index"
+@import "groups/index";
+@import "passwords/new";

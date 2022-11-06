@@ -36,7 +36,11 @@
               </div>
             <% end %>
           <% end %>
-        </div>
+          <% count_notifications = GroupInvitation.where(user_id: current_user.id).group(:status).count %>
+          <% if count_notifications[false] == nil %>
+            <p class="noyet">No tienes invitaciones aún <i class="fa-solid fa-face-sad-cry"></i></p>
+          <% end %>
+      </div>
         <div class="segundo-div my-5">
           <div class="d-flex justify-content-center align-items-center icon-invitation">
               <lord-icon
@@ -48,10 +52,10 @@
               </lord-icon>
           </div>
           <div class="texto-in d-flex justify-content-center text-center mt-4 p-4 text-white">
-            <h4><strong>@<%= current_user.username %></strong>, ¡conoce quien te ha invitado a hacer parte de su grupo!</h4>
+            <h4><strong>@<%= current_user.username %></strong>, ¡conoce quién te ha invitado a hacer parte de su grupo!</h4>
           </div>
         </div>
-        <div class="circle-fondo-invitation"></div>
+        <div class="circle-fondo-password"></div>
     </div>
   </div>
 </div>

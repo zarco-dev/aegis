@@ -15,7 +15,7 @@ class PasswordsController < ApplicationController
     if @password.save
       redirect_to @password
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 

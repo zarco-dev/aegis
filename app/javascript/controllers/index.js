@@ -22,6 +22,9 @@ application.register("navbar", NavbarController)
 import PassgenerateController from "./passgenerate_controller"
 application.register("passgenerate", PassgenerateController)
 
+import PassnewController from "./passnew_controller"
+application.register("passnew", PassnewController)
+
 import SearchcardsController from "./searchcards_controller"
 application.register("searchcards", SearchcardsController)
 

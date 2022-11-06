@@ -6,7 +6,8 @@ class BankPasswordPolicy < ApplicationPolicy
   end
 
   def create?
-    return true
+    return true if BankPassword.where(user_id: user).size < 5 && user.premium_user == false
+    return true if user.premium_user == true
   end
 
   def show?

@@ -6,17 +6,19 @@
         <%= render "shared/left_navbar"%>
       </div>
 
-      <div class="col-9">
-
         <div class="blue-border-box-1">
         </div>
 
-        <h1>Mis contraseñas</h1>
-        <% @password.each do |password| %>
-          <div class="dash-card mt-4 mb-4 p-3">
+      <div class="col-9">
+
+        <h1 class="title-slide-in">Mis contraseñas</h1>
+        <% @password.each_with_index do |password, num| %>
+          <div class="dash-card mt-4 mb-4 p-3" style="
+            animation: cardSlide <%= num + 1 - num * 0.75 %>s;
+            ">
 
             <div class="d-flex justify-content-between">
-              <h3>Nombre del sitio: <%= link_to password.site_name, password_path(password), style: 'text-decoration: none;' %></h3>
+              <h3>Nombre del sitio: <%= password.site_name %></h3>
 
               <div class="d-flex justify-content-between"
               style="width: 10%;">
@@ -40,7 +42,7 @@
         <% end %>
 
         <% if @password.size >= 5 && current_user.premium_user == false %>
-          <h4>No puedes crear más contraseñas, cambiate a premium!</h4>
+          <h4 class="mt-5">Has excedido el limite de contraseñas, cambia tu plan a premium!</h4>
         <% else %>
           <%= link_to '+ Crear contraseña', new_password_path, class: "btn btn-blue" %>
         <% end %>

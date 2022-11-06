@@ -2,9 +2,6 @@ class PasswordsController < ApplicationController
   before_action :set_pass, only: [:show, :edit, :update, :destroy]
   after_action :authorize_pass
 
-  def show
-  end
-
   def new
     @password = Password.new
   end
@@ -13,7 +10,7 @@ class PasswordsController < ApplicationController
     @password = Password.new(pass_params)
     @password.user = current_user
     if @password.save
-      redirect_to @password
+      redirect_to dashboard_path
     else
       render :new
     end
@@ -25,14 +22,14 @@ class PasswordsController < ApplicationController
   def update
     @password.update(pass_params)
     @password.save
-    redirect_to dashboard_path
-
+    redirect_to params[:previous_request]
   end
 
   def destroy
     @password.destroy
     redirect_to dashboard_path
   end
+
 
   private
 

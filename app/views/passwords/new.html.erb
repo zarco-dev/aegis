@@ -1,26 +1,76 @@
-<div class="dashboard-body text-white">
-  <div class="blue-bg container p-5">
-  <div class="row">
-    <div class="col-3">
-      <%= render "shared/left_navbar"%>
+<div class="password-container" data-controller="passnew">
+  <script>
+    document.title = "Aegis: Guarda tu contraseña";
+  </script>
+<%= link_to :back, class: "back-font back-font-2" do %>
+    <i class="fa-solid fa-circle-arrow-left"> <span>Regresar<span></i>
+  <% end %>
+  <div class="row-password">
+    <div class="div-form-pass">
+      <h1>Guarda tu contraseña</h1>
+        <%= simple_form_for @password do |f| %>
+          <%= f.input :site_name, label: "Nombre del sitio web", placeholder: 'Netflix, Facebook, etc...' %>
+          <%= f.input :site_username, label: "Nombre de usuario o correo", placeholder: "Username o correo dentro de la plataforma" %>
+          <%= f.input :site_password, label: "Contraseña", placeholder: "Contraseña dentro de la plataforma" %>
+          <%= f.input :url, label: "URL", placeholder: "https://facebook.com", input_html: { data: { passnew_target: 'siteurl', action: "keyup->passnew#urlicon" } } %>
+          <%= f.input :category, label: false, input_html: { data: { passnew_target: 'fav' }, value: "https://i.imgur.com/hPTdOQ4.png", class: "ocultar-campo" } %>
+          <%= f.hidden_field :user_id, value: current_user.id %>
+          <%= f.submit 'Crear contraseña', class: 'btn btn-blue mt-3' %>
+        <% end %>
     </div>
-
-    <div class="col-9">
-
-    <h1>Guarda tu sitio web!</h1>
-
-      <%= simple_form_for @password do |f| %>
-        <%= f.input :site_name, label: "Nombre del sitio web", placeholder: 'Netflix, facebook, etc...' %>
-        <%= f.input :category, label: "Categoría", placeholder: "Red social, plataforma de streaming, etc..." %>
-        <%= f.input :site_username, label: "Nombre de usuario", placeholder: "Username dentro de la plataforma." %>
-        <%= f.input :site_password, label: "Contraseña", placeholder: "..." %>
-        <%= f.input :url, label: "Dirección", placeholder: "https://www.facebook.com" %>
-        <%= f.hidden_field :user_id, value: current_user.id %>
-
-        <%= f.submit 'Crear contraseña', class: 'btn btn-blue mt-3' %>
-      <% end %>
-
+    <div class="div-form-img">
+      <div data-passnew-target="titulopassword" class="titulopassword-2">
+        <h2>¿Necesitas una contraseña segura?</h2>
+        <lord-icon
+          src="https://cdn.lordicon.com/huwchbks.json"
+          trigger="loop"
+          delay="3000"
+          class="lordicon"
+          colors="primary:#ffffff,secondary:#192229"
+          style="width:500px;height:500px">
+        </lord-icon>
+        <button class="btn btn-blue mt-3 btn-aceptar" data-action="click->passnew#showg">Usa nuestro generador</button>
+      </div>
+      <div id="generator" class="section-passwords-free pass-c-p" data-passnew-target="generatepass" data-controller="passgenerate">
+        <div class="passwords-section paa-b">
+          <div class="passwords-generate">
+            <div class="password-generating password-generating-pass">
+              <form action="" class="generating-form">
+                <input class="inputpass-g" type="text" maxlength="35" data-passgenerate-target="textinput" data-action="keyup->passgenerate#text">
+                <i class="fa-regular fa-copy" data-action="click->passgenerate#copypass"></i>
+                <span class="texto-aparece texto-aparece-2" data-passgenerate-target="textshow">Contraseña copiada <i class="fa-solid fa-check"></i></span>
+                <div class="progress-pass">
+                  <div class="carga-barra" data-passgenerate-target="divcarga"></div>
+                </div>
+            </div>
+            <div class="options-password option-pas">
+                <div class="longitud-password">
+                  <label for="longitud">Longitud de la contraseña</label>
+                  <div>
+                    <input type="number" min="0" max="35" readonly value="18" data-passgenerate-target="lengthnumber" id="numberlength">
+                    <input type="range" name="longitud" id="longitud" min="0" max="35" value="18" data-action="input->passgenerate#range" data-passgenerate-target="rangeinput">
+                  </div>
+                </div>
+                <div class="options-check">
+                  <div>
+                    <label for="mayu">Mayúsculas</label>
+                    <input type="checkbox" value="Mayus" data-passgenerate-target="mayus" data-action="input->passgenerate#checkbox1" checked id="mayu">
+                  </div>
+                  <div>
+                    <label for="number">Números</label>
+                    <input type="checkbox" value="Numeros" data-passgenerate-target="numbers" data-action="input->passgenerate#checkbox2" checked id="number">
+                  </div>
+                  <div>
+                    <label for="symbol">Símbolos</label>
+                    <input type="checkbox" value="Simbolos" data-passgenerate-target="symbols" data-action="input->passgenerate#checkbox3" checked id="symbol">
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  </div>
+  <div class="circle-fondo-password"></div>
 </div>

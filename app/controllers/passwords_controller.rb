@@ -12,7 +12,7 @@ class PasswordsController < ApplicationController
     if @password.save
       redirect_to dashboard_path
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 

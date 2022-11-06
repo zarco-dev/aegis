@@ -1,5 +1,5 @@
-<div class="blue-bg">
-  <div class="container pt-5">
+<div class="mygroup-dashboard-body">
+  <div class="mygroup-blue-bg container p-5">
   <div class="row">
     <div class="col-6 text-white">
       <h1>Detalles del grupo '<%= @group.name %>'</h1>
@@ -31,9 +31,11 @@
                   <%= simple_form_for password, method: :patch do |f| %>
                       <% if password.group_id == nil %>
                       <%= f.hidden_field :group_id, value: @group.id %>
+                      <%= hidden_field_tag :previous_request, request.referer %>
                       <%= f.submit password.site_name, class: "card disabled-pass p-4 text-white my-5 w-100"  %>
                         <% else %>
                         <%= f.hidden_field :group_id, value: nil %>
+                        <%= hidden_field_tag :previous_request, request.referer %>
                       <%= f.submit password.site_name, class: "card active-pass p-4 text-white mt-4 w-100" %>
                         <% if password.group_id.present? %>
                           <div class="group-badge">

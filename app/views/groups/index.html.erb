@@ -6,12 +6,17 @@
         <%= render "shared/left_navbar"%>
       </div>
 
+      <div class="blue-border-box-2">
+      </div>
+
       <div class="col-9 pb-5">
 
-          <h1>Mis grupos</h1>
+          <h1 class="title-slide-in">Mis grupos</h1>
 
-            <% @groups.each do |group| %>
-              <div class="group-card p-3 mt-4 mb-4">
+            <% @groups.each_with_index do |group, num| %>
+              <div class="group-card p-3 mt-4 mb-4" style="
+              animation: cardSlide <%= num + 1 - num * 0.75 %>s;
+              ">
                 <h3><%= group.name %> <%= link_to group_path(group) do %>
                   <button type="button" class="btn-group-info" style="color: white;">
                     <i class="fa-solid fa-circle-info"></i>
@@ -24,7 +29,13 @@
                   <% end %>
                 <% end %></p>
 
-                <p>"<%= group.description %>"</p>
+                <p>Contraseñas de este grupo:
+                <% Password.all.each do |pass| %>
+                  <% if pass.group_id == group.id %>
+                    <span class="user-badge p-1 mx-1"><%= pass.site_name %></span>
+                  <% end %>
+                <% end %></p>
+
               </div>
             <% end %>
 

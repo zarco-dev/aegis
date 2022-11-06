@@ -7,17 +7,37 @@
   -o-background-size: cover;
   background-size: cover;
 
+  z-index: -2;
+
   position: relative;
 }
 
 .blue-border-box-1 {
   background: linear-gradient(162deg, #154c74, #07273d);
-  border-radius: 100% 0% 70% 30% / 46% 76% 24% 54% ;
+  border-radius: 22% 12% 0% 46% / 72% 0% 10% 100% ;
   min-width: 80%;
-  min-height: 93%;
-  left: 500px;
+  min-height: 100%;
+  left: 550px;
+  bottom: 0;
+
+  z-index: -1;
 
   position: absolute;
+  animation: blueBoxOpacity .75s;
+}
+
+.blue-border-box-2 {
+  background: linear-gradient(162deg, #154c74, #07273d);
+  border-radius: 36% 0% 0% 30% / 78% 0% 10% 98% ;
+  min-width: 80%;
+  min-height: 100%;
+  left: 550px;
+  bottom: 0;
+
+  z-index: -1;
+
+  position: absolute;
+  animation: blueBoxOpacity .75s;
 }
 
 .ocultar-campo {
@@ -26,6 +46,9 @@
 
 .dashboard-body {
   height: 100vh;
+  position: relative;
+
+  z-index: 1;
 }
 
 .dash-card {
@@ -80,7 +103,63 @@
   -webkit-backdrop-filter: blur( 0px );
   border-radius: 10px;
 
+  position: relative;
+  z-index: 50;
+
   .m-header {
     padding: 20px 20px 0 20px;
   }
+}
+
+
+//animations
+
+@keyframes blueBoxOpacity {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes titleSlide {
+
+  from {
+    opacity: 0;
+    left: 125px;
+  }
+
+  to {
+    opacity: 1;
+    left: 0;
+  }
+
+}
+
+@keyframes cardSlide {
+
+  from {
+    opacity: 0;
+    top: -25px;
+  }
+
+  to {
+    opacity: 1;
+    top: 0;
+  }
+
+}
+
+@keyframes bgIcon {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: .35;
+  }
+
 }

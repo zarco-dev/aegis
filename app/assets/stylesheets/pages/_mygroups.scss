@@ -1,3 +1,20 @@
+.mygroup-dashboard-body {
+  height: 100vh;
+  position: relative;
+}
+
+.mygroup-blue-bg {
+  background: #172934;
+  min-width: 100%;
+  min-height: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  position: relative;
+}
+
 .close-modal {
   color: #5f5f5b;
 }

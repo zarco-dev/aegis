@@ -11,8 +11,8 @@
         <%= simple_form_for @password do |f| %>
           <%= f.input :site_name, label: "Nombre del sitio web", placeholder: 'Netflix, Facebook, etc...' %>
           <%= f.input :site_username, label: "Nombre de usuario o correo", placeholder: "Username o correo dentro de la plataforma" %>
-          <%= f.input :site_password, label: "Contraseña", placeholder: "Contraseña dentro de la plataforma" %>
-          <%= f.input :url, label: "URL", placeholder: "https://facebook.com", input_html: { data: { passnew_target: 'siteurl', action: "keyup->passnew#urlicon" } } %>
+          <%= f.input :site_password, as: :string, label: "Contraseña", placeholder: "Contraseña dentro de la plataforma" %>
+          <%= f.input :url, as: :string, label: "URL", placeholder: "https://facebook.com", input_html: { data: { passnew_target: 'siteurl', action: "keyup->passnew#urlicon" } } %>
           <%= f.input :category, label: false, input_html: { data: { passnew_target: 'fav' }, value: "https://i.imgur.com/hPTdOQ4.png", class: "ocultar-campo" } %>
           <%= f.hidden_field :user_id, value: current_user.id %>
           <%= f.submit 'Crear contraseña', class: 'btn btn-blue mt-3' %>

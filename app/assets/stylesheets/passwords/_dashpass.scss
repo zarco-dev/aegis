@@ -1,0 +1,62 @@
+.mis-passwords {
+  width: 100%;
+  margin-top: 91px !important;
+  z-index: 50;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.card-pass-index {
+  background: rgba(48, 66, 82, 0.671);
+  border-radius: 15px;
+  width: 30%;
+  margin-left: 40px;
+}
+
+.circle-fondo-mispassword {
+  width: 57%;
+  height: 100%;
+  background: linear-gradient(162deg, #1d4969, #172c3b);
+  z-index: 20;
+  position: absolute;
+  border-radius: 0% 6% 6% 0% / 0% 16% 17% 0%;
+  left: 0;
+}
+
+.header-card {
+  // background: red;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.header-card > div#d1 {
+  // background-color: beige;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.header-card > div#d2 {
+  // background-color: rgb(201, 201, 54);
+  width: 20%;
+}
+
+#d1 img {
+  // background-color: blue;
+  width: 50px;
+  margin-right: 8px;
+}
+
+#d1 h3 {
+    font-size: 1.75rem;
+    padding: 0;
+    margin: 0;
+}

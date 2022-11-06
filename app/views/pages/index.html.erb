@@ -3,7 +3,7 @@
     <%= render "shared/left_navbar" %>
     <div class="col-9 index-cards">
       <div class="options-cards" data-sidebar-target="colorbank">
-        <h2 class="title-invitation">Mis contraseñas</h2>
+        <h2 class="title-invitation title-slide-in">Mis contraseñas</h2>
         <% if @password.size >= 5 && current_user.premium_user == false %>
           <h4>No puedes crear más contraseñas, cambiate a premium!</h4>
         <% else %>
@@ -11,8 +11,10 @@
         <% end %>
       </div>
       <div class="text-white my-5 p-3 mis-passwords">
-        <% @password.each do |password| %>
-          <div class="card-pass-index mt-4 mb-4 p-3">
+        <% @password.each_with_index do |password, num| %>
+          <div class="card-pass-index mt-4 mb-4 p-3" style="
+            animation: cardSlide <%= num + 1 - num * 0.75 %>s;
+            ">
             <div class="header-card">
               <div id="d1">
                 <img src="<%= password.category %>" alt="">

@@ -13,4 +13,8 @@ class GroupPolicy < ApplicationPolicy
   def create?
     user.premium_user == true
   end
+
+  def destroy?
+    return true
+  end
 end

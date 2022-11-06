@@ -22,6 +22,11 @@
                     <i class="fa-solid fa-circle-info"></i>
                   </button>
                 <% end %></h3>
+
+                <%= link_to group, data: { turbo_method: :delete, turbo_confirm: "Quieres borrar este grupo?" } do %>
+                  <button type="button" class="btn btn-sm delete-invitation"><%= image_tag "close.png" %></button>
+                <% end %>
+
                 <p>Usuarios de este grupo:
                 <% GroupInvitation.all.each do |group_i| %>
                   <% if group.id == group_i.group.id && group_i.status == true %>

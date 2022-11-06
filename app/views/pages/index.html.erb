@@ -7,10 +7,6 @@
       </div>
 
       <div class="col-9">
-
-        <div class="blue-border-box-1">
-        </div>
-
         <h1>Mis contraseñas</h1>
         <% @password.each do |password| %>
           <div class="dash-card mt-4 mb-4 p-3">
@@ -32,6 +28,7 @@
             <div class="mt-1"
             style="line-height: 1.6rem;">
               <p>Categoría: <%= password.category %></p>
+              <img src="<%= password.category %>" style="width: 50px" alt="">
               <p>Url: <%= password.url %></p>
               <p>Contraseña: <%= password.site_password %></p>
             </div>

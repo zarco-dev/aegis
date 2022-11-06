@@ -15,9 +15,10 @@
         <%= f.input :site_username, label: "Nombre de usuario", placeholder: "Username dentro de la plataforma." %>
         <%= f.input :site_password, label: "Contraseña", placeholder: "..." %>
         <%= f.input :url, label: "Dirección", placeholder: "https://www.facebook.com" %>
+        <%= hidden_field_tag :previous_request, request.referer %>
         <%= f.hidden_field :user_id, value: current_user.id %>
 
-        <%= f.submit 'Crear contraseña', class: 'btn btn-blue mt-3' %>
+        <%= f.submit 'Actualizar contraseña', class: 'btn btn-blue mt-3' %>
       <% end %>
 
     </div>

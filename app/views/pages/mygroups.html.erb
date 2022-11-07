@@ -5,17 +5,6 @@
         <div class="circle-fondo-mygroups"></div>
         <div class="options-cards" data-sidebar-target="colorbank">
           <h2 class="title-invitation">Grupos a los que pertenezco</h2>
-            <%= form_with url: mygroups_path, method: :get, html: { data: { searchcards_target: "searchcard" } } do |f| %>
-              <div class="search-form-control form-group">
-                <%= f.text_field :query,
-                                  class: "form-control",
-                                  value: params[:query],
-                                  data: { searchcards_target: "inputsearch", action: "keyup->searchcards#showcards"} %>
-                <button class="btn btn-flat">
-                  <i class="fas fa-search"></i> Buscar grupo por nombre
-                </button>
-              </div>
-            <% end %>
         </div>
         <div class="container-groups">
           <div class="second-group">
@@ -28,26 +17,63 @@
               </lord-icon>
           </div>
           <div class="first-group">
+          <% arraygroup = ['https://img.icons8.com/bubbles/500/null/crowd--v1.png', 'https://img.icons8.com/bubbles/500/null/crowd--v2.png', 'https://img.icons8.com/bubbles/500/null/group.png', 'https://img.icons8.com/bubbles/500/null/user-group-woman-woman.png'] %>
             <% current_user.group_invitations.each_with_index do |group, num| %>
               <% if group.status.eql?(true) %>
-                <div class="group-card p-4 mt-4" style="animation: cardSlide <%= num + 1 - num * 0.75 %>s;">
-                  <p>Grupo <strong>'<%= group.group.name %>'</strong> (Invitado por: <span>@<%= group.group.user.username %></span>)</p>
-                  <button type="button" class="btn btn-view" data-bs-toggle="modal" data-bs-target="#group<%= group.id %>"> Ver contraseñas </button>
+                <div class="group-card mt-4" style="animation: cardSlide <%= num + 1 - num * 0.75 %>s;">
+                  <div>
+                    <%= image_tag arraygroup.sample %>
+                    <p><strong><%= group.group.name %></strong></p>
+                    <span>(Grupo de: <span>@<%= group.group.user.username %></span>)</span>
+                  </div>
+                  <div class="buttons-group">
+                    <button type="button" class="btn-my-group" data-bs-toggle="modal" data-bs-target="#group<%= group.id %>"><i class="fa-solid fa-key"></i> Ver contraseñas </button>
+                    <%= link_to group_delete_invitation_path(group.group.id, group),  data: { turbo_method: :delete, turbo_confirm: "¿Quieres salir esta grupo?" } do %>
+                      <button type="button" class="btn-my-group btn-exit"> <i class="fa-solid fa-person-walking-dashed-line-arrow-right"></i>Salir del grupo</button>
+                    <% end %>
+                  </div>
+                  <%# <button type="button" class="btn btn-view"> Salir del grupo </button> %>
                 </div>
                 <div class="modal fade" id="group<%= group.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="false">
                     <div class="modal-dialog modal-dialog-centered">
-                      <div class="modal-content modal-styles">
+                      <div class="modal-primary">
                         <div class="d-flex justify-content-between m-header">
-                          <h4 class="modal-title" id="exampleModalLabel">Contraseñas del grupo '<%= group.group.name %>'</h4>
-                          <button type="button" class="btn close-modal" data-bs-dismiss="modal" aria-label="Close">X</button>
+                          <h4>Contraseñas del grupo <span><%= group.group.name %></span></h4>
+                          <button type="button" class="btn close-modal" data-bs-dismiss="modal" aria-label="Close"><%= image_tag "close.png" %></button>
                         </div>
                         <div class="modal-body">
                           <% group.group.passwords.each do |password| %>
-                            <div class="dash-card p-3">
-                              <p>Sitio: <%= password.site_name %></p>
-                              <label for="oculto">Password:</label>
-                              <input id="oculto" class="form-control" type="text" value='<%= password.site_password %>' readonly>
-                            </div>
+                            <div class="card-pass-show mt-4 mb-4" data-controller="passindex">
+  <div class="header-card">
+
+    <div id="d1">
+      <img src="<%= password.category %>" alt="">
+      <h3><%= password.site_name %></h3>
+    </div>
+    <div id="d2">
+      <a href=""></a>
+      <a href=""></a>
+    </div>
+  </div>
+  <div class="body-card-pass">
+    <div>
+      <i class="fa-brands fa-chrome"></i>
+      <p>URL: <span><%= link_to password.url, password.url, target: "_blank" %></span></p>
+    </div>
+    <div>
+      <i class="fa-solid fa-user"></i>
+      <p>Usuario: <span><%= password.site_username %></span></p>
+    </div>
+    <div>
+      <i class="fa-solid fa-lock"></i>
+      <p>contraseña: </p>
+      <input id="clickhere" data-action="click->passindex#copypass" data-passindex-target="inputpass" type="password"  readonly value="<%= password.site_password %>">
+      <i class="fa-solid fa-eye-slash" data-action="click->passindex#show" data-passindex-target="showpass"></i><i data-action="click->passindex#show" class="fa-solid fa-eye display-ojo" data-passindex-target="eyenormal"></i>
+      <span class="placeholder1" data-passindex-target="placetext">copiado <i class="fa-solid fa-check"></i></span>
+    </div>
+  </div>
+</div>
+
                           <% end %>
                         </div>
                       </div>

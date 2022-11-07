@@ -1,54 +1,50 @@
 <div class="banking-all" >
   <div class="row row-test">
     <%= render "shared/left_navbar" %>
-    <div class="col-9 index-cards">
-      <div class="options-cards" data-sidebar-target="colorbank">
-        <h2 class="title-invitation">Mis contraseñas</h2>
-        <% if @password.size >= 5 && current_user.premium_user == false %>
-          <h4>No puedes crear más contraseñas, cambiate a premium!</h4>
-        <% else %>
-          <%= link_to '+ Crear contraseña', new_password_path, class: "btn btn-blue" %>
-        <% end %>
-      </div>
-      <div class="text-white my-5 p-3 mis-passwords">
-        <% @password.each do |password| %>
-          <div class="card-pass-index mt-4 mb-4 p-3">
-            <div class="header-card">
-              <div id="d1">
-                <img src="<%= password.category %>" alt="">
-                <h3><%= link_to password.site_name, password_path(password)%></h3>
-              </div>
-              <div id="d2">
-                <%= link_to edit_password_path(password) do %>
-                  <button type="button" class="btn btn-primary" style="color: white;"><i class="fa-solid fa-pen-to-square"></i></button>
-                <% end %>
-                <%= link_to password, data: { turbo_method: :delete, turbo_confirm: "Quieres borrar esta contraseña?" } do %>
-                  <button type="button" class="btn btn-danger" style="color: white;"><i class="fa-solid fa-trash"></i></button>
-                <% end %>
-              </div>
-            </div>
-            <div class="mt-1"
-            style="line-height: 1.6rem;">
-              <p>Categoría: <%= password.category %></p>
-              <p>Url: <%= password.url %></p>
-              <p>Contraseña: <%= password.site_password %></p>
-            </div>
-
+      <div class="col-9 index-cards" data-controller="passindex searchcards">
+        <div class="options-cards" data-sidebar-target="colorbank">
+          <h2 class="title-invitation">Mis contraseñas</h2>
+            <%= form_with url: dashboard_path, method: :get, html: { data: { searchcards_target: "searchcard" } } do |f| %>
+          <div class="search-form-control form-group">
+            <%= f.text_field :query,
+                              class: "form-control",
+                              value: params[:query],
+                              data: { searchcards_target: "inputsearch", action: "keyup->searchcards#showcards"} %>
+            <button class="btn btn-flat">
+              <i class="fas fa-search"></i> Buscar tarjeta por nombre
+            </button>
           </div>
         <% end %>
-
-
-          <!--<% count_notifications = GroupInvitation.where(user_id: current_user.id).group(:status).count %>
-          <% if count_notifications[false] == nil %>
-            <p class="noyet">No tienes invitaciones aún <i class="fa-solid fa-face-sad-cry"></i></p>
-          <% end %>-->
-      </div>
+        <% if @password.size >= 5 && current_user.premium_user == false %>
+              <div class="btn-disable">Agregar contraseña</div>
+            <% else %>
+              <%= link_to 'Agregar contraseña', new_password_path, class: "btn-active-2" %>
+                
+            <% end %>
+        </div>
+          <% count_notifications = Password.where(user_id: current_user.id).count %>
+            <% if count_notifications.eql?(0) %>
+              <h2 class="noyetpass">No has agregado contraseñas todavía.</h2>
+              <%= link_to new_password_path do %>
+                <i class="fa-solid fa-circle-plus move-plus" id="agregar-bank"></i>
+              <% end %>
+            <% else %>
+              <%= render "passwords/parm", passwords: @password %>
+              <% if @password.size >= 5 && current_user.premium_user == false %>
+                <h4 class="alert-2"><lord-icon
+                  src="https://cdn.lordicon.com/tdrtiskw.json"
+                  trigger="loop"
+                  delay="5000"
+                  colors="primary:#e83a30,secondary:#ee6d66"
+                  style="width:70px;height:70px">
+              </lord-icon>No puedes crear más contraseñas, ¡cambiate a premium!</h4>
+              <% end %>
+            <% end %>
         <div class="circle-fondo-mispassword"></div>
-    </div>
+      </div>
   </div>
 </div>
 
-
- <script>
-    document.title = "Aegis: Tus contraseñas";
-  </script>
+<script>
+  document.title = "Aegis: Tus contraseñas";
+</script>

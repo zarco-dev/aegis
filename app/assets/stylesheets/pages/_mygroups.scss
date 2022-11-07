@@ -1,19 +1,90 @@
-.mygroup-dashboard-body {
-  height: 100vh;
-  position: relative;
+.circle-fondo-mygroups {
+  width: 74%;
+  height: 100%;
+  background: linear-gradient(343deg, #154c74, #07273d);
+  z-index: 1;
+  position: absolute;
+  border-radius: 29% 0% 0% 9% / 16% 0% 0% 44%;
+  right: 0;
 }
 
-.mygroup-blue-bg {
-  background: #172934;
-  min-width: 100%;
-  min-height: 100%;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-
-  position: relative;
+.container-groups {
+  // background-color: red;
+  margin-top: 130px;
+  z-index: 100;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-direction: row;
+  padding: 0 50px;
 }
+
+.first-group {
+  // background-color: blue;
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  // z-index: 100;
+}
+
+.second-group {
+  // background-color: yellow;
+  z-index: 5;
+  width: 30%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.index-primary {
+  display: block !important;
+}
+
+.group-card {
+    background-color: #1922297e;
+    border-radius: 15px;
+    margin: 0;
+    color: white;
+    position: relative;
+    border-top: 4px solid #32A6BE;
+    overflow: hidden;
+    transition: transform .3s, border-top .3s;
+    z-index: 2;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .close-modal {
   color: #5f5f5b;

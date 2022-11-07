@@ -5,7 +5,7 @@
   cursor: url(cursor.png), auto;
 }
 
-a, button, .fa-house, .fa-user-plus, .fa-right-to-bracket, .fa-lock, input[type="color"], section.tarjeta *, input.btn-enviar, .contenedor-btn, .fa-plus, input[type="submit"], .fa-circle-arrow-left, .fa-circle-arrow-left span, span.icon-input .fa-eye-slash, span.icon-input .fa-eye, a .fa-circle-plus, #agregar-bank, .fa-circle-plus::before, .menuToggle *, .nav-link *, .cerrar-sesion *, .fa-copy, input#longitud, .delete-invitation img {
+a, button, .fa-house, .fa-user-plus, .fa-right-to-bracket, .fa-lock, input[type="color"], section.tarjeta *, input.btn-enviar, .contenedor-btn, .fa-plus, input[type="submit"], .fa-circle-arrow-left, .fa-circle-arrow-left span, span.icon-input .fa-eye-slash, span.icon-input .fa-eye, a .fa-circle-plus, #agregar-bank, .fa-circle-plus::before, .menuToggle *, .nav-link *, .cerrar-sesion *, .fa-copy, input#longitud, .delete-invitation img, .btncard-delete-pass img, .fa-pen-to-square, input#clickhere {
   cursor: url(cpointer.png), auto !important;
 }
 
@@ -58,4 +58,4 @@ body::-webkit-scrollbar-thumb:hover {
 @import "group_invitations/index";
 @import "bank_passwords/index";
 @import "groups/index";
-@import "passwords/new";
+@import "passwords/index";

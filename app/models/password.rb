@@ -1,5 +1,6 @@
 class Password < ApplicationRecord
   before_create :linkimg
+  before_save :linkimg
   belongs_to :user
   belongs_to :group, optional: true
 

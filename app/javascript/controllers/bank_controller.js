@@ -1,5 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
 
+const abbr = document.querySelectorAll("abbr");
+
 // Connects to data-controller="bank"
 let opcion = document.createElement('option');
 opcion.value = 1;
@@ -18,7 +20,9 @@ export default class extends Controller {
 
 
   connect() {
-    // preventDefault();
+    abbr.forEach((element) => {
+      element.setAttribute("style", "display: none;");
+    });
     console.log(this.validformTarget.textContent == "true");
     if (this.validformTarget.textContent == "true") {
       this.formTarget.classList.add("display-form-bank");

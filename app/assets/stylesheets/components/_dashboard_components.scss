@@ -12,6 +12,18 @@
   position: relative;
 }
 
+.show-blue-bg {
+  background: #172934;
+  min-width: 100%;
+  min-height: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  position: relative;
+}
+
 .blue-border-box-1 {
   background: linear-gradient(162deg, #154c74, #07273d);
   border-radius: 22% 12% 0% 46% / 72% 0% 10% 100% ;
@@ -28,10 +40,24 @@
 
 .blue-border-box-2 {
   background: linear-gradient(162deg, #154c74, #07273d);
-  border-radius: 36% 0% 0% 30% / 78% 0% 10% 98% ;
+  border-radius: 0% 7% 7% 0% / 100% 22% 21% 100% ;
   min-width: 80%;
   min-height: 100%;
   left: 550px;
+  bottom: 0;
+
+  z-index: -1;
+
+  position: absolute;
+  animation: blueBoxOpacity .75s;
+}
+
+.blue-border-box-3 {
+  background: linear-gradient(162deg, #154c74, #07273d);
+  border-radius: 0% 30% 35% 0% / 100% 43% 50% 100% ;
+  min-width: 80%;
+  min-height: 100%;
+  right: 100px;
   bottom: 0;
 
   z-index: -1;

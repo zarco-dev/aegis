@@ -1,25 +1,29 @@
-.group-bg {
-  background: linear-gradient(0deg, #1d2b3a 0%, #185468 100%);
-  min-width: 100%;
-  min-height: 100%;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
 .groupinv-bg {
-  background: linear-gradient(0deg, #16283a 0%, #325a79 100%);
+  background: linear-gradient(0deg, #16283a 0%, #254157 100%);
   min-width: 100%;
   min-height: 100%;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+
+  z-index: -2;
 
   h1 {
     font-size: 3rem;
   }
+}
+
+.invi-card {
+  background: rgba(48, 66, 82, 0.671);
+  box-shadow: 0 4px 10px 0 rgba(11, 15, 19, 0.6);
+  border-radius: 5px;
+  margin: 0;
+}
+
+.user-image {
+  width: 150px;
+  height: 150px;
 }
 
 

@@ -1,9 +1,32 @@
+<% photoarray = [ "https://img.icons8.com/bubbles/500/null/guest-male.png",
+                "https://img.icons8.com/bubbles/500/null/user.png",
+                "https://img.icons8.com/bubbles/500/null/user-female.png",
+                "https://img.icons8.com/bubbles/500/null/administrator-male.png" ] %>
+
 <div class="dashboard-body">
-  <div class="groupinv-bg container p-5">
+  <div class="blue-bg container p-5">
     <div class="row">
       <div class="col-12 text-white">
 
-        <h1>Invitaciones</h1>
+      <div class="blue-border-box-3">
+      </div>
+
+        <h2>Usuarios que pertenecen a este grupo</h2>
+
+        <div class="d-flex flex-wrap justify-content-around">
+          <% @group_invitations.each do |group_invitation| %>
+            <% if group_invitation.status == true %>
+              <div class="text-center p-3">
+
+                <img src="<%= photoarray.sample %>" class="user-image" alt="user-img">
+                <h4 class="m-0"><%= group_invitation.user.username %></h4>
+
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+
+        <h2 class="mt-5">Invitaciones</h2>
 
         <% @group_invitations.each do |group_invitation| %>
           <% if group_invitation.status == false %>

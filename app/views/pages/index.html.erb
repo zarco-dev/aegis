@@ -19,7 +19,7 @@
               <div class="btn-disable">Agregar contraseña</div>
             <% else %>
               <%= link_to 'Agregar contraseña', new_password_path, class: "btn-active-2" %>
-                
+
             <% end %>
         </div>
           <% count_notifications = Password.where(user_id: current_user.id).count %>

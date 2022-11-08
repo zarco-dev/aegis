@@ -1,25 +1,43 @@
-<div class="dashboard-body groupinv-bg">
-  <div class="row">
+<% photoarray = [ "https://img.icons8.com/bubbles/500/null/guest-male.png",
+                "https://img.icons8.com/bubbles/500/null/user.png",
+                "https://img.icons8.com/bubbles/500/null/user-female.png",
+                "https://img.icons8.com/bubbles/500/null/administrator-male.png" ] %>
 
-    <div class="col-12 pt-4 text-white">
-      <div class="container">
+<div class="dashboard-body">
+  <div class="blue-bg container p-5">
+    <div class="row">
+      <div class="col-12 text-white">
 
-        <h1>Invitaciones</h1>
+      <div class="blue-border-box-3">
+      </div>
 
-        <% @group_invitations.each do |group_invitation| %>
-          <div class="option-card mt-5 mb-5 p-3">
-            <h3>Invitacion para <strong>@<%= group_invitation.user.username %></strong></h3>
-            <small>Invitado por: <%= group_invitation.group.user.username %></small>
+        <h2>Usuarios que pertenecen a este grupo</h2>
+
+        <div class="d-flex flex-wrap justify-content-around">
+          <% @group_invitations.each do |group_invitation| %>
             <% if group_invitation.status == true %>
-              <div class="status accepted mt-2">
-                <p>@<%= group_invitation.user.username %> ya hace parte del grupo!</p>
-              </div>
-            <% else %>
-              <div class="status pending mt-2">
-                <p>Pendiente</p>
+              <div class="text-center p-3">
+
+                <img src="<%= photoarray.sample %>" class="user-image" alt="user-img">
+                <h4 class="m-0"><%= group_invitation.user.username %></h4>
+
               </div>
             <% end %>
-          </div>
+          <% end %>
+        </div>
+
+        <h2 class="mt-5">Invitaciones</h2>
+
+        <% @group_invitations.each do |group_invitation| %>
+          <% if group_invitation.status == false %>
+            <div class="invi-card mt-5 mb-5 p-3">
+              <h3>Invitacion para <strong>@<%= group_invitation.user.username %></strong></h3>
+              <div class="d-flex justify-content-between">
+                <small>Invitado por: <%= group_invitation.group.user.username %></small>
+                <p class="text-muted m-0"><em><%= time_ago_in_words(group_invitation.created_at) %> ago</em></p>
+              </div>
+            </div>
+          <% end %>
         <% end %>
 
       </div>

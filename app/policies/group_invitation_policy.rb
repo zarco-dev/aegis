@@ -14,7 +14,7 @@ class GroupInvitationPolicy < ApplicationPolicy
   end
 
   def create?
-    return true
+    user.premium_user == true
   end
 
   def update?

@@ -1,3 +1,8 @@
+ <% unless @bankpasswords.size >= 5 && current_user.premium_user == false %>
+  <%= link_to new_bank_password_path do %>
+    <i class="fa-solid fa-circle-plus" id="agregar-bank"></i>
+  <% end %>
+<% end %>
 <div class="cards-all" data-searchcards-target="listcard">
   <% bank_passwords.each do |bankpassword| %>
     <%= render 'card_info', bankpassword: bankpassword %>

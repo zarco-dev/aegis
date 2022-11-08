@@ -3,9 +3,19 @@ class PagesController < ApplicationController
 
   def home
   end
+  
 
   def index
     @password = policy_scope(Password)
+
+    if params[:query].present?
+      @password = @password.where('site_name ILIKE ?', "#{params[:query]}%")
+    end
+
+    respond_to do |format|
+      format.html # Follow regular flow of Rails
+      format.text { render partial: "passwords/parm", locals: {passwords: @password}, formats: [:html] }
+    end
   end
 
   def invitation
@@ -34,5 +44,5 @@ class PagesController < ApplicationController
 
   def generate
   end
-  
+
 end

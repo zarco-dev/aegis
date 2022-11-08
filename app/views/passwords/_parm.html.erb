@@ -1,0 +1,10 @@
+<div class="text-white my-5 p-3 mis-passwords" data-searchcards-target="listcard">
+<% unless @password.size >= 5 && current_user.premium_user == false %>
+  <%= link_to new_password_path do %>
+    <i class="fa-solid fa-circle-plus" id="agregar-bank"></i>
+  <% end %>
+<% end %>
+  <% passwords.each do |password| %>
+    <%= render 'passwords/pass_info', password: password %>
+  <% end %>
+</div>

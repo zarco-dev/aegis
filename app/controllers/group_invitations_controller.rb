@@ -17,7 +17,7 @@ class GroupInvitationsController < ApplicationController
   def create
     @group_invitation = GroupInvitation.new(group_invitation_params)
     if @group_invitation.save
-      redirect_to groups_path
+      redirect_to group_path(@group)
     else
       render :new
     end

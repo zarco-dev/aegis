@@ -1,39 +1,50 @@
-<div class="dashboard-body">
-  <div class="row">
-
-    <div class="col-3">
-      <%= render "shared/left_navbar"%>
-    </div>
-
-    <div class="col-9">
-      <div class="container mt-3">
-
-        <h1>Mis contraseñas</h1>
-        <% @password.each do |password| %>
-          <div class="mt-5 mb-5">
-
-            <h3>Nombre del sitio: <%= link_to password.site_name, password_path(password), style: 'text-decoration: none;' %></h3>
-            <p>Categoría: <%= password.category %></p>
-            <p>Dirección: <%= password.url %></p>
-            <p>Contraseña: <%= password.site_password %></p>
-
-            <%= link_to password, data: { turbo_method: :delete, turbo_confirm: "Quieres borrar esta contraseña?" } do %>
-              <button type="button" class="btn btn-danger" style="color: white;"><i class="fa-solid fa-trash"></i></button>
-            <% end %>
-            <%= link_to edit_password_path(password) do %>
-              <button type="button" class="btn btn-primary" style="color: white;"><i class="fa-solid fa-pen-to-square"></i></button>
-            <% end %>
-
+<div class="banking-all" >
+  <div class="row row-test">
+    <%= render "shared/left_navbar" %>
+      <div class="col-9 index-cards" data-controller="passindex searchcards">
+        <div class="options-cards" data-sidebar-target="colorbank">
+          <h2 class="title-invitation">Mis contraseñas</h2>
+            <%= form_with url: dashboard_path, method: :get, html: { data: { searchcards_target: "searchcard" } } do |f| %>
+          <div class="search-form-control form-group">
+            <%= f.text_field :query,
+                              class: "form-control",
+                              value: params[:query],
+                              data: { searchcards_target: "inputsearch", action: "keyup->searchcards#showcards"} %>
+            <button class="btn btn-flat">
+              <i class="fas fa-search"></i> Buscar tarjeta por nombre
+            </button>
           </div>
         <% end %>
-
         <% if @password.size >= 5 && current_user.premium_user == false %>
-          <h4>No puedes crear más contraseñas, cambiate a premium!</h4>
-        <% else %>
-          <%= link_to '+ Crear contraseña', new_password_path, class: "btn btn-success" %>
-        <% end %>
+              <div class="btn-disable">Agregar contraseña</div>
+            <% else %>
+              <%= link_to 'Agregar contraseña', new_password_path, class: "btn-active-2" %>
 
+            <% end %>
+        </div>
+          <% count_notifications = Password.where(user_id: current_user.id).count %>
+            <% if count_notifications.eql?(0) %>
+              <h2 class="noyetpass">No has agregado contraseñas todavía.</h2>
+              <%= link_to new_password_path do %>
+                <i class="fa-solid fa-circle-plus move-plus" id="agregar-bank"></i>
+              <% end %>
+            <% else %>
+              <%= render "passwords/parm", passwords: @password %>
+              <% if @password.size >= 5 && current_user.premium_user == false %>
+                <h4 class="alert-2"><lord-icon
+                  src="https://cdn.lordicon.com/tdrtiskw.json"
+                  trigger="loop"
+                  delay="5000"
+                  colors="primary:#e83a30,secondary:#ee6d66"
+                  style="width:70px;height:70px">
+              </lord-icon>No puedes crear más contraseñas, ¡cambiate a premium!</h4>
+              <% end %>
+            <% end %>
+        <div class="circle-fondo-mispassword"></div>
       </div>
-    </div>
   </div>
 </div>
+
+<script>
+  document.title = "Aegis: Tus contraseñas";
+</script>

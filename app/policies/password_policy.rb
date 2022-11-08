@@ -5,10 +5,6 @@ class PasswordPolicy < ApplicationPolicy
     end
   end
 
-  def show?
-    user == record.user
-  end
-
   def new?
     return true if Password.where(user_id: user).size < 5 && user.premium_user == false
     return true if user.premium_user == true

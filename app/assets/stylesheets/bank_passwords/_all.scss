@@ -65,6 +65,23 @@ a:hover .fa-circle-plus, .options-cards a:hover {
   color: #32A6BE;
 }
 
+.move-plus {
+  top: 494px !important;
+  right: 690px !important;
+}
+
+.noyetbank {
+    font-size: 5rem;
+    /* background: red; */
+    text-align: center;
+    height: 90vh;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #90909078;
+}
+
 .search-form-control .form-control {
   height: 2.5rem;
   // box-shadow: 0 2px 6px rgb(0 0 0 / 8%);
@@ -150,18 +167,6 @@ a i#agregar-bank {
   border: none;
 }
 
-.btncard-delete i.fa-solid.fa-circle-xmark {
-  font-size: 2.5em;
-  // transition: .2s;
-  color: #f7bfbf;
-  // backface-visibility: hidden;
-}
-
-.btncard-delete i.fa-solid.fa-circle-xmark:hover {
-  transform: scale(1.02);
-  color: #f19f9f;
-}
-
 .btncard-delete img {
   width: 50px;
 }
@@ -195,6 +200,22 @@ a i#agregar-bank:hover {
   .tarjetas-bank {
     margin-top: 65px;
     margin-bottom: 0px;
+}
+
+.move-plus {
+  top: 346px !important;
+  right: 494px !important;
+}
+
+.noyetbank {
+  font-size: 3.5rem;
+  text-align: center;
+  height: 90vh;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #90909078;
 }
 
   section.tarjeta {

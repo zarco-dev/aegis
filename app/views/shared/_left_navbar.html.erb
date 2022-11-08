@@ -43,7 +43,11 @@
         <li class="nav-link">
           <%= link_to invitation_path do %>
             <i class="bx bxs-bell-ring icon-nav"></i>
-            <span class="text-nav nav-text">Notificaciones</span>
+              <span class="text-nav nav-text noti">Notificaciones </span>
+              <% count_notifications = GroupInvitation.where(user_id: current_user.id).group(:status).count %>
+              <% unless count_notifications[false] == nil %>
+                <small class="span-noti"><%= count_notifications[false] %></small>
+              <% end %>
           <% end %>
         </li>
         <li class="nav-link">
@@ -52,52 +56,70 @@
             <span class="text-nav nav-text">Tarjetas bancarias</span>
           <% end %>
         </li>
-        <li>
-          <span>
-            <%# <i class="fa-solid fa-thumbs-up icon-nav"></i> %>
-            <%# <span class="text-nav nav-text">Usuario premium</span> %>
-          </span>
-        </li>
-        <li>
-          <span>
-            <%# <i class="fa-solid fa-thumbs-up icon-nav"></i> %>
-            <%# <span class="text-nav nav-text">Usuario premium</span> %>
-          </span>
-        </li>
-        <% if current_user.premium_user == true %>
-          <li class="nav-link">
-            <a href="#">
-              <i class="fa-solid fa-thumbs-up icon-nav"></i>
-              <span class="text-nav nav-text">Usuario premium</span>
-            </a>
-          </li>
-        <% else %>
-          <li class="nav-subscription">
-            <a>
-              <i class="fa-solid fa-thumbs-up icon-nav"></i>
-              <span class="text-nav nav-text">Usuario basic <small>Sube a premium</small></span>
-            </a>
-          </li>
-        <% end %>
       </ul>
     </div>
     <div class="bottom-content">
-      <li class="cerrar-sesion">
-          <%= link_to destroy_user_session_path, data: {turbo_method: :delete} do%>
-            <i class="bx bx-log-out icon-nav"></i>
-            <span class="text-nav nav-text">Cerrar sesión</span>
+    <% date_in = current_user.subscription.begining_date %>
+    <% date_start = "#{date_in.day}/#{date_in.month}/#{date_in.year}" %>
+    <% date_out = current_user.subscription.expired_date %>
+    <% if current_user.premium_user == true %>
+    <% date_end = "#{date_out.day}/#{date_out.month}/#{date_out.year}" %>
+      <li class="nav-subscription">
+        <div class="user-first">
+          <a>
+            <lord-icon src="https://cdn.lordicon.com/hbvyhtse.json" trigger="loop" delay="10000" style="width:30px;height:30px" colors="primary:#cccccc"></lord-icon>
+            <span class="text-nav nav-text plan-text">Usuario <span class="premium-p"><%= current_user.subscription.subscription_plan.title %></span></span>
+          </a>
+          <small class="text-nav nav-text plan-text">Te quedan: <%= (Date.parse(date_end) - Date.today).to_i %> días</small>
+        </div>
+        <div class="user-first">
+          <a>
+            <lord-icon  src="https://cdn.lordicon.com/qtxqkhzr.json" trigger="loop" delay="10000" style="width:30px;height:30px" colors="primary:#cccccc"></lord-icon>
+            <span class="text-nav nav-text plan-text">Se activó el: <%= date_in.day  %>-<%= date_in.month  %>-<%= date_in.year  %></span>
+          </a>
+          <% if current_user.subscription.expired_date.eql?(nil) %>
+            <small class="text-nav nav-text plan-text">No se vence</small>
+          <% else %>
+            <small class="text-nav nav-text plan-text">Se vence en: <%= date_out.day %>-<%= date_out.month %>-<%= date_out.year %></small>
           <% end %>
-        </li>
-        <li class="dark-mode-nav">
-          <div class="moon-sun">
-            <i class="fa-solid fa-moon icon-nav moon"></i>
-            <i class="bx bxs-sun icon-nav sun"></i>
-          </div>
-          <span class="mode-text text-nav" data-sidebar-target="modetext">Ligth Mode</span>
-          <div class="toggle-switch" data-sidebar-target="toggleswitch" data-action="click->sidebar#darkmode">
-            <span class="switch"></span>
-          </div>
-        </li>
+        </div>
+      </li>
+    <% else %>
+      <li class="nav-subscription">
+        <div class="user-first">
+          <a>
+            <lord-icon src="https://cdn.lordicon.com/hbvyhtse.json" trigger="loop" delay="10000" style="width:30px;height:30px" colors="primary:#cccccc"></lord-icon>
+            <span class="text-nav nav-text plan-text">Usuario <span><%= current_user.subscription.subscription_plan.title %></span></span>
+          </a>
+          <small><a class="sube-premium" href="">Sube a premium</a></small>
+        </div>
+        <div class="user-first">
+          <a>
+            <lord-icon  src="https://cdn.lordicon.com/qtxqkhzr.json" trigger="loop" delay="10000" style="width:30px;height:30px" colors="primary:#cccccc"></lord-icon>
+            <span class="text-nav nav-text plan-text">Se activó el: <%= date_in.day  %>-<%= date_in.month  %>-<%= date_in.year  %></span>
+          </a>
+          <% if current_user.subscription.expired_date.eql?(nil) %>
+            <small class="text-nav nav-text plan-text">No se vence</small>
+          <% end %>
+        </div>
+      </li>
+    <% end %>
+      <li class="cerrar-sesion">
+        <%= link_to destroy_user_session_path, data: {turbo_method: :delete} do%>
+          <i class="fa-solid fa-right-from-bracket fa-flip-horizontal icon-nav"></i>
+          <span class="text-nav nav-text">Cerrar sesión</span>
+        <% end %>
+      </li>
+      <li class="dark-mode-nav">
+        <div class="moon-sun">
+          <i class="fa-solid fa-moon icon-nav moon"></i>
+          <i class="bx bxs-sun icon-nav sun"></i>
+        </div>
+        <span class="mode-text text-nav" data-sidebar-target="modetext">Ligth Mode</span>
+        <div class="toggle-switch" data-sidebar-target="toggleswitch" data-action="click->sidebar#darkmode">
+          <span class="switch"></span>
+        </div>
+      </li>
     </div>
   </div>
 </nav>

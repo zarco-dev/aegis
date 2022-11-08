@@ -1,0 +1,35 @@
+
+<div class="card-pass-index mt-4 mb-4" data-controller="passindex">
+  <div class="header-card">
+
+    <div id="d1">
+      <img src="<%= password.category %>" alt="">
+      <h3><%= password.site_name %></h3>
+    </div>
+    <div id="d2">
+      <%= link_to password, data: { turbo_method: :delete } do %>
+        <button type="button" class="btn btncard-delete-pass"><%= image_tag "close.png" %></button>
+      <% end %>
+      <%= link_to edit_password_path(password) do %>
+        <button type="button" class="btn btncard-edit-pass"><i class="fa-solid fa-pen-to-square"></i></button>
+      <% end %>
+    </div>
+  </div>
+  <div class="body-card-pass">
+    <div>
+      <i class="fa-brands fa-chrome"></i>
+      <p>URL: <span><%= link_to password.url, password.url, target: "_blank" %></span></p>
+    </div>
+    <div>
+      <i class="fa-solid fa-user"></i>
+      <p>Usuario: <span><%= password.site_username %></span></p>
+    </div>
+    <div>
+      <i class="fa-solid fa-lock"></i>
+      <p>contraseña: </p>
+      <input id="clickhere" data-action="click->passindex#copypass" data-passindex-target="inputpass" type="password"  readonly value="<%= password.site_password %>">
+      <i class="fa-solid fa-eye-slash" data-action="click->passindex#show" data-passindex-target="showpass"></i><i data-action="click->passindex#show" class="fa-solid fa-eye display-ojo" data-passindex-target="eyenormal"></i>
+      <span class="placeholder1" data-passindex-target="placetext">copiado <i class="fa-solid fa-check"></i></span>
+    </div>
+  </div>
+</div>

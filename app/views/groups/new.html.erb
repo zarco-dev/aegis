@@ -1,11 +1,22 @@
-<div class="container mt-5">
-  <div class="row">
-    <div class="col-12">
-      <%= simple_form_for @group do |f| %>
-        <%= f.input :name, placeholder: 'Familiar, Empresarial, etc...' %>
-        <%= f.input :description, as: :text %>
-        <%= f.submit 'Crear grupo', class: "btn btn-success" %>
-      <% end %>
+<div class="dashboard-body">
+  <div class="blue-bg container p-5">
+    <div class="row">
+
+      <div class="col-3">
+        <%= render "shared/left_navbar"%>
+      </div>
+      
+      <div class="col-9 text-white">
+        <h1>Crea un nuevo grupo</h1>
+
+        <div class="mt-4">
+          <%= simple_form_for @group do |f| %>
+            <%= f.input :name, label: 'Nombre del grupo', placeholder: 'Familiar, Empresarial, etc...', class: "input-border" %>
+            <%= f.input :description, label: '¿De qué trata el grupo?', as: :text, class: "input-border" %>
+            <%= f.submit 'Crear grupo', class: "btn btn-blue mt-2" %>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>

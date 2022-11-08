@@ -1,17 +1,24 @@
-<div class="container mt-3">
-  <div class="row">
-    <div class="col-12">
-
-      <%= simple_form_for @password do |f| %>
-        <%= f.input :site_name, placeholder: 'Facebook, Youtube, etc...' %>
-        <%= f.input :category %>
-        <%= f.input :site_username %>
-        <%= f.input :site_password %>
-        <%= f.input :url %>
-
-        <%= f.submit 'Editar contraseña', class: 'btn btn-success' %>
-      <% end %>
-
+<div class="password-container" data-controller="passnew">
+  <script>
+    document.title = "Aegis: Edita tu contraseña";
+  </script>
+<%= link_to :back, class: "back-font back-font-2" do %>
+    <i class="fa-solid fa-circle-arrow-left"> <span>Regresar<span></i>
+  <% end %>
+  <div class="row-password">
+    <div class="div-form-pass">
+      <h1>Actualiza tu contraseña</h1>
+        <%= simple_form_for @password do |f| %>
+          <%= f.input :site_name, label: "Nombre del sitio web", placeholder: 'Netflix, Facebook, etc...' %>
+          <%= f.input :site_username, label: "Nombre de usuario o correo", placeholder: "Username o correo dentro de la plataforma" %>
+          <%= f.input :site_password, as: :string, label: "Contraseña", placeholder: "Contraseña dentro de la plataforma" %>
+          <%= f.input :url, as: :string, label: "URL", placeholder: "https://facebook.com", input_html: { data: { passnew_target: 'siteurl', action: "keyup->passnew#urlicon" } } %>
+          <%= f.input :category, label: false, input_html: { data: { passnew_target: 'fav' }, value: "https://i.imgur.com/hPTdOQ4.png", class: "ocultar-campo" } %>
+          <%= f.hidden_field :user_id, value: current_user.id %>
+          <%= hidden_field_tag :previous_request, request.referer %>
+          <%= f.submit 'Actualizar contraseña', class: 'btn btn-blue mt-3' %>
+        <% end %>
     </div>
   </div>
+  <div class="circle-fondo-password"></div>
 </div>

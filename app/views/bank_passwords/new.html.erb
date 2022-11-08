@@ -26,7 +26,7 @@
             <div class="flexbox">
               <div class="groups-info-bank">
                 <p class="bank-label">Nombre Tarjeta</p>
-                <p class="bank-name" data-bank-target="namecard">Sebas Restrepo</p>
+                <p class="bank-name" data-bank-target="namecard">TU NOMBRE COMPLETO</p>
               </div>
               <div class="groups-info-bank">
                 <p class="bank-label">Expiración</p>
@@ -56,6 +56,9 @@
         <button class="btn-abrir-form" data-bank-target="btnabrir" data-action="click->bank#open">
           <i class="fa-solid fa-plus"></i>
         </button>
+      </div>
+      <div id="form-render" style="display: none;">
+        <p data-bank-target="validform"><%= @page %></p>
       </div>
             <%= simple_form_for @bankpassword, html: { class: "form-tarjeta", data: { bank_target: 'form' } } do |f| %>
               <div class="groups-info-bank">

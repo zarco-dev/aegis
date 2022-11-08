@@ -25,11 +25,15 @@ class BankPasswordsController < ApplicationController
 
   def create
     @bankpassword = BankPassword.new(bank_params)
+    if bank_params["expiration_date(1i)"].eql?("2000")
+      @bankpassword.expiration_date = nil
+    end
     @bankpassword.user = current_user
     authorize @bankpassword
     if @bankpassword.save
       redirect_to bank_passwords_path
     else
+      @page = true
       render :new, status: :unprocessable_entity
     end
   end

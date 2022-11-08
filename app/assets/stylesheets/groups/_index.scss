@@ -1,4 +1,5 @@
 @import "show";
+@import "new";
 
 .btn-group-info {
   background-color: #3CB0D0;
@@ -26,9 +27,4 @@
   border-radius: 5px;
 }
 
-.group-card {
-  background: rgba(48, 66, 82, 0.671);
-  box-shadow: 0 4px 15px 0 rgb(11, 15, 19);
-  border-radius: 5px;
-  width: 98%;
-}
+

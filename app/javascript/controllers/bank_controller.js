@@ -1,20 +1,35 @@
 import { Controller } from "@hotwired/stimulus"
 
+const abbr = document.querySelectorAll("abbr");
+
 // Connects to data-controller="bank"
 let opcion = document.createElement('option');
-opcion.value = null;
+opcion.value = 1;
 opcion.innerText = "Mes"
 opcion.selected = "selected";
 
 let opcion2 = document.createElement('option');
-opcion2.value = null;
+opcion2.value = 2000;
 opcion2.innerText = "Año"
 opcion2.selected = "selected";
 
 
 export default class extends Controller {
 
-  static targets = ["tarjeta", "btnabrir", "form", "inputnumero", "inputnombre", "inputcvc", "selectdate", "numbercard", "namecard", "expiratemonth", "expirateyear", "logofranquicia", "firma", "cvc", "groupselect", "franq", "colorpicker", "colorcard", "colorground"]
+  static targets = ["tarjeta", "btnabrir", "form", "inputnumero", "inputnombre", "inputcvc", "selectdate", "numbercard", "namecard", "expiratemonth", "expirateyear", "logofranquicia", "firma", "cvc", "groupselect", "franq", "colorpicker", "colorcard", "colorground", "validform"]
+
+
+  connect() {
+    abbr.forEach((element) => {
+      element.setAttribute("style", "display: none;");
+    });
+    console.log(this.validformTarget.textContent == "true");
+    if (this.validformTarget.textContent == "true") {
+      this.formTarget.classList.add("display-form-bank");
+      this.formTarget.classList.add("active");
+    }
+  }
+
 
   mostrarFrente() {
     if (this.tarjetaTarget.classList.contains('active')) {

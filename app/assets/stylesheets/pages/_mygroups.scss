@@ -1,47 +1,220 @@
-.blue-bg {
-  background: radial-gradient(circle at left bottom, #00162e , #2d516c);
-  height: 768px;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+.circle-fondo-mygroups {
+  width: 74%;
+  height: 100%;
+  background: linear-gradient(343deg, #154c74, #07273d);
+  z-index: 1;
+  position: absolute;
+  border-radius: 29% 0% 0% 9% / 16% 0% 0% 44%;
+  right: 0;
+}
+
+.container-groups {
+  // background-color: red;
+  margin-top: 130px;
+  z-index: 100;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-direction: row;
+  padding: 0 50px;
+}
+
+.first-group {
+  // background-color: blue;
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  // z-index: 100;
+}
+
+.second-group {
+  // background-color: yellow;
+  z-index: 5;
+  width: 30%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.index-primary {
+  display: block !important;
+}
+
+.group-card {
+    background-color: #1922297e;
+    border-radius: 15px;
+    margin: 0;
+    color: white;
+    position: relative;
+    border-top: 4px solid #32A6BE;
+    overflow: hidden;
+    transition: transform .3s, border-top .3s;
+    z-index: 2;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.group-card:hover {
+  transform: scale(1.02);
+  border-top: 4px solid #32be78;
+}
+
+.group-card > div {
+  // background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.group-card > div img {
+  width: 50px;
+  padding: 0;
+  margin: 0;
+  // background-color: yellow;
+}
+
+.group-card > div p {
+  // background-color: blue;
+  padding: 0;
+  margin: 0;
+  width: 70%;
+  padding-left: 13px;
+}
+
+.group-card > div span {
+  // background-color: green;
   padding: 0;
   margin: 0;
 }
 
-.close-modal {
-  color: #5f5f5b;
+.group-card > div span span {
+  color: #43e5ab;
+  font-weight: bold;
 }
 
-.title-slide-in {
+.buttons-group {
+  // background-color: red;
+  height: 94px;
+  display: flex;
+  align-items: flex-start !important;
+  padding-left: 80px;
+  flex-direction: column;
+  justify-content: space-evenly !important;
+}
+
+.btn-my-group {
+  background-color: #0c2d33;
+  width: 180px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border: none;
+  padding: 5px;
+  border-radius: 15px;
+  color: #fff;
+  transition: .4s;
+}
+
+.btn-my-group:hover {
+  background-color: #43e5ab;
+  color: black;
+  font-weight: bold;
+}
+
+.btn-exit:hover {
+  background-color: #e54e43;
+}
+
+.modal-primary h4 {
+  color: white;
+  margin-bottom: 30px;
+  font-weight: lighter;
+}
+
+.modal-primary h4 span {
+  color: #43e5ab;
+  font-weight: bold;
+}
+
+.modal-primary button img {
+  width: 50px;
   position: relative;
-  animation: titleSlide 0.5s;
+  top: -21px;
+  left: 39px;
+  border: none;
 }
 
-.bg-icon {
-  animation: bgIcon 1.5s;
+.modal-primary button img:hover {
+  transform: scale(1.2);
+}
+
+.modal-primary button {
+  border: none;
+}
+
+.modal-primary {
+  background: #203953;
+  border-radius: 15px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 50;
   width: 100%;
-
-  position: fixed;
-  left: 800px;
-  opacity: .45;
+  pointer-events: auto;
+  background-clip: padding-box;
+  outline: 0;
 }
 
-// Animations
-
-@keyframes titleSlide {
-
-  from {
-    opacity: 0;
-    left: 125px;
-  }
-
-  to {
-    opacity: 1;
-    left: 0;
-  }
-
+.modal-body {
+  position: relative;
+  flex: 1 1 auto;
+  width: 100%;
+  /* padding: var(--bs-modal-padding); */
+  overflow-y: scroll;
+  max-height: 400px;
 }
+
+.card-pass-show {
+  background: #1e2226ab;
+  border-radius: 15px;
+  width: 100%;
+  /* margin-left: 40px; */
+  overflow: hidden;
+  height: 240px;
+  border-top: 4px solid #32A6BE;
+  transition: transform .3s, border-top .3s;
+  transform: scale(1);
+}
+
+.card-pass-show * {
+  color: #fff;
+}
+
+.card-pass-show:hover {
+  transform: scale(1.02);
+  border-top: 4px solid #32be78;
+}
+
+.dash-card {
+  position: relative;
+  background-color: #1922297e;
+  box-shadow: 0 4px 15px 0 #0b0f13;
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  border-radius: 10px;
+  width: 100%;
+  height: 130px;
+  margin-bottom: 30px;
+}
+
 
 @keyframes cardSlide {
 
@@ -57,14 +230,23 @@
 
 }
 
-@keyframes bgIcon {
+@media (max-width: 1370px) {
 
-  from {
-    opacity: 0;
+
+  .group-card > div p {
+    padding: 0;
+    margin: 0;
+    width: 61%;
+    padding-left: 13px;
   }
 
-  to {
-    opacity: .45;
+  .second-group {
+    z-index: 5;
+    width: 30%;
+    height: 404px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: red; */
   }
-
 }

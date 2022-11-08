@@ -1,20 +1,32 @@
+<script src="https://cdn.lordicon.com/qjzruarw.js"></script>
 <div class="show-dashboard-body">
   <div class="show-blue-bg container p-5">
   <div class="row">
     <div class="col-6 text-white">
-      <h1>Detalles del grupo '<%= @group.name %>'</h1>
+      <h1>Grupo <strong style="color: #43e5ab;"><%= @group.name %></strong></h1>
         <div class="row text-center mt-5 d-flex justify-content-around">
           <div class="col-5">
             <%= link_to new_group_group_invitation_path(@group) do %>
-              <div class="option-card p-3">
-                <img src="https://img.icons8.com/bubbles/500/000000/add-user-group-man-man.png" class="group-img">
+              <div class="option-card">
+                <lord-icon
+                  src="https://cdn.lordicon.com/imamsnbq.json"
+                  trigger="loop-on-hover"
+                  delay="2000"
+                  colors="primary:#ffffff,secondary:#43e5ab"
+                  style="width:250px;height:250px">
+                </lord-icon>
                 <h5>Agrega amigos a este grupo para que puedas compartir tus contraseñas!</h5>
               </div>
             <% end %>
           </div>
           <div class="col-5">
-            <div class="option-card p-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              <img src="https://img.icons8.com/bubbles/500/000000/lock.png" class="group-img">
+            <div class="option-card" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <lord-icon
+                  src="https://cdn.lordicon.com/nocovwne.json"
+                  trigger="loop-on-hover"
+                  colors="primary:#ffffff,secondary:#43e5ab"
+                  style="width:250px;height:250px">
+              </lord-icon>
               <h5>Selecciona que contraseña quieres compartir con tus amigos!</h5>
             </div>
           </div>
@@ -50,14 +62,12 @@
           </div>
         </div>
 
-        <div class="p-3 my-5">
-          <h2>Contraseñas de este grupo</h2>
+          <h2 class="m-5">Contraseñas de este grupo</h2>
+
+          <div class="d-flex flex-wrap justify-content-around w-100">
           <% current_user.passwords.each do |pass| %>
             <% if pass.group_id == @group.id %>
-            <div class="password-info d-flex justify-content-between p-2 mt-3 align-items-center">
-              <p>Sitio: <%= pass.site_name %></p>
-              <p>url - <a href="http://<%= pass.url %>"><%= pass.url %></a></p>
-            </div>
+              <%= render 'groups/group_pass_info', password: pass %>
             <% end %>
           <% end %>
         </div>

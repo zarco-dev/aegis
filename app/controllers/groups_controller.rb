@@ -5,6 +5,15 @@ class GroupsController < ApplicationController
   def index
     @groups = policy_scope(Group)
     @password = policy_scope(Password)
+
+    if params[:query].present?
+      @groups = @groups.where('name ILIKE ?', "#{params[:query]}%")
+    end
+
+    respond_to do |format|
+      format.html # Follow regular flow of Rails
+      format.text { render partial: "groups/parm", locals: {groups: @groups}, formats: [:html] }
+    end
   end
 
   def new

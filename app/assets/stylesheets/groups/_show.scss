@@ -1,5 +1,5 @@
 .groupinv-bg {
-  background: linear-gradient(0deg, #16283a 0%, #254157 100%);
+  background: linear-gradient(0deg, #16283a 0%, #315774 100%);
   min-width: 100%;
   min-height: 100%;
   -webkit-background-size: cover;
@@ -28,9 +28,7 @@
 
 
 .option-card {
-  background: rgba(48, 66, 82, 0.671);
-  box-shadow: 0 4px 10px 0 rgba(11, 15, 19, 0.6);
-  border-radius: 5px;
+  border-radius: 6px;
   margin: 0;
   height: 325px;
 
@@ -40,8 +38,8 @@
 }
 
 .option-card:hover {
-  background: linear-gradient(180deg, #1f6d86 0%, #1d2b3a 100%);
-  transform: scale(1.1);
+  background: linear-gradient(180deg, #113846 50%, #172934 100%);
+  transform: scale(1.07);
 }
 
 a:-webkit-any-link {

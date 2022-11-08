@@ -15,7 +15,7 @@
               </button>
             </div>
           <% end %>
-          <div class="btn-disable">Crear Grupo</div>
+          <%= link_to 'Crear Grupo', new_group_path, class: "btn-active-2" %>
         </div>
           <% count_notifications = Group.where(user_id: current_user.id).count %>
             <% if count_notifications.eql?(0) %>
@@ -32,5 +32,5 @@
 </div>
 
 <script>
-  document.title = "Aegis: Tus contraseñas";
+  document.title = "Aegis: Tus grupos";
 </script>

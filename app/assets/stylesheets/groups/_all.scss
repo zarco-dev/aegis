@@ -1,0 +1,136 @@
+.groups-card {
+  background-color: #1922297e;
+  border-radius: 15px;
+  margin: 0;
+  color: white;
+  position: relative;
+  border-bottom: 4px solid #32A6BE;
+  border-right: 4px solid #32a6be;
+  overflow: hidden;
+  transition: transform .3s, border-top .3s, border-left .3s, border-right .3s, border-bottom .3s;
+  z-index: 2;
+  width: 29%;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.groups-card h3 img {
+  width: 50px;
+  margin-right: 10px;
+}
+
+.mis-groups {
+  width: 100%;
+  margin-top: 91px !important;
+  z-index: 50;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.groups-card:hover {
+transform: scale(1.02);
+border-bottom: 4px solid #32be78;
+border-right: 4px solid #32be78;
+}
+
+
+.body-group {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.body-group p {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 1.8em;
+  background-color: #192a379e;
+  border-radius: 15px;
+  padding: 10px 20px;
+}
+
+.body-group p i {
+  margin-right: 20px;
+}
+
+@media (max-width: 1370px) {
+  .body-group p {
+    font-size: 1.3em;
+  }
+
+  .groups-card {
+    width: 29%;
+  }
+
+  .groups-card h3 {
+    font-size: 1.3em;
+  }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btn-group-info {
+  background-color: #3CB0D0;
+  color: #FFFFFF;
+  border-radius: 9px;
+  padding: 0 6px 0 6px;
+  border: none;
+
+  transition: 0.15s ease-in-out;
+
+  .fa-circle-info {
+    font-size: 20px;
+  }
+}
+
+.btn-group-info:hover{
+  color: #FFFFFF;
+  background-color: #1f9bbd;
+  transform: scale(1.07);
+}
+
+.user-badge {
+  font-size: 14px;
+  background-color: #1f9bbd;;
+  border-radius: 5px;
+}

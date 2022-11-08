@@ -22,6 +22,21 @@
   transition: transform .3s, border-top .3s;
 }
 
+// Groups show
+
+.group-card-pass {
+  background: #1e2226ab;
+  border-radius: 15px;
+  width: 42.5%;
+  margin-left: 40px;
+  overflow: hidden;
+  height: 240px;
+  border-top: 4px solid #32A6BE;
+  transition: transform .3s, border-top .3s;
+}
+
+// Groups show
+
 .card-pass-index:hover {
   transform: scale(1.02);
   border-top: 4px solid #32be78;

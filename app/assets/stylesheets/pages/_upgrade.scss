@@ -1,0 +1,118 @@
+
+.plan__premium{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #124468;
+  position: relative;
+}
+.return__arrow{
+  position: absolute;
+  top: 5%;
+  left: 2%;
+  display: flex;
+  flex-direction: row;
+}
+.return__arrow .fa-circle-arrow-left{
+  font-size: 23px;
+  color:#1e96b8;
+  transition:.2s;
+}
+.return__arrow .fa-circle-arrow-left{
+  color: #3CB0D0;
+}
+.return__arrow .return{
+  margin-left: 10px;
+  color:#1e96b8;
+  font-weight: 600;
+  transition:.2s;
+  font-size: 16.8px;
+  font-family: $body-font;
+
+}
+.return__arrow .return:hover{
+ color: #3CB0D0;
+}
+.plan__premium .info__plan__premium{
+  width:45%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 100px auto;
+  background-color: #142a39;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgb(8, 8, 8);
+
+}
+.plan__premium .info__plan__premium h3{
+  margin-bottom: 30px;
+  color:white;
+  font-weight: 600;
+
+}
+.plan__premium .data__user__email{
+  width:70%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.plan__premium .data__user__email .data__user, .user__email{
+  width:100%;
+  color:#e2e5e7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.plan__premium .data__user__email .data__user > .user__premium, .user__email > .email__premium{
+  padding: 5px;
+  border-radius: 8px;
+  width: 100%;
+  background-color:#f4f4f4;
+  margin:5px auto;
+}
+.plan__premium .data__card{
+  width:70%;
+}
+.plan__premium .data__card .info__premium{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.plan__premium .data__card .info__premium .item{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #e2e5e7;
+}
+.plan__premium .data__card .info__premium .item .input{
+  padding: 5px;
+  border-radius: 8px;
+  width: 100%;
+  background-color:#f4f4f4;
+  margin:5px auto;
+
+}
+.plan__premium .info__plan__premium .btn__premium{
+  margin-top: 30px;
+  padding:10px;
+  color: white;
+  font-weight: 600;
+  background-color: #3CB0D0;
+  border-radius: 8px;
+  border: 1px solid #3CB0D0;
+  transition: .2s;
+  transform: scale(100%, 100%);
+}
+.plan__premium .info__plan__premium .btn__premium:hover{
+  transform: scale(101%, 101%);
+  background-color: #1e96b8;
+  border: 1px solid #1e96b8;
+
+}

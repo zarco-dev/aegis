@@ -20,6 +20,7 @@
   height: 240px;
   border-top: 4px solid #32A6BE;
   transition: transform .3s, border-top .3s;
+  position: relative;
 }
 
 // Groups show
@@ -285,4 +286,18 @@ h4.alert-3 {
 h4.alert-3 {
   width: 72%;
   }
+}
+
+@keyframes passCardSlide {
+
+  from {
+    opacity: 0;
+    bottom: 40px;
+  }
+
+  to {
+    opacity: 1;
+    bottom: 0;
+  }
+
 }

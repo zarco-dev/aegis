@@ -1,5 +1,6 @@
 <section class="tarjeta tarjetas-bank" data-bank-target="tarjeta" data-action="click->bank#show" data-controller="bank">
-  <div class="front" data-bank-target="colorcard" style="background-color: <%= bankpassword.account_type %>;">
+  <div class="front" data-bank-target="colorcard" style="background-color: <%= bankpassword.account_type %>;
+  animation: bankCardSlide <%= num + 1 - num * 0.65 %>s;">
   <%= link_to bankpassword, data: { turbo_method: :delete } do %>
     <button type="button" class="btn btncard-delete">
       <%# <i class="fa-solid fa-circle-xmark"></i> %>

@@ -1,11 +1,12 @@
-
 .plan__premium{
-  height: 100vh;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   background-color: #124468;
   position: relative;
+  gap:100px;
+
 }
 .return__arrow{
   position: absolute;
@@ -29,13 +30,19 @@
   transition:.2s;
   font-size: 16.8px;
   font-family: $body-font;
-
 }
 .return__arrow .return:hover{
  color: #3CB0D0;
 }
+/*---  Container 1 -------*/
+
+.plan__premium .container1{
+  width: 90%;
+  max-width: 500px;
+
+}
 .plan__premium .info__plan__premium{
-  width:45%;
+  width: 100%;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -46,17 +53,17 @@
   border-radius: 8px;
   padding: 20px;
   box-shadow: 0 0 10px rgb(8, 8, 8);
-
 }
 .plan__premium .info__plan__premium h3{
   margin-bottom: 30px;
   color:white;
   font-weight: 600;
-
+}
+.plan__premium .info__plan__premium h3 span{
+  color: #ffc700fc;
 }
 .plan__premium .data__user__email{
   width:70%;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -96,23 +103,68 @@
   border-radius: 8px;
   width: 100%;
   background-color:#f4f4f4;
-  margin:5px auto;
+  margin: 5px auto;
+}
+.plan__premium .data__card .data__info{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.plan__premium .data__card .data__info .data__select .select__container{
+  display: flex;
+  flex-direction: row;
+}
+.plan__premium .data__card .data__info .data__select{
+  display: flex;
+  flex-direction: column;
+}
+.plan__premium .data__card .data__info p{
+  color:#e2e5e7;
+}
+.plan__premium .data__card .data__info .data__select .month, .year{
+ border-radius: 8px;
+ padding: 5px;
+ margin-right: 5px;
+
+}
+.plan__premium .data__card .data__info .item{
+  margin-left: 20px;
+
+}
+.plan__premium .data__card .data__info .item .input{
+  margin-top:15px;
+
+}
+.plan__premium .info__plan__premium .payments__cards{
+  margin: 20px;
 
 }
 .plan__premium .info__plan__premium .btn__premium{
-  margin-top: 30px;
-  padding:10px;
-  color: white;
+  padding: 10px;
+  color: black;
   font-weight: 600;
-  background-color: #3CB0D0;
+  background-color: #ffc700fc;
   border-radius: 8px;
-  border: 1px solid #3CB0D0;
+  border: 1px solid #ffc700fc;
   transition: .2s;
   transform: scale(100%, 100%);
 }
 .plan__premium .info__plan__premium .btn__premium:hover{
   transform: scale(101%, 101%);
-  background-color: #1e96b8;
-  border: 1px solid #1e96b8;
 
+}
+/*---  Container 2 -------*/
+
+.plan__premium .container2{
+  width: 90%;
+  max-width: 500px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #142a39;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgb(8, 8, 8);
 }

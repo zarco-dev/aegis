@@ -1,40 +1,126 @@
 
 <div class="plan__premium">
-  <div class="return__arrow">
-    <i class="fa-solid fa-circle-arrow-left"></i>
-    <a href="#" class="return">Regresar</a>
+  <div class="container1">
+    <div class="return__arrow">
+      <i class="fa-solid fa-circle-arrow-left"></i>
+      <!--<a href="#" class="return">Regresar</a>-->
+      <%= link_to 'Regresar', dashboard_path, class: "return" %>
+    </div>
+    <form class="info__plan__premium">
+      <h3>Suscripción <span>Premium</span></h3>
+
+      <div class="data__user__email">
+        <div class="data__user">
+          <label for="" class="usuario">Nombre de usuario</label>
+          <input type="text" class="user__premium" required>
+        </div>
+        <div class="user__email">
+            <label for="" class="email">Correo electrónico</label>
+            <input type="email" class="email__premium" required>
+        </div>
+      </div>
+
+      <div class="data__card">
+        <div class="info__premium">
+          <div class="item">
+            <label for="" class="xxxx">Numero tarjeta</label>
+            <input title="Ingresa 16 numeros conservando un espacio cada 4" pattern="[0-9]{4}\s[0-9]{4}\s[0-9]{4}\s[0-9]{4}" type="text" class="input">
+          </div>
+
+          <div class="data__info">
+
+            <div class="data__select">
+              <p>Expiración</p>
+              <div class="select__container">
+
+                <select  class="month" required>
+
+                  <!-- <input title="Ingresa mes" placeholder="mes" type="month" pattern="[0-9]{2}" class="input" required>
+                  <input title="Ingresa año" placeholder="año" type="year" pattern="[0-9]{4}" class="input" required> -->
+                    <option value="" class="">Enero</option>
+                    <option value="" class="">Febrero</option>
+                    <option value="" class="">Marzo</option>
+                    <option value="" class="">Abril</option>
+                    <option value="" class="">Mayo</option>
+                    <option value="" class="">Junio</option>
+                    <option value="" class="">Julio</option>
+                    <option value="" class="">Agosto</option>
+                    <option value="" class="">Septiembre</option>
+                    <option value="" class="">Octubre</option>
+                    <option value="" class="">Noviembre</option>
+                    <option value="" class="">Diciembre</option>
+                </select>
+                <select class="month" required>
+
+                  <!-- <input title="Ingresa mes" placeholder="mes" type="month" pattern="[0-9]{2}" class="input" required>
+                  <input title="Ingresa año" placeholder="año" type="year" pattern="[0-9]{4}" class="input" required> -->
+                    <option value="" class="">2022</option>
+                    <option value="" class="">2023</option>
+                    <option value="" class="">2024</option>
+                    <option value="" class="">2025</option>
+                    <option value="" class="">2026</option>
+                    <option value="" class="">2027</option>
+                    <option value="" class="">2028</option>
+                    <option value="" class="">2029</option>
+                    <option value="" class="">2030</option>
+                    <option value="" class="">2031</option>
+                    <option value="" class="">2032</option>
+                    <option value="" class="">2033</option>
+                    <option value="" class="">2034</option>
+
+                </select>
+              </div>
+            </div>
+
+              <div class="item">
+                <label for="" class="xxxx">CVC</label>
+                <input title="Ingresa solo 3 numeros" pattern="[0-9]{3}" type="text" class="input" required>
+              </div>
+
+
+
+          </div>
+
+        </div>
+
+      </div>
+      <div class="payments__cards">
+        <img src="https://edteam-media.s3.amazonaws.com/cashboxes/co/colombia-nequi-dark.svg" alt="" class="nequi">
+        <img src="https://edteam-media.s3.amazonaws.com/cashboxes/co/colombia-bancolombia-dark.svg" alt="" class="bancolombia">
+        <img src="https://edteam-media.s3.amazonaws.com/cashboxes/usd/visa-dark.svg" alt="" class="visa">
+        <img src="https://edteam-media.s3.amazonaws.com/cashboxes/usd/mastercard-dark.svg" alt="" class="mastercard">
+        <img src="https://edteam-media.s3.amazonaws.com/cashboxes/usd/americanexpress-dark.svg" alt="" class="americanexpress">
+        <img src="https://edteam-media.s3.amazonaws.com/cashboxes/co/colombia-ach-pse-dark.svg" alt="" class="pse">
+      </div>
+
+      <input type="submit" value="Plan Premium" class="btn__premium">
+
+    </form>
   </div>
-  <div class="info__plan__premium">
-    <h3>Suscripción Premium</h3>
 
-    <div class="data__user__email">
-      <div class="data__user">
-        <label for="" class="usuario">Nombre de usuario</label>
-        <input type="text" class="user__premium">
-      </div>
-      <div class="user__email">
-          <label for="" class="email">Correo electrónico</label>
-          <input type="text" class="email__premium">
-      </div>
-    </div>
 
-    <div class="data__card">
-      <div class="info__premium">
-        <div class="item">
-          <label for="" class="xxxx">xxxx</label>
-          <input type="text" class="input">
-        </div>
-        <div class="item">
-          <label for="" class="xxxx">xxxx</label>
-          <input type="text" class="input">
-        </div>
-        <div class="item">
-          <label for="" class="xxxx">csv</label>
-          <input type="text" class="input">
-        </div>
-      </div>
-    </div>
+  <div class="container2">
+      <div class="shopping__cart">
+        <h3><span>Premium</span> mensual</h3>
+          <p class="save">¡Ahorras $25 USD!</p>
+          <p class="price__before">Antes $60</p>
+          <p class="price__now">Ahora $35</p>
 
-    <button class="btn__premium">Plan premium</button>
+      <lord-icon
+          src="https://cdn.lordicon.com/slkvcfos.json"
+          trigger="hover"
+          style="width:250px;height:250px">
+      </lord-icon>
+
+      </div>
+      <div class="payments__ways">
+        <ul class="payments__features">
+          <li class="">Almacena passwords limitados</li>
+          <li class="">Guarda tarjetas bancarias ilimitadas</li>
+          <li class="">Ve contraseñas que te compartan</li>
+          <li class="">Crea grupos y agrega passwords</li>
+          <li class="">Comparte tus passwords</li>
+        </ul>
+      </div>
   </div>
 </div>

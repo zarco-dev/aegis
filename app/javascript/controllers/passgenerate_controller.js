@@ -65,6 +65,7 @@ export default class extends Controller {
 
   text() {
     var longitud = this.textinputTarget.value;
+    this.passpassTarget.value = this.textinputTarget.value;
     let sizepass = this.rangeinputTarget.value
     this.lengthnumberTarget.value = longitud.length
     this.rangeinputTarget.value = longitud.length

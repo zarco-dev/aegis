@@ -1,22 +1,36 @@
-<div class="dashboard-body">
-  <div class="blue-bg container p-5">
-    <div class="row">
-
-      <div class="col-3">
-        <%= render "shared/left_navbar"%>
-      </div>
-      
-      <div class="col-9 text-white">
-        <h1>Crea un nuevo grupo</h1>
-
-        <div class="mt-4">
-          <%= simple_form_for @group do |f| %>
-            <%= f.input :name, label: 'Nombre del grupo', placeholder: 'Familiar, Empresarial, etc...', class: "input-border" %>
-            <%= f.input :description, label: '¿De qué trata el grupo?', as: :text, class: "input-border" %>
-            <%= f.submit 'Crear grupo', class: "btn btn-blue mt-2" %>
-          <% end %>
+<div class="banking-all" >
+  <div class="row row-test">
+    <%= render "shared/left_navbar" %>
+      <div class="col-9 index-cards">
+      <%= link_to :back, class: "back-font new-position-back" do %>
+        <i class="fa-solid fa-circle-arrow-left"> <span>Regresar<span></i>
+      <% end %>
+        <div class="options-cards" data-sidebar-target="colorbank">
+          <h2 class="title-invitation">Crea un grupo</h2>
         </div>
+          <div class="newgroup-form">
+            <div class="form-new-group">
+              <%= simple_form_for @group do |f| %>
+                <%= f.input :name, label: 'Nombre del grupo', class: "input-border" %>
+                <%= f.input :description, label: '¿De qué trata el grupo?', as: :text, class: "input-border" %>
+                <%= f.submit 'Crear grupo', class: "btn btn-blue mt-2" %>
+              <% end %>
+            </div>
+            <div class="icon-new-group">
+              <lord-icon
+                src="https://cdn.lordicon.com/uukerzzv.json"
+                trigger="loop"
+                delay="2000"
+                colors="primary:#ffffff,secondary:#08a88a"
+                style="width:400px;height:400px">
+              </lord-icon>
+            </div>
+          </div>
+        <div class="circle-fondo-mispassword"></div>
       </div>
-    </div>
   </div>
 </div>
+
+<script>
+  document.title = "Aegis: Crea un grupo";
+</script>

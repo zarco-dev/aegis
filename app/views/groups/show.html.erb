@@ -1,54 +1,59 @@
-<script src="https://cdn.lordicon.com/qjzruarw.js"></script>
 <div class="show-dashboard-body">
-  <div class="show-blue-bg container p-5">
+  <div class="show-blue-bg container padding-8" >
   <div class="row">
     <div class="col-6 text-white">
-      <h1>Grupo <strong style="color: #43e5ab;"><%= @group.name %></strong></h1>
-        <div class="row text-center mt-5 d-flex justify-content-around">
+    <%= link_to groups_path, class: "back-font" do %>
+    <i class="fa-solid fa-circle-arrow-left"> <span>Regresar<span></i>
+  <% end %>
+      <h1>Grupo <strong style="color: #1F9BBD;"><%= @group.name %></strong></h1>
+        <div class="row text-center mt-5 d-flex justify-content-around primer-lordi">
           <div class="col-5">
-            <%= link_to new_group_group_invitation_path(@group) do %>
-              <div class="option-card">
+            <%# <%= link_to new_group_group_invitation_path(@group) do %>
+              <div class="option-card opp" data-bs-toggle="modal" data-bs-target="#adduser">
                 <lord-icon
-                  src="https://cdn.lordicon.com/imamsnbq.json"
-                  trigger="loop-on-hover"
-                  delay="2000"
-                  colors="primary:#ffffff,secondary:#43e5ab"
-                  style="width:250px;height:250px">
-                </lord-icon>
-                <h5>Agrega amigos a este grupo para que puedas compartir tus contraseñas!</h5>
-              </div>
-            <% end %>
-          </div>
-          <div class="col-5">
-            <div class="option-card" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              <lord-icon
-                  src="https://cdn.lordicon.com/nocovwne.json"
-                  trigger="loop-on-hover"
-                  colors="primary:#ffffff,secondary:#43e5ab"
+                  src="https://cdn.lordicon.com/eszyyflr.json"
+                  trigger="hover"
+                  colors="primary:#ffffff,secondary:#ffffff"
                   style="width:250px;height:250px">
               </lord-icon>
-              <h5>Selecciona que contraseña quieres compartir con tus amigos!</h5>
+                <h5>Agregar usuarios<i class="fa-solid fa-plus"></i></h5>
+              </div>
+            <%# <% end %>
+          </div>
+          <div class="col-5">
+            <div class="option-card opp" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <lord-icon
+                  src="https://cdn.lordicon.com/huwchbks.json"
+                  trigger="hover"
+                  colors="primary:#ffffff,secondary:#192229"
+                  style="width:250px;height:250px">
+              </lord-icon>
+              <h5>Agregar contraseñas<i class="fa-solid fa-plus"></i></h5>
             </div>
           </div>
         </div>
 
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade blur-back" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-            <div class="modal-content modal-styles">
-              <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">¿Qué contraseñas deseas agregar?</h1>
-              </div>
+            <div class="modal-content modal-styles modal-pass">
               <div class="modal-body">
+              <h1>Añade una contraseña</h1>
                 <% current_user.passwords.each do |password| %>
                   <%= simple_form_for password, method: :patch do |f| %>
                       <% if password.group_id == nil %>
                       <%= f.hidden_field :group_id, value: @group.id %>
                       <%= hidden_field_tag :previous_request, request.referer %>
-                      <%= f.submit password.site_name, class: "card disabled-pass p-4 text-white my-5 w-100"  %>
+                      <div class="c-contra-modal">
+                        <%= image_tag password.category %>
+                        <%= f.submit password.site_name, class: "card disabled-pass p-4 text-white my-5 w-100" %>
+                      </div>
                         <% else %>
                         <%= f.hidden_field :group_id, value: nil %>
                         <%= hidden_field_tag :previous_request, request.referer %>
-                      <%= f.submit password.site_name, class: "card active-pass p-4 text-white mt-4 w-100" %>
+                        <div class="c-contra-modal">
+                          <%= image_tag password.category %>
+                          <%= f.submit password.site_name, class: "card active-pass p-4 text-white mt-4 w-100" %>
+                        </div>
                         <% if password.group_id.present? %>
                           <div class="group-badge">
                             <p>Pertenece al grupo <strong><%= password.group.name %></strong></p>
@@ -62,9 +67,31 @@
           </div>
         </div>
 
-          <h2 class="m-5">Contraseñas de este grupo</h2>
+        <div class="modal fade blur-back" id="adduser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content modal-styles modal-user">
+              <div class="modal-body" >
+                <div data-controller="searchcards" class="container-1-search">
+                        <h1>Invitar a un usuario</h1>
+                        <%= form_with url: new_group_group_invitation_path(@group), method: :get, html: { data: { searchcards_target: "searchcard" } }, class: "form-search-1" do |f| %>
+                          <div class="search-form-control form-group container-2-search">
+                            <%= f.text_field :query,
+                                  class: "form-control input-1-search",
+                                  value: params[:query],
+                                  placeholder: "ex: user@mail.com",
+                                  data: { searchcards_target: "inputsearch", action: "keyup->searchcards#showcards"} %>
+                          </div>
+                        <% end %>
+        <%= render 'group_invitations/parm', usuarios: @usuarios %>
+</div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-          <div class="d-flex flex-wrap justify-content-around w-100">
+
+          <div class="d-flex flex-wrap justify-content-around w-100 segundo-lordi">
+          <h2 class="m-5">Contraseñas de este grupo:</h2>
           <% current_user.passwords.each do |pass| %>
             <% if pass.group_id == @group.id %>
               <%= render 'groups/group_pass_info', password: pass %>

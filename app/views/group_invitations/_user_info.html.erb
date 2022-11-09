@@ -1,0 +1,17 @@
+<div class="dash-card-2">
+  <div class="primer--first--">
+  <% avatar = %w[avatar1.png avatar2.png avatar3.png avatar4.png avatar5.png avatar6.png avatar7.png avatar8.png avatar9.png avatar10.png avatar11.png] %>
+    <%= image_tag avatar.sample%>
+    <p class="fs-5"><%= user.email %></p>
+    <small>(@<strong><%= user.username %></strong>)</small>
+  </div>
+  <div class="segundo--second--">
+    <%= simple_form_for @group_invitation, url: group_group_invitations_path, method: :post do |f| %>
+      <%= f.hidden_field :user_id,
+      value: user.id %>
+      <%= f.hidden_field :group_id,
+      value: @group.id %>
+      <%= f.submit 'Invitar', class: 'btn-modal-user' %>
+    <% end %>
+  </div>
+</div>

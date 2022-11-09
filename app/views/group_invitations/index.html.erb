@@ -1,36 +1,32 @@
-<% photoarray = [ "https://img.icons8.com/bubbles/500/null/guest-male.png",
-                "https://img.icons8.com/bubbles/500/null/user.png",
-                "https://img.icons8.com/bubbles/500/null/user-female.png",
-                "https://img.icons8.com/bubbles/500/null/administrator-male.png" ] %>
+<% avatar2 = %w[avatar1.png avatar2.png avatar3.png avatar4.png avatar5.png avatar6.png avatar7.png avatar8.png avatar9.png avatar10.png avatar11.png] %>
 
 <div class="dashboard-body">
-  <div class="blue-bg container p-5">
+  <div class="blue-bg iframe-back container p-5">
     <div class="row">
       <div class="col-12 text-white">
 
-        <h2>Usuarios que pertenecen a este grupo</h2>
+        <h2>Usuarios que pertenecen a este grupo:</h2>
 
-        <div class="d-flex flex-wrap justify-content-around">
+
+        <div class="d-flex flex-wrap justify-content-around maxhei">
           <% @group_invitations.each do |group_invitation| %>
             <% if group_invitation.status == true %>
               <div class="text-center p-3">
-
-                <img src="<%= photoarray.sample %>" class="user-image" alt="user-img">
-                <h4 class="m-0"><%= group_invitation.user.username %></h4>
-
+                <%= image_tag avatar2.sample, class: "user-image" %>
+                <h4 class="m-0">@<%= group_invitation.user.username %></h4>
               </div>
             <% end %>
           <% end %>
         </div>
 
-        <h2 class="mt-5">Invitaciones</h2>
+        <h2 class="mt-5">Invitaciones pendientes:</h2>
 
         <% @group_invitations.each do |group_invitation| %>
           <% if group_invitation.status == false %>
             <div class="invi-card mt-5 mb-5 p-3">
-              <h3>Invitacion para <strong>@<%= group_invitation.user.username %></strong></h3>
+              <h3>Invitacion para <strong style="color: #43e5ab;">@<%= group_invitation.user.username %></strong></h3>
               <div class="d-flex justify-content-between">
-                <small>Invitado por: <%= group_invitation.group.user.username %></small>
+                <small></small>
                 <p class="text-muted m-0"><em><%= time_ago_in_words(group_invitation.created_at) %> ago</em></p>
               </div>
             </div>

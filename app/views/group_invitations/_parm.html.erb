@@ -1,0 +1,7 @@
+<div data-searchcards-target="listcard" class="container-show-users">
+<% if @usuarios.present? %>
+  <% usuarios.each do |user| %>
+    <%= render 'user_info', user: user %>
+  <% end %>
+<% end %>
+</div>

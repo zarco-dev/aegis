@@ -171,6 +171,7 @@ header .image-text .header-text {
   font-size: 16px;
   font-weight: 500;
   background-color: var(--primary-color-light);
+  color: var(--text-color);
 }
 
 .sidebar li a {
@@ -390,11 +391,15 @@ small.span-noti {
   }
 
   small.text-nav.nav-text.plan-text {
-    font-size: 12px;
+    font-size: 10px;
 }
 
   span.text-nav.nav-text.plan-text {
-  font-size: 12px;
+  font-size: 10px;
+  }
+
+  .sidebar li {
+    height: 40px;
   }
 
 }

@@ -7,7 +7,7 @@
       <h3><%= password.site_name %></h3>
     </div>
     <div id="d2">
-      <%= link_to password, data: { turbo_method: :delete } do %>
+      <%= link_to password, data: { turbo_method: :delete, turbo_confirm: "¿Quieres borrar esta contraseña?" } do %>
         <button type="button" class="btn btncard-delete-pass"><%= image_tag "close.png" %></button>
       <% end %>
       <%= link_to edit_password_path(password) do %>
@@ -26,7 +26,7 @@
     </div>
     <div>
       <i class="fa-solid fa-lock"></i>
-      <p>contraseña: </p>
+      <p>Contraseña: </p>
       <input id="clickhere" data-action="click->passindex#copypass" data-passindex-target="inputpass" type="password"  readonly value="<%= password.site_password %>">
       <i class="fa-solid fa-eye-slash" data-action="click->passindex#show" data-passindex-target="showpass"></i><i data-action="click->passindex#show" class="fa-solid fa-eye display-ojo" data-passindex-target="eyenormal"></i>
       <span class="placeholder1" data-passindex-target="placetext">copiado <i class="fa-solid fa-check"></i></span>

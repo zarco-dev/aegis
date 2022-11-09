@@ -1,6 +1,6 @@
 <section class="tarjeta tarjetas-bank" data-bank-target="tarjeta" data-action="click->bank#show" data-controller="bank">
   <div class="front" data-bank-target="colorcard" style="background-color: <%= bankpassword.account_type %>;">
-  <%= link_to bankpassword, data: { turbo_method: :delete } do %>
+  <%= link_to bankpassword, data: { turbo_method: :delete, turbo_confirm: "¿Quieres borrar esta tarjeta?" } do %>
     <button type="button" class="btn btncard-delete">
       <%# <i class="fa-solid fa-circle-xmark"></i> %>
       <%= image_tag "close.png" %>
@@ -46,7 +46,7 @@
       </div>
     </div>
     <p class="leyenda">
-      Esta tarjeta es una representación visual de la tarjeta que estas ingresando aqui, puedes cambiarle el color para identificarla mejor.</p>
+      Esta es una representación visual de la tarjeta que estás agregando a nuestra bóveda. Puedes cambiarle el color para identificarla mejor.</p>
       <a href="#" class="link-bank">aegis.com</a>
   </div>
 </section>

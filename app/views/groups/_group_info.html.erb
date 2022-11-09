@@ -2,7 +2,7 @@
 
   <div class="groups-card p-3 mt-4 mb-4" style="animation: cardSlide <%= num + 1 - num * 0.75 %>s;">
     <h3><%= image_tag arraygroup2.sample %><%= group.name %></h3>
-    <%= link_to group, data: { turbo_method: :delete, turbo_confirm: "Quieres borrar este grupo?" } do %>
+    <%= link_to group, data: { turbo_method: :delete, turbo_confirm: "¿Quieres borrar este grupo?" } do %>
       <button type="button" class="btn btn-sm delete-invitation"><%= image_tag "close.png" %></button>
     <% end %>
 <%= link_to group_path(group) do %>

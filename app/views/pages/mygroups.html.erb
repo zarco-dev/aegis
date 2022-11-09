@@ -13,11 +13,14 @@
                   trigger="loop"
                   colors="primary:#ffffff,secondary:#43e5ab"
                   delay="5000"
-                  style="width:650px;height:650px">
+                  style="width:400px;height:400px">
               </lord-icon>
+              <div class="texto-in d-flex justify-content-center text-center mt-4 p-4 text-white">
+            <h4><strong>@<%= current_user.username %></strong>, revisa las contraseñas que han compartido contigo.</h4>
+          </div>
           </div>
           <div class="first-group">
-          <% arraygroup = ['https://img.icons8.com/bubbles/500/null/crowd--v1.png', 'https://img.icons8.com/bubbles/500/null/crowd--v2.png', 'https://img.icons8.com/bubbles/500/null/group.png', 'https://img.icons8.com/bubbles/500/null/user-group-woman-woman.png'] %>
+          <% arraygroup = ['https://img.icons8.com/bubbles/500/null/user-group-woman-woman.png', 'https://img.icons8.com/bubbles/500/null/groups.png', 'https://img.icons8.com/bubbles/500/null/crowd--v1.png', 'https://img.icons8.com/bubbles/500/null/crowd--v2.png', 'https://img.icons8.com/bubbles/500/null/user-group-man-woman.png', 'https://img.icons8.com/bubbles/500/null/conference-call.png', 'https://img.icons8.com/bubbles/500/null/group.png'] %>
             <% current_user.group_invitations.each_with_index do |group, num| %>
               <% if group.status.eql?(true) %>
                 <div class="group-card mt-4" style="animation: cardSlide <%= num + 1 - num * 0.75 %>s;">
@@ -66,7 +69,7 @@
     </div>
     <div>
       <i class="fa-solid fa-lock"></i>
-      <p>contraseña: </p>
+      <p>Contraseña: </p>
       <input id="clickhere" data-action="click->passindex#copypass" data-passindex-target="inputpass" type="password"  readonly value="<%= password.site_password %>">
       <i class="fa-solid fa-eye-slash" data-action="click->passindex#show" data-passindex-target="showpass"></i><i data-action="click->passindex#show" class="fa-solid fa-eye display-ojo" data-passindex-target="eyenormal"></i>
       <span class="placeholder1" data-passindex-target="placetext">copiado <i class="fa-solid fa-check"></i></span>

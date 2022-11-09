@@ -1,152 +1,101 @@
 
 <div class="plan__premium">
-  <div class="container1">
-    <div class="return__arrow">
-      <i class="fa-solid fa-circle-arrow-left"></i>
-      <!--<a href="#" class="return">Regresar</a>-->
-      <%= link_to 'Regresar', dashboard_path, class: "return" %>
-    </div>
-    <form class="info__plan__premium">
-      <h3>Suscripción <span>Premium</span></h3>
-
-      <div class="data__user__email">
-        <div class="data__user">
-          <label for="" class="usuario">Nombre de usuario</label>
-          <input type="text" class="user__premium" required>
+  <%= link_to :back, class: "back-font" do %>
+    <i class="fa-solid fa-circle-arrow-left"> <span>Regresar<span></i>
+  <% end %>
+  <div class="plan__premium--center">
+    <div class="container1">
+      <form class="info__plan__premium">
+        <div class="container1-1">
+          <h3>Suscripción <span>Premium</span></h3>
         </div>
-        <div class="user__email">
-            <label for="" class="email">Correo electrónico</label>
-            <input type="email" class="email__premium" required>
-        </div>
-      </div>
-
-      <div class="data__card">
-        <div class="info__premium">
-          <div class="item">
-            <label for="" class="xxxx">Numero tarjeta</label>
-            <input title="Ingresa 16 numeros conservando un espacio cada 4" pattern="[0-9]{4}\s[0-9]{4}\s[0-9]{4}\s[0-9]{4}" type="text" class="input">
+        <div class="container1-2">
+          <div class="data__user__email">
+            <div class="data__user">
+              <label for="" class="usuario">Nombre de usuario</label>
+              <input type="text" value="<%= current_user.username%>" readonly disabled class="user__premium" required>
+            </div>
+            <div class="user__email">
+              <label for="" class="email">Correo electrónico</label>
+              <input type="email" value="<%= current_user.email%>" readonly disabled class="email__premium" required>
+            </div>
           </div>
-
-          <div class="data__info">
-
-            <div class="data__select">
-              <p>Expiración</p>
-              <div class="select__container">
-
-                <select  class="month" required>
-
-                  <!-- <input title="Ingresa mes" placeholder="mes" type="month" pattern="[0-9]{2}" class="input" required>
-                  <input title="Ingresa año" placeholder="año" type="year" pattern="[0-9]{4}" class="input" required> -->
-                    <option value="" class=""></option>
-
-                    <option value="" class="">Enero</option>
-                    <option value="" class="">Febrero</option>
-                    <option value="" class="">Marzo</option>
-                    <option value="" class="">Abril</option>
-                    <option value="" class="">Mayo</option>
-                    <option value="" class="">Junio</option>
-                    <option value="" class="">Julio</option>
-                    <option value="" class="">Agosto</option>
-                    <option value="" class="">Septiembre</option>
-                    <option value="" class="">Octubre</option>
-                    <option value="" class="">Noviembre</option>
-                    <option value="" class="">Diciembre</option>
-                </select>
-                <select class="month" required>
-
-                  <!-- <input title="Ingresa mes" placeholder="mes" type="month" pattern="[0-9]{2}" class="input" required>
-                  <input title="Ingresa año" placeholder="año" type="year" pattern="[0-9]{4}" class="input" required> -->
-                    <option value="" class=""></option>
-
-                    <option value="" class="">2022</option>
-                    <option value="" class="">2023</option>
-                    <option value="" class="">2024</option>
-                    <option value="" class="">2025</option>
-                    <option value="" class="">2026</option>
-                    <option value="" class="">2027</option>
-                    <option value="" class="">2028</option>
-                    <option value="" class="">2029</option>
-                    <option value="" class="">2030</option>
-                    <option value="" class="">2031</option>
-                    <option value="" class="">2032</option>
-                    <option value="" class="">2033</option>
-                    <option value="" class="">2034</option>
-
-                </select>
+          <div class="data__card">
+            <div class="info__premium">
+              <div class="item">
+                <label for="" class="xxxx">Numero tarjeta</label>
+                <input type="text" value="4523 2356 2312 0025" class="input">
+              </div>
+              <div class="data__info">
+                <div class="data__select">
+                  <p>Expiración</p>
+                  <div class="select__container">
+                    <select  class="month" required>
+                      <option value="" class="" selected>Mes</option>
+                      <option value="" class="">Enero</option>
+                      <option value="" class="">Febrero</option>
+                      <option value="" class="">Marzo</option>
+                      <option value="" class="">Abril</option>
+                      <option value="" class="">Mayo</option>
+                      <option value="" class="">Junio</option>
+                      <option value="" class="">Julio</option>
+                      <option value="" class="">Agosto</option>
+                      <option value="" class="">Septiembre</option>
+                      <option value="" class="">Octubre</option>
+                      <option value="" class="">Noviembre</option>
+                      <option value="" class="">Diciembre</option>
+                    </select>
+                    <select class="month" required>
+                      <option value="" class="" selected>Año</option>
+                      <option value="" class="">2022</option>
+                      <option value="" class="">2023</option>
+                      <option value="" class="">2024</option>
+                      <option value="" class="">2025</option>
+                      <option value="" class="">2026</option>
+                      <option value="" class="">2027</option>
+                      <option value="" class="">2028</option>
+                      <option value="" class="">2029</option>
+                      <option value="" class="">2030</option>
+                      <option value="" class="">2031</option>
+                      <option value="" class="">2032</option>
+                      <option value="" class="">2033</option>
+                      <option value="" class="">2034</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="item">
+                  <label for="" class="xxxx">CVC</label>
+                  <input title="Ingresa solo 3 numeros" pattern="[0-9]{3}" type="text" class="input" required>
+                </div>
               </div>
             </div>
-
-              <div class="item">
-                <label for="" class="xxxx">CVC</label>
-                <input title="Ingresa solo 3 numeros" pattern="[0-9]{3}" type="text" class="input" required>
-              </div>
-
-
-
           </div>
-
+          <div class="payments__cards">
+            <img src="https://edteam-media.s3.amazonaws.com/cashboxes/co/colombia-nequi-dark.svg" alt="" class="nequi">
+            <img src="https://edteam-media.s3.amazonaws.com/cashboxes/co/colombia-bancolombia-dark.svg" alt="" class="bancolombia">
+            <img src="https://edteam-media.s3.amazonaws.com/cashboxes/usd/visa-dark.svg" alt="" class="visa">
+            <img src="https://edteam-media.s3.amazonaws.com/cashboxes/usd/mastercard-dark.svg" alt="" class="mastercard">
+            <img src="https://edteam-media.s3.amazonaws.com/cashboxes/usd/americanexpress-dark.svg" alt="" class="americanexpress">
+            <img src="https://edteam-media.s3.amazonaws.com/cashboxes/co/colombia-ach-pse-dark.svg" alt="" class="pse">
+          </div>
         </div>
-
-      </div>
-      <div class="payments__cards">
-        <img src="https://edteam-media.s3.amazonaws.com/cashboxes/co/colombia-nequi-dark.svg" alt="" class="nequi">
-        <img src="https://edteam-media.s3.amazonaws.com/cashboxes/co/colombia-bancolombia-dark.svg" alt="" class="bancolombia">
-        <img src="https://edteam-media.s3.amazonaws.com/cashboxes/usd/visa-dark.svg" alt="" class="visa">
-        <img src="https://edteam-media.s3.amazonaws.com/cashboxes/usd/mastercard-dark.svg" alt="" class="mastercard">
-        <img src="https://edteam-media.s3.amazonaws.com/cashboxes/usd/americanexpress-dark.svg" alt="" class="americanexpress">
-        <img src="https://edteam-media.s3.amazonaws.com/cashboxes/co/colombia-ach-pse-dark.svg" alt="" class="pse">
-      </div>
-
-      <input type="submit" value="Plan Premium" class="btn__premium">
-
-    </form>
-  </div>
-
-
+        <div class="container1-3">
+          <input type="submit" value="¡Sube a premium!" class="btn__premium">
+        </div>
+      </form>
+    </div>
     <div class="container2">
-      <h3><span>Premium</span> mensual</h3>
-      <div class="shopping__cart">
-
-        <div class="pricing">
-          <p class="save">¡Ahorras $25 USD!</p>
-          <p class="price__before">Antes $60</p>
-          <p class="price__now">Ahora $35</p>
-        </div>
-          <lord-icon
-            src="https://cdn.lordicon.com/slkvcfos.json"
-            trigger="hover"
-            colors="primary:#ffffff,secondary:#08a88a"
-            stroke="40"
-            style="width:200px;height:200px">
-          </lord-icon>
-
-      </div>
-      <div class="payments__ways">
-        <div class="payments__features">
-          <i class="fa-solid fa-circle-check"></i>
-          <p>Almacena passwords limitados</p>
-        </div>
-
-        <div class="payments__features">
-          <i class="fa-solid fa-circle-check"></i>
-          <p>Guarda tarjetas bancarias ilimitadas</p>
-        </div>
-
-        <div class="payments__features">
-          <i class="fa-solid fa-circle-check"></i>
-          <p>Ve contraseñas que te compartan</p>
-        </div>
-
-        <div class="payments__features">
-          <i class="fa-solid fa-circle-check"></i>
-          <p>Crea grupos y agrega passwords</p>
-        </div>
-
-        <div class="payments__features">
-          <i class="fa-solid fa-circle-check"></i>
-          <p>Comparte tus passwords</p>
-        </div>
-
+      <div class="shopbuy">
+        <h2>$35 USD</h2>
+        <lord-icon
+          class="lordlord"
+          src="https://cdn.lordicon.com/slkvcfos.json"
+          trigger="loop"
+          delay="5000"
+          colors="primary:#ffffff,secondary:#ffc700"
+          style="width:180px;height:180px">
+        </lord-icon>
       </div>
     </div>
+  </div>
 </div>

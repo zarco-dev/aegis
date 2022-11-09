@@ -2,6 +2,7 @@
   <script>
     document.title = "Aegis: Tus invitaciones";
   </script>
+  <% avatar = %w[avatar1.png avatar2.png avatar3.png avatar4.png avatar5.png avatar6.png avatar7.png avatar8.png avatar9.png avatar10.png avatar11.png] %>
   <div class="row row-test">
     <%= render "shared/left_navbar" %>
     <div class="col-9 index-cards position-invitation">
@@ -16,7 +17,7 @@
               ">
                 <div class="d-flex justify-content-between">
                   <p>
-                    <img class="img-invitation" src="https://img.icons8.com/bubbles/500/null/gender-neutral-user.png"/>
+                  <%= image_tag avatar.sample, class: "img-invitation" %>
                     <strong>@<%= group_i.group.user.username %></strong>
                     te invita unirte al grupo
                     <strong class="grupo-text"><%= group_i.group.name %></strong>

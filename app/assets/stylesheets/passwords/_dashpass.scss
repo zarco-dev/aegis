@@ -189,7 +189,7 @@ h4.alert-2 {
   z-index: 10;
   background: #ff000026;
   text-align: center;
-  width: 50%;
+  width: 56%;
   margin: 0 auto;
   height: 50px;
   display: flex;
@@ -198,6 +198,23 @@ h4.alert-2 {
   font-weight: bold;
   color: #fff;
   border-radius: 15px;
+  margin-top: 160px;
+  margin-bottom: -59px;
+}
+
+h4.alert-2 a {
+  background-color: #ffea08d4;
+  padding: 5px 15px;
+  margin-left: 5px;
+  border-radius: 15px;
+  color: black !important;
+  font-weight: bold;
+  transition: .3s;
+}
+
+h4.alert-2 a:hover {
+  transform: scale(1.02);
+  background-color: #ffea00ec;
 }
 
 h4.alert-3 {
@@ -280,12 +297,14 @@ h4.alert-3 {
 
   h4.alert-2, .alert-2.h4 {
     width: 79%;
-    margin-bottom: 20px;
+    margin-bottom: -56px;
 }
 
 h4.alert-3 {
   width: 72%;
   }
+
+
 }
 
 @keyframes passCardSlide {

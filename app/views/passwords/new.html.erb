@@ -1,4 +1,4 @@
-<div class="password-container" data-controller="passnew">
+<div class="password-container" data-controller="passnew passgenerate">
   <script>
     document.title = "Aegis: Guarda tu contraseña";
   </script>
@@ -9,9 +9,9 @@
     <div class="div-form-pass">
       <h1>Guarda tu contraseña</h1>
         <%= simple_form_for @password do |f| %>
-          <%= f.input :site_name, label: "Nombre del sitio web", placeholder: 'Netflix, Facebook, etc...' %>
-          <%= f.input :site_username, label: "Nombre de usuario o correo", placeholder: "Username o correo dentro de la plataforma" %>
-          <%= f.input :site_password, as: :string, label: "Contraseña", placeholder: "Contraseña dentro de la plataforma" %>
+          <%= f.input :site_name, label: "Nombre del sitio web", placeholder: 'Netflix, Facebook, etc.' %>
+          <%= f.input :site_username, label: "Nombre de usuario o correo", placeholder: "Nombre de usuario o correo de la plataforma" %>
+          <%= f.input :site_password, as: :string, label: "Contraseña", placeholder: "Contraseña de la plataforma", input_html: { data: { passgenerate_target: 'passpass' } } %>
           <%= f.input :url, as: :string, label: "URL", placeholder: "https://facebook.com", input_html: { data: { passnew_target: 'siteurl', action: "keyup->passnew#urlicon" } } %>
           <%= f.input :category, label: false, input_html: { data: { passnew_target: 'fav' }, value: "https://i.imgur.com/hPTdOQ4.png", class: "ocultar-campo" } %>
           <%= f.hidden_field :user_id, value: current_user.id %>
@@ -31,7 +31,7 @@
         </lord-icon>
         <button class="btn btn-blue mt-3 btn-aceptar" data-action="click->passnew#showg">Usa nuestro generador</button>
       </div>
-      <div id="generator" class="section-passwords-free pass-c-p" data-passnew-target="generatepass" data-controller="passgenerate">
+      <div id="generator" class="section-passwords-free pass-c-p" data-passnew-target="generatepass">
         <div class="passwords-section paa-b">
           <div class="passwords-generate">
             <div class="password-generating password-generating-pass">

@@ -1,0 +1,14 @@
+<% arraygroup2 = ['https://img.icons8.com/bubbles/500/null/user-group-woman-woman.png', 'https://img.icons8.com/bubbles/500/null/groups.png', 'https://img.icons8.com/bubbles/500/null/crowd--v1.png', 'https://img.icons8.com/bubbles/500/null/crowd--v2.png', 'https://img.icons8.com/bubbles/500/null/user-group-man-woman.png', 'https://img.icons8.com/bubbles/500/null/conference-call.png', 'https://img.icons8.com/bubbles/500/null/group.png'] %>
+
+  <div class="groups-card p-3 mt-4 mb-4" style="animation: cardSlide <%= num + 1 - num * 0.75 %>s;">
+    <h3><%= image_tag arraygroup2.sample %><%= group.name %></h3>
+    <%= link_to group, data: { turbo_method: :delete, turbo_confirm: "¿Quieres borrar este grupo?" } do %>
+      <button type="button" class="btn btn-sm delete-invitation"><%= image_tag "close.png" %></button>
+    <% end %>
+<%= link_to group_path(group) do %>
+    <div class="body-group">
+      <p><i class="fa-solid fa-user-group"></i><%= GroupInvitation.where("group_id = ? AND status = true", group.id).count %></p>
+      <p><i class="fa-solid fa-lock"></i><%= group.passwords.count %>    </p>
+    </div>
+  </div>
+<% end %>

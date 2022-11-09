@@ -5,7 +5,7 @@ const abbr = document.querySelectorAll("abbr");
 // Connects to data-controller="passnew"
 export default class extends Controller {
 
-  static targets = ["siteurl", "fav", "generatepass", "titulopassword"]
+  static targets = ["siteurl", "fav", "generatepass", "titulopassword", "passpass"]
 
   connect() {
     abbr.forEach((element) => {

@@ -3,7 +3,7 @@ class PagesController < ApplicationController
 
   def home
   end
-  
+
 
   def index
     @password = policy_scope(Password)

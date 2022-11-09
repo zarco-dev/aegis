@@ -6,13 +6,24 @@ class GroupInvitationsController < ApplicationController
     @group_invitations = policy_scope(GroupInvitation)
   end
 
+
+
   def new
     @group_invitation = GroupInvitation.new
+
     if params[:query].present?
-      @query = params[:query]
-      @usuarios = User.where("email LIKE '%#{@query}%'")
+      @usuarios = User.where('email ILIKE ?', "%#{params[:query]}%")
     end
+
+    respond_to do |format|
+      format.html # Follow regular flow of Rails
+      format.text { render partial: "group_invitations/parm", locals: {usuarios: @usuarios}, formats: [:html] }
+    end
+
   end
+
+
+
 
   def create
     @group_invitation = GroupInvitation.new(group_invitation_params)

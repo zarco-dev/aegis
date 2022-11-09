@@ -1,46 +1,19 @@
-<div class="dashboard-body text-white">
-  <div class="blue-bg container p-5">
-    <div class="row">
-
-      <div class="col-8">
+<div class="dashboard-body text-white" data-controller="searchcards">
+  <div class="blue-bg container p-5" >
+    <div class="row" >
+      <div class="col-8" >
         <h1>Invitar a un usuario</h1>
-        <%= form_tag new_group_group_invitation_path, method: :get do  %>
-          <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-          placeholder: "ex: user@mail.com" %>
-          <%= submit_tag "Buscar", class: "btn btn-primary mt-2" %>
+        <%= form_with url: new_group_group_invitation_path, method: :get, html: { data: { searchcards_target: "searchcard" } } do |f| %>
+          <div class="search-form-control form-group">
+            <%= f.text_field :query,
+                  class: "form-control",
+                  value: params[:query],
+                  placeholder: "ex: user@mail.com",
+                  data: { searchcards_target: "inputsearch", action: "keyup->searchcards#showcards"} %>
+          </div>
         <% end %>
-
-        <% if @usuarios.present? %>
-          <% @usuarios.each do |user| %>
-            <div class="dash-card p-3 my-4">
-              <div class="d-flex justify-content-between">
-                <p class="fs-5"><%= user.email %></p>
-
-                <small>Usuario: <strong><%= user.username %></strong></small>
-              </div>
-              <%= simple_form_for @group_invitation, url: group_group_invitations_path, method: :post do |f| %>
-                <%= f.hidden_field :user_id,
-                value: user.id %>
-                <%= f.hidden_field :group_id,
-                value: @group.id %>
-                <%= f.submit 'Invitar usuario', class: 'btn btn-blue mt-2' %>
-              <% end %>
-            </div>
-          <% end %>
-        <% end %>
-
+        <%= render 'parm', usuarios: @usuarios %>
       </div>
-
-      <div class="col-4 text-center">
-        <div class="dash-card p-4">
-          <img src="https://img.icons8.com/bubbles/500/000000/couple-question-mark.png" class="invitation-img">
-
-          <h5>Una vez que invites a un usuario, le llegará la invitación y si decide aceptarla, estará automaticamente dentro de tu grupo!</h5>
-        </div>
-      </div>
-
     </div>
   </div>
 </div>

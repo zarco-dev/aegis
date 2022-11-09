@@ -12,6 +12,7 @@
   width: 29%;
   margin-bottom: 10px;
   padding: 10px;
+  margin-right: 60px;
 }
 
 .groups-card h3 img {
@@ -26,7 +27,7 @@
   display: flex;
   flex-flow: row wrap;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: flex-start;
 }
 
 .groups-card:hover {
@@ -67,6 +68,7 @@ border-right: 4px solid #32be78;
 
   .groups-card {
     width: 29%;
+    margin-right: 43px;
   }
 
   .groups-card h3 {

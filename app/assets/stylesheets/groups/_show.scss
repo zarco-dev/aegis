@@ -15,10 +15,11 @@
 }
 
 .invi-card {
-  background: rgba(48, 66, 82, 0.671);
-  box-shadow: 0 4px 10px 0 rgba(11, 15, 19, 0.6);
+  background: #202b33ab;
   border-radius: 5px;
   margin: 0;
+  border-radius: 15px;
+  border-top: 4px solid #e7a9a970;
 }
 
 .user-image {
@@ -37,9 +38,12 @@
   transition: all .75s;
 }
 
+.option-card.opp h5 i {
+  margin-left: 20px;
+}
+
 .option-card:hover {
-  background: linear-gradient(180deg, #113846 50%, #172934 100%);
-  transform: scale(1.07);
+  transform: scale(1.05);
 }
 
 a:-webkit-any-link {
@@ -84,17 +88,32 @@ a:-webkit-any-link {
   iframe {
     width: 45%;
     height: 85vh;
-    border-radius: 6px;
+    border-radius: 15px;
     position: fixed;
+    margin-top: 24px;
+    margin-left: 32px;
+    border-top: 4px solid #00b4ff1f;
   }
+
+}
+
+.iframe-back {
+  background: #192229 !important;
+}
+
+.maxhei {
+  height: 414px !important;
+  max-height: 414px !important;
+  overflow: hidden;
+  justify-content: flex-start !important;
 }
 
 .active-pass {
-  background: radial-gradient(circle at right top, #437fad , #25397a);
   border: none;
-  box-shadow: 0 4px 10px 0 rgba(11, 15, 19, 0.6);
-
   transition: transform .5s;
+  background: #071e26;
+  border-radius: 15px;
+  border-top: 4px solid #92e7958a;
 }
 
 .active-pass:hover {
@@ -102,11 +121,11 @@ a:-webkit-any-link {
 }
 
 .disabled-pass {
-  background: radial-gradient(circle at right top, #696969 , #292829);
   border: none;
-  box-shadow: 0 4px 10px 0 rgba(11, 15, 19, 0.6);
-
   transition: transform .5s;
+  background: #2c3133;
+  border-radius: 15px;
+  border-top: 4px solid #e792928a;
 }
 
 .disabled-pass:hover {
@@ -118,14 +137,14 @@ a:-webkit-any-link {
   padding: 5px;
   border-radius: 5px;
   position: relative;
-  background: #298cae;
+  background: #298cae45;
   font-size: 12px;
 
   bottom: 17px;
 
   transition: transform .5s;
 
-  left: 12px;
+  left: 240px;
 
   p {
     margin: 0;
@@ -134,4 +153,31 @@ a:-webkit-any-link {
 
 .group-badge:hover {
   transform: scale(1.04);
+}
+
+
+@media (max-width: 1370px) {
+
+  .iframe-box iframe {
+    width: 45%;
+    height: 85vh;
+    border-radius: 15px;
+    position: fixed;
+    margin-top: -9px;
+    margin-left: 32px;
+    border-top: 4px solid #00b4ff1f;
+  }
+
+.user-image {
+  width: 100px;
+  height: 100px;
+}
+
+.maxhei {
+  height: 235px !important;
+  max-height: 235px !important;
+  overflow: hidden;
+  justify-content: flex-start !important;
+  }
+
 }

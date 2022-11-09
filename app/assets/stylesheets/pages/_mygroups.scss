@@ -38,6 +38,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+
+.second-group lord-icon {
+  margin-bottom: -50px;
 }
 
 .index-primary {
@@ -132,8 +137,15 @@
 
 .modal-primary h4 {
   color: white;
-  margin-bottom: 30px;
   font-weight: lighter;
+}
+
+.modal-primary button.btn.close-modal {
+  width: 50px;
+  position: relative;
+  top: -21px;
+  left: 39px;
+  border: none;
 }
 
 .modal-primary h4 span {
@@ -144,9 +156,13 @@
 .modal-primary button img {
   width: 50px;
   position: relative;
-  top: -21px;
-  left: 39px;
   border: none;
+}
+
+.modal-primary .d-flex.justify-content-between.m-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .modal-primary button img:hover {

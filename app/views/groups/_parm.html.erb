@@ -1,0 +1,8 @@
+  <%= link_to new_group_path do %>
+    <i class="fa-solid fa-circle-plus" id="agregar-bank"></i>
+  <% end %>
+<div class="text-white my-5 p-3 mis-groups" data-searchcards-target="listcard">
+  <% groups.each_with_index do |group, num| %>
+    <%= render 'groups/group_info', group: group, num: num %>
+  <% end %>
+</div>

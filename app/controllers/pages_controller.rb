@@ -4,7 +4,9 @@ class PagesController < ApplicationController
   def home
   end
 
-
+  def upgrade
+  end
+  
   def index
     @password = policy_scope(Password)
 

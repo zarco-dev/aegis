@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get "invitation", to: "pages#invitation", as: :invitation
   get "mygroups", to: "pages#mygroups", as: :mygroups
   patch "invitation", to: "pages#invitation"
+  get "upgrade", to: "pages#upgrade", as: :upgrade
 
   resources :passwords
   resources :bank_passwords

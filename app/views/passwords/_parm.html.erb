@@ -4,7 +4,7 @@
     <i class="fa-solid fa-circle-plus" id="agregar-bank"></i>
   <% end %>
 <% end %>
-  <% passwords.each do |password| %>
-    <%= render 'passwords/pass_info', password: password %>
+  <% passwords.each_with_index do |password, num| %>
+    <%= render 'passwords/pass_info', password: password, num: num %>
   <% end %>
 </div>

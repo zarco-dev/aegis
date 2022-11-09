@@ -144,3 +144,17 @@ input.btn.btn-accept {
   }
 
 }
+
+@keyframes inviCardSlide {
+
+  from {
+    opacity: 0;
+    bottom: 40px;
+  }
+
+  to {
+    opacity: 1;
+    bottom: 0;
+  }
+
+}

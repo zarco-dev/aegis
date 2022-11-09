@@ -4,7 +4,7 @@
   <% end %>
 <% end %>
 <div class="cards-all" data-searchcards-target="listcard">
-  <% bank_passwords.each do |bankpassword| %>
-    <%= render 'card_info', bankpassword: bankpassword %>
+  <% bank_passwords.each_with_index do |bankpassword, num| %>
+    <%= render 'card_info', bankpassword: bankpassword, num: num %>
   <% end %>
 </div>

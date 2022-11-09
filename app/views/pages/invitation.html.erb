@@ -10,9 +10,11 @@
         <h2 class="title-invitation">Mis invitaciones</h2>
       </div>
       <div class="text-white my-5 p-3 primer-div">
-          <% @group_invitation.each do |group_i| %>
+          <% @group_invitation.each_with_index do |group_i, num| %>
             <% if current_user.id == group_i.user_id && group_i.status == false %>
-              <div data-controller="invitation" class="invitation-card mt-3 p-3" id="container<%= group_i.id %>" data-invitation-target="invitationcard">
+              <div data-controller="invitation" class="invitation-card mt-3 p-3" id="container<%= group_i.id %>" data-invitation-target="invitationcard" style="
+              animation: inviCardSlide <%= num + 1 - num * 0.95 %>s;
+              ">
                 <div class="d-flex justify-content-between">
                   <p>
                   <%= image_tag avatar.sample, class: "img-invitation" %>

@@ -5,7 +5,7 @@
   <% end %>
   <div class="plan__premium--center">
     <div class="container1">
-      <form class="info__plan__premium">
+      <form class="info__plan__premium" action="/upgrade" method="get">
         <div class="container1-1">
           <h3>Suscripción <span>Premium</span></h3>
         </div>
@@ -80,6 +80,7 @@
           </div>
         </div>
         <div class="container1-3">
+          <input type="hidden" name="params" value="<%= current_user.id %>">
           <input type="submit" value="¡Sube a premium!" class="btn__premium">
         </div>
       </form>

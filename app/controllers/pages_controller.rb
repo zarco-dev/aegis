@@ -5,8 +5,18 @@ class PagesController < ApplicationController
   end
 
   def upgrade
+    if params[:params].present?
+      iduser = User.find(params[:params])
+      iduser.premium_user = true
+      iduser.subscription.subscription_plan_id = 2
+      iduser.subscription.begining_date = Date.today
+      iduser.subscription.expired_date = Date.today.next_month
+      iduser.save
+      iduser.subscription.save
+      redirect_to dashboard_path
+    end
   end
-  
+
   def index
     @password = policy_scope(Password)
 

@@ -87,7 +87,7 @@
             <lord-icon src="https://cdn.lordicon.com/hbvyhtse.json" trigger="loop" delay="10000" style="width:30px;height:30px" colors="primary:#cccccc"></lord-icon>
             <span class="text-nav nav-text plan-text">Usuario <span><%= current_user.subscription.subscription_plan.title %></span></span>
           </a>
-          <small><a class="sube-premium" href="">Sube a premium</a></small>
+          <small><%= link_to 'Sube a premium', upgrade_path, class: "sube-premium" %></small>
         </div>
         <div class="user-first">
           <a>
@@ -111,7 +111,7 @@
           <i class="fa-solid fa-moon icon-nav moon"></i>
           <i class="bx bxs-sun icon-nav sun"></i>
         </div>
-        <span class="mode-text text-nav" data-sidebar-target="modetext">Ligth Mode</span>
+        <span class="mode-text text-nav" data-sidebar-target="modetext">Light Mode</span>
         <div class="toggle-switch" data-sidebar-target="toggleswitch" data-action="click->sidebar#darkmode">
           <span class="switch"></span>
         </div>

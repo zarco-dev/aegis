@@ -2,7 +2,7 @@ User.destroy_all
 
 SubscriptionPlan.create!(
   title: "basic",
-  description: "Plan basico, almacena hasta 15 contraseñas",
+  description: "Plan basico, almacena hasta 5 contraseñas",
   price: 0
 )
 
